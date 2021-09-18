@@ -1,0 +1,64 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+//
+// Copyright (c) 2010-2014, Marcus Rohrmoser mobile Software
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without modification, are permitted
+// provided that the following conditions are met:
+//
+// 1. Redistributions of source code must retain the above copyright notice, this list of conditions
+// and the following disclaimer.
+//
+// 2. The software must not be used for military or intelligence or related purposes nor
+// anything that's in conflict with human rights as declared in http://www.un.org/en/documents/udhr/ .
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR
+// IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+// FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
+// CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+// DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+// IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
+// THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+
+#ifndef DEBUG
+// Ensure DEBUG is defined properly
+#if NS_BLOCK_ASSERTIONS
+//#error Define -DDEBUG=0 in Project Settings->GCC 4.2 Language->Other C Flags
+#define DEBUG 0
+#else
+#error Define -DDEBUG=1 in Project Settings->GCC 4.2 Language->Other C Flags
+#endif
+#endif
+
+#if DEBUG
+#ifdef NS_BLOCK_ASSERTIONS
+#error Don't define -DNS_BLOCK_ASSERTIONS=0 in Project Settings->GCC 4.2 Language->Other C Flags
+#endif
+// Do Logging
+#define MRLogD(x, ...)          NSLog(@"DEBUG  %s " x, __FUNCTION__, ## __VA_ARGS__)
+#define MRLogTStart()           const NSTimeInterval debug_timer_start = [[NSProcessInfo processInfo] systemUptime]
+#define MRLogT(s, ... )         MRLogD(@"TIME  dt=%f " s, ([[NSProcessInfo processInfo] systemUptime] - debug_timer_start), __VA_ARGS__)
+#else
+#ifndef NS_BLOCK_ASSERTIONS
+#error Define -DNS_BLOCK_ASSERTIONS=1 in Project Settings->GCC 4.2 Language->Other C Flags
+#endif
+#if !NS_BLOCK_ASSERTIONS
+#error Define -DNS_BLOCK_ASSERTIONS=1 in Project Settings->GCC 4.2 Language->Other C Flags
+#endif
+// No Logging
+#define MRLogD(x, ...)                            /* NSLog(x,##__VA_ARGS__) */
+#define NSLog(x, ...)                             /* NSLog(x,##__VA_ARGS__) */
+#define MRLogTStart()
+#define MRLogT(s, ... )
+#endif
+
+#endif

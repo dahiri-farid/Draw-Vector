@@ -1,0 +1,6 @@
+framework module MROGeometry {
+  umbrella header "MROGeometry-umbrella.h"
+
+  export *
+  module * { export * }
+}

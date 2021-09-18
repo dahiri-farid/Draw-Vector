@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "swift-html",
+        "repositoryURL": "https://github.com/pointfreeco/swift-html",
+        "state": {
+          "branch": null,
+          "revision": "f53c38c4b841841f36afa1866093c908cadaa736",
+          "version": "0.4.0"
+        }
+      },
+      {
+        "package": "SnapshotTesting",
+        "repositoryURL": "https://github.com/pointfreeco/swift-snapshot-testing.git",
+        "state": {
+          "branch": null,
+          "revision": "f8a9c997c3c1dab4e216a8ec9014e23144cbab37",
+          "version": "1.9.0"
+        }
+      },
+      {
+        "package": "UIColorHexSwift",
+        "repositoryURL": "https://github.com/yeahdongcn/UIColor-Hex-Swift",
+        "state": {
+          "branch": null,
+          "revision": "304ae671f4db4208a13999bbe026b1869ad614de",
+          "version": "5.1.7"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

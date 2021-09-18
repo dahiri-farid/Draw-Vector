@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41929E9F26F68CE10090F96F /* DVSVGConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 41929E9E26F68CE10090F96F /* DVSVGConverter.m */; };
+		41929EA226F697E00090F96F /* Html in Frameworks */ = {isa = PBXBuildFile; productRef = 41929EA126F697E00090F96F /* Html */; };
+		41929EA526F6983D0090F96F /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 41929EA426F6983D0090F96F /* UIColorHexSwift */; };
+		41929EA626F6983D0090F96F /* UIColorHexSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 41929EA426F6983D0090F96F /* UIColorHexSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		4197F92226F527AD0075C0BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197F92126F527AD0075C0BC /* AppDelegate.swift */; };
 		4197F92426F527AD0075C0BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197F92326F527AD0075C0BC /* SceneDelegate.swift */; };
 		4197F92626F527AD0075C0BC /* VectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197F92526F527AD0075C0BC /* VectorViewController.swift */; };
@@ -14,9 +18,28 @@
 		4197F92B26F527AE0075C0BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4197F92A26F527AE0075C0BC /* Assets.xcassets */; };
 		4197F92E26F527AE0075C0BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4197F92C26F527AE0075C0BC /* LaunchScreen.storyboard */; };
 		4197F93626F527D10075C0BC /* VectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197F93526F527D10075C0BC /* VectorView.swift */; };
+		AAD8885D721E7EB07D22D5AF /* Pods_draw_vector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 828B662218652F0CF6460662 /* Pods_draw_vector.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		41929EA726F6983D0090F96F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				41929EA626F6983D0090F96F /* UIColorHexSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3C457A570B6A23226CC8D0CB /* Pods-draw-vector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-draw-vector.release.xcconfig"; path = "Target Support Files/Pods-draw-vector/Pods-draw-vector.release.xcconfig"; sourceTree = "<group>"; };
+		41929E9C26F68CE10090F96F /* draw-vector-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "draw-vector-Bridging-Header.h"; sourceTree = "<group>"; };
+		41929E9D26F68CE10090F96F /* DVSVGConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVSVGConverter.h; sourceTree = "<group>"; };
+		41929E9E26F68CE10090F96F /* DVSVGConverter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DVSVGConverter.m; sourceTree = "<group>"; };
 		4197F91E26F527AD0075C0BC /* draw-vector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "draw-vector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4197F92126F527AD0075C0BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4197F92326F527AD0075C0BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +49,8 @@
 		4197F92D26F527AE0075C0BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4197F92F26F527AE0075C0BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4197F93526F527D10075C0BC /* VectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorView.swift; sourceTree = "<group>"; };
+		79A5634EF000CCF1F0B18E62 /* Pods-draw-vector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-draw-vector.debug.xcconfig"; path = "Target Support Files/Pods-draw-vector/Pods-draw-vector.debug.xcconfig"; sourceTree = "<group>"; };
+		828B662218652F0CF6460662 /* Pods_draw_vector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_draw_vector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +58,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41929EA526F6983D0090F96F /* UIColorHexSwift in Frameworks */,
+				AAD8885D721E7EB07D22D5AF /* Pods_draw_vector.framework in Frameworks */,
+				41929EA226F697E00090F96F /* Html in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C207CEB9FF0EA6ADE8EEB09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				828B662218652F0CF6460662 /* Pods_draw_vector.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4197F91526F527AD0075C0BC = {
 			isa = PBXGroup;
 			children = (
 				4197F92026F527AD0075C0BC /* draw-vector */,
 				4197F91F26F527AD0075C0BC /* Products */,
+				6EAE3332488534052E6991BA /* Pods */,
+				1C207CEB9FF0EA6ADE8EEB09 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,8 +104,20 @@
 				4197F92C26F527AE0075C0BC /* LaunchScreen.storyboard */,
 				4197F92F26F527AE0075C0BC /* Info.plist */,
 				4197F93526F527D10075C0BC /* VectorView.swift */,
+				41929E9D26F68CE10090F96F /* DVSVGConverter.h */,
+				41929E9E26F68CE10090F96F /* DVSVGConverter.m */,
+				41929E9C26F68CE10090F96F /* draw-vector-Bridging-Header.h */,
 			);
 			path = "draw-vector";
+			sourceTree = "<group>";
+		};
+		6EAE3332488534052E6991BA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79A5634EF000CCF1F0B18E62 /* Pods-draw-vector.debug.xcconfig */,
+				3C457A570B6A23226CC8D0CB /* Pods-draw-vector.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,15 +127,22 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4197F93226F527AE0075C0BC /* Build configuration list for PBXNativeTarget "draw-vector" */;
 			buildPhases = (
+				ADD166D12CE04F533D5F75EB /* [CP] Check Pods Manifest.lock */,
 				4197F91A26F527AD0075C0BC /* Sources */,
 				4197F91B26F527AD0075C0BC /* Frameworks */,
 				4197F91C26F527AD0075C0BC /* Resources */,
+				8174392C14F4BAEA31FA4700 /* [CP] Embed Pods Frameworks */,
+				41929EA726F6983D0090F96F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "draw-vector";
+			packageProductDependencies = (
+				41929EA126F697E00090F96F /* Html */,
+				41929EA426F6983D0090F96F /* UIColorHexSwift */,
+			);
 			productName = "draw-vector";
 			productReference = 4197F91E26F527AD0075C0BC /* draw-vector.app */;
 			productType = "com.apple.product-type.application";
@@ -101,6 +158,7 @@
 				TargetAttributes = {
 					4197F91D26F527AD0075C0BC = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -113,6 +171,10 @@
 				Base,
 			);
 			mainGroup = 4197F91526F527AD0075C0BC;
+			packageReferences = (
+				41929EA026F697E00090F96F /* XCRemoteSwiftPackageReference "swift-html" */,
+				41929EA326F6983D0090F96F /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */,
+			);
 			productRefGroup = 4197F91F26F527AD0075C0BC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -135,12 +197,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8174392C14F4BAEA31FA4700 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-draw-vector/Pods-draw-vector-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-draw-vector/Pods-draw-vector-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-draw-vector/Pods-draw-vector-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADD166D12CE04F533D5F75EB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-draw-vector-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4197F91A26F527AD0075C0BC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4197F92626F527AD0075C0BC /* VectorViewController.swift in Sources */,
+				41929E9F26F68CE10090F96F /* DVSVGConverter.m in Sources */,
 				4197F93626F527D10075C0BC /* VectorView.swift in Sources */,
 				4197F92226F527AD0075C0BC /* AppDelegate.swift in Sources */,
 				4197F92426F527AD0075C0BC /* SceneDelegate.swift in Sources */,
@@ -287,9 +392,11 @@
 		};
 		4197F93326F527AE0075C0BC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79A5634EF000CCF1F0B18E62 /* Pods-draw-vector.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83GL89SB24;
 				INFOPLIST_FILE = "draw-vector/Info.plist";
@@ -299,6 +406,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "faridahiri.draw-vector";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "draw-vector/draw-vector-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -306,9 +415,11 @@
 		};
 		4197F93426F527AE0075C0BC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C457A570B6A23226CC8D0CB /* Pods-draw-vector.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83GL89SB24;
 				INFOPLIST_FILE = "draw-vector/Info.plist";
@@ -318,6 +429,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "faridahiri.draw-vector";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "draw-vector/draw-vector-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -345,6 +457,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		41929EA026F697E00090F96F /* XCRemoteSwiftPackageReference "swift-html" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-html";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.0;
+			};
+		};
+		41929EA326F6983D0090F96F /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yeahdongcn/UIColor-Hex-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		41929EA126F697E00090F96F /* Html */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41929EA026F697E00090F96F /* XCRemoteSwiftPackageReference "swift-html" */;
+			productName = Html;
+		};
+		41929EA426F6983D0090F96F /* UIColorHexSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41929EA326F6983D0090F96F /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */;
+			productName = UIColorHexSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4197F91626F527AD0075C0BC /* Project object */;
 }
