@@ -64,9 +64,6 @@ class VectorView : UIView {
                 }
                 
                 bezierPath.close()
-                let string = DVSVGConverter.svgString(from: bezierPath.cgPath, size: self.bounds.size)
-                print("SVG \(string)")
-                
                 UIColor.blue.setFill()
                 bezierPath.fill()
             }
