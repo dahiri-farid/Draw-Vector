@@ -10,11 +10,15 @@ import UIKit
 
 class VectorView : UIView {
     var currentVectorPath: VectorPath?
-    var vectorPathCollection = [VectorPath]()
+    var closedVectorPathCollection = [ClosedVectorPath]()
+    var pathTranslationStartPoint = CGPoint.zero
+    var pathTranslationCurrentPoint = CGPoint.zero
     
     func reset() {
         self.currentVectorPath = nil
-        self.vectorPathCollection.removeAll()
+        self.closedVectorPathCollection.removeAll()
+        self.pathTranslationStartPoint = CGPoint.zero
+        self.pathTranslationCurrentPoint = CGPoint.zero
     }
     
     func beginPath(point: CGPoint, editMode: VectorViewEditMode) {
@@ -23,7 +27,8 @@ class VectorView : UIView {
             let currentVectorPath = VectorPath()
             currentVectorPath.path.append(point)
             self.currentVectorPath = currentVectorPath
-            self.vectorPathCollection.append(currentVectorPath)
+        case .move:
+            self.pathTranslationStartPoint = point
         default: break
         }
         
@@ -31,12 +36,14 @@ class VectorView : UIView {
     }
     
     func movePath(point: CGPoint, editMode: VectorViewEditMode) {
-        guard let currentVectorPath = self.currentVectorPath else {
-            return
-        }
         switch editMode {
         case .draw:
+            guard let currentVectorPath = self.currentVectorPath else {
+                return
+            }
             currentVectorPath.path.append(point)
+        case .move:
+            self.pathTranslationCurrentPoint = point
         default: break
         }
         
@@ -44,13 +51,15 @@ class VectorView : UIView {
     }
     
     func closePath(point: CGPoint, editMode: VectorViewEditMode) {
-        guard let currentVectorPath = self.currentVectorPath else {
-            return
-        }
         switch editMode {
         case .draw:
-            self.vectorPathCollection.append(currentVectorPath)
+            if let currentVectorPath = self.currentVectorPath {
+                self.closedVectorPathCollection.append(ClosedVectorPath(vectorPath: currentVectorPath))
+            }
             self.currentVectorPath = nil
+        case .move:
+            self.pathTranslationCurrentPoint = CGPoint.zero
+            self.pathTranslationStartPoint = CGPoint.zero
         default: break
         }
         
@@ -58,8 +67,6 @@ class VectorView : UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        
-        // 1
         guard let context = UIGraphicsGetCurrentContext() else {
             return
         }
@@ -67,21 +74,33 @@ class VectorView : UIView {
         context.setFillColor(UIColor.yellow.cgColor)
         context.fill(bounds)
         
-        for vectorPath in self.vectorPathCollection {
-            if vectorPath.path.count > 1 {
-                let bezierPath = UIBezierPath()
-                
-                let origin = vectorPath.path.first!
-                bezierPath.move(to: origin)
-                
-                for point in vectorPath.path[1...] {
-                    bezierPath.addLine(to: point)
-                }
-                
-                bezierPath.close()
-                UIColor.blue.setFill()
-                bezierPath.fill()
+        if let currentVectorPath = self.currentVectorPath {
+            guard let bezierPath = currentVectorPath.bezierPath else {
+                fatalError()
             }
+            currentVectorPath.fillColor.setFill()
+            currentVectorPath.strokeColor.setStroke()
+            bezierPath.lineWidth = currentVectorPath.strokeWidth
+            bezierPath.fill()
+            bezierPath.stroke()
+        }
+        let closedVectorPathCollection = self.closedVectorPathCollection
+        for closedVectorPath in closedVectorPathCollection {
+            let bezierPath = closedVectorPath.bezierPath
+            if self.pathTranslationCurrentPoint != CGPoint.zero {
+                if bezierPath.contains(self.pathTranslationCurrentPoint) {
+                    let translationPoint = CGPoint(x: self.pathTranslationCurrentPoint.x - self.pathTranslationStartPoint.x, y: self.pathTranslationCurrentPoint.y - self.pathTranslationStartPoint.y)
+                    bezierPath.apply(CGAffineTransform(translationX: translationPoint.x, y: translationPoint.y))
+                    self.pathTranslationStartPoint = self.pathTranslationCurrentPoint
+                    self.setNeedsDisplay()
+                }
+            }
+            
+            closedVectorPath.strokeColor.setFill()
+            closedVectorPath.fillColor.setFill()
+            bezierPath.lineWidth = closedVectorPath.strokeWidth
+            bezierPath.stroke()
+            bezierPath.fill()
         }
     }
 }
