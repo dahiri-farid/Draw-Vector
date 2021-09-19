@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4119122B26F79C71009509D3 /* VectorPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119122A26F79C71009509D3 /* VectorPath.swift */; };
 		41929E9F26F68CE10090F96F /* DVSVGConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 41929E9E26F68CE10090F96F /* DVSVGConverter.m */; };
 		41929EA226F697E00090F96F /* Html in Frameworks */ = {isa = PBXBuildFile; productRef = 41929EA126F697E00090F96F /* Html */; };
 		41929EA526F6983D0090F96F /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 41929EA426F6983D0090F96F /* UIColorHexSwift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		3C457A570B6A23226CC8D0CB /* Pods-draw-vector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-draw-vector.release.xcconfig"; path = "Target Support Files/Pods-draw-vector/Pods-draw-vector.release.xcconfig"; sourceTree = "<group>"; };
+		4119122A26F79C71009509D3 /* VectorPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorPath.swift; sourceTree = "<group>"; };
 		41929E9C26F68CE10090F96F /* draw-vector-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "draw-vector-Bridging-Header.h"; sourceTree = "<group>"; };
 		41929E9D26F68CE10090F96F /* DVSVGConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVSVGConverter.h; sourceTree = "<group>"; };
 		41929E9E26F68CE10090F96F /* DVSVGConverter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DVSVGConverter.m; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				41929E9D26F68CE10090F96F /* DVSVGConverter.h */,
 				41929E9E26F68CE10090F96F /* DVSVGConverter.m */,
 				41929E9C26F68CE10090F96F /* draw-vector-Bridging-Header.h */,
+				4119122A26F79C71009509D3 /* VectorPath.swift */,
 			);
 			path = "draw-vector";
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				4197F92626F527AD0075C0BC /* VectorViewController.swift in Sources */,
 				41929E9F26F68CE10090F96F /* DVSVGConverter.m in Sources */,
 				4197F93626F527D10075C0BC /* VectorView.swift in Sources */,
+				4119122B26F79C71009509D3 /* VectorPath.swift in Sources */,
 				4197F92226F527AD0075C0BC /* AppDelegate.swift in Sources */,
 				4197F92426F527AD0075C0BC /* SceneDelegate.swift in Sources */,
 			);
