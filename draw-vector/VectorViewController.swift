@@ -9,6 +9,8 @@ import UIKit
 
 class VectorViewController: UIViewController {
     
+    let panelView: VectorPanelView? = VectorPanelView.loadFromNib()
+    
     var previousPoint = CGPoint.zero
     let vectorView = VectorView()
 
@@ -16,6 +18,16 @@ class VectorViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.addSubview(self.vectorView)
+        guard let panelView = self.panelView else {
+            return
+        }
+        self.view.addSubview(panelView)
+        
+        panelView.translatesAutoresizingMaskIntoConstraints = false
+        let leadingConstraint = NSLayoutConstraint(item: panelView, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal, toItem: panelView.superview!, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: 0)
+        let verticalConstraint = NSLayoutConstraint(item: panelView, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: panelView.superview!, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: 0)
+        let widthConstraint = NSLayoutConstraint(item: panelView, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 44)
+        NSLayoutConstraint.activate([leadingConstraint, verticalConstraint, widthConstraint])
     }
     
     override func viewWillAppear(_ animated: Bool) {

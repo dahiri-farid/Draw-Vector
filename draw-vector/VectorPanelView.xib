@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="VectorPanelView" customModule="draw_vector" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="bcD-Vi-ln5">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLU-F1-g6M">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+                            <state key="normal" title="Draw"/>
+                            <connections>
+                                <action selector="drawActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="rtI-nD-I9M"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fw5-bD-bbT">
+                            <rect key="frame" x="0.0" y="173" width="414" height="30"/>
+                            <state key="normal" title="Move"/>
+                            <connections>
+                                <action selector="moveActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="MSd-C9-4UR"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnr-4T-Xjp">
+                            <rect key="frame" x="0.0" y="346.5" width="414" height="30"/>
+                            <state key="normal" title="Scale"/>
+                            <connections>
+                                <action selector="scaleActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="FTQ-ba-AqU"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9U-hL-Ra4">
+                            <rect key="frame" x="0.0" y="519.5" width="414" height="30"/>
+                            <state key="normal" title="Edit"/>
+                            <connections>
+                                <action selector="editActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="bAN-x2-Gt2"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vw-8m-nQ6">
+                            <rect key="frame" x="0.0" y="693" width="414" height="30"/>
+                            <state key="normal" title="Delete"/>
+                            <connections>
+                                <action selector="deleteActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="BjH-6O-DGm"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXS-3A-lxU">
+                            <rect key="frame" x="0.0" y="866" width="414" height="30"/>
+                            <state key="normal" title="Save"/>
+                            <connections>
+                                <action selector="saveActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="d9T-op-9rg"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="bcD-Vi-ln5" secondAttribute="bottom" id="IWI-qD-q2X"/>
+                <constraint firstAttribute="trailing" secondItem="bcD-Vi-ln5" secondAttribute="trailing" id="Xsh-Qt-ou7"/>
+                <constraint firstItem="bcD-Vi-ln5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="idh-xA-QWQ"/>
+                <constraint firstItem="bcD-Vi-ln5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jzv-1v-6U0"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="deleteButton" destination="3Vw-8m-nQ6" id="eEk-qi-5ze"/>
+                <outlet property="drawButton" destination="BLU-F1-g6M" id="Ifj-O3-2A6"/>
+                <outlet property="editButton" destination="o9U-hL-Ra4" id="umx-4M-pZg"/>
+                <outlet property="moveButton" destination="fw5-bD-bbT" id="oxj-qx-JOB"/>
+                <outlet property="saveButton" destination="UXS-3A-lxU" id="NwS-uk-jFE"/>
+                <outlet property="scaleButton" destination="Pnr-4T-Xjp" id="Axv-xp-b6G"/>
+            </connections>
+            <point key="canvasLocation" x="-46" y="104"/>
+        </view>
+    </objects>
+</document>
