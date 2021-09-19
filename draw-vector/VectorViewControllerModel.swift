@@ -7,17 +7,8 @@
 
 import Foundation
 
-enum VectorViewMode {
-    case draw
-    case drawOptions
-    case move
-    case scale
-    case edit
-    case delete
-}
-
 class VectorViewControllerModel {
-    var viewMode: VectorViewMode = .draw
+    var viewMode: VectorViewEditMode = .draw
     
     func save() {
         

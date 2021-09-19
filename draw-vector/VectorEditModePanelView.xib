@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="VectorPanelView" customModule="draw_vector" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="VectorEditModePanelView" customModule="draw_vector" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -23,32 +23,18 @@
                                 <action selector="drawActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="rtI-nD-I9M"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkF-xO-YHe">
-                            <rect key="frame" x="0.0" y="173" width="414" height="30"/>
-                            <state key="normal" title="Draw Options"/>
-                            <connections>
-                                <action selector="drawOptionsActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="QTt-ys-4yc"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fw5-bD-bbT">
-                            <rect key="frame" x="0.0" y="346.5" width="414" height="30"/>
+                            <rect key="frame" x="0.0" y="288.5" width="414" height="30"/>
                             <state key="normal" title="Move"/>
                             <connections>
                                 <action selector="moveActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="MSd-C9-4UR"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnr-4T-Xjp">
-                            <rect key="frame" x="0.0" y="519.5" width="414" height="30"/>
+                            <rect key="frame" x="0.0" y="577.5" width="414" height="30"/>
                             <state key="normal" title="Scale"/>
                             <connections>
                                 <action selector="scaleActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="FTQ-ba-AqU"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9U-hL-Ra4">
-                            <rect key="frame" x="0.0" y="693" width="414" height="30"/>
-                            <state key="normal" title="Edit"/>
-                            <connections>
-                                <action selector="editActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="bAN-x2-Gt2"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vw-8m-nQ6">
@@ -76,8 +62,6 @@
             <connections>
                 <outlet property="deleteButton" destination="3Vw-8m-nQ6" id="eEk-qi-5ze"/>
                 <outlet property="drawButton" destination="BLU-F1-g6M" id="Ifj-O3-2A6"/>
-                <outlet property="drawOptionsButton" destination="tkF-xO-YHe" id="6VP-SZ-rnI"/>
-                <outlet property="editButton" destination="o9U-hL-Ra4" id="umx-4M-pZg"/>
                 <outlet property="moveButton" destination="fw5-bD-bbT" id="oxj-qx-JOB"/>
                 <outlet property="scaleButton" destination="Pnr-4T-Xjp" id="Axv-xp-b6G"/>
             </connections>

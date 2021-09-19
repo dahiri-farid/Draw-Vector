@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4119122B26F79C71009509D3 /* VectorPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119122A26F79C71009509D3 /* VectorPath.swift */; };
-		4119122E26F79FAD009509D3 /* VectorPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119122D26F79FAD009509D3 /* VectorPanelView.swift */; };
-		4119123026F79FC6009509D3 /* VectorPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4119122F26F79FC6009509D3 /* VectorPanelView.xib */; };
+		4119122E26F79FAD009509D3 /* VectorEditModePanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119122D26F79FAD009509D3 /* VectorEditModePanelView.swift */; };
+		4119123026F79FC6009509D3 /* VectorEditModePanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4119122F26F79FC6009509D3 /* VectorEditModePanelView.xib */; };
 		4119123426F7A84C009509D3 /* Nib+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119123326F7A84C009509D3 /* Nib+View.swift */; };
 		4119123626F7AAB2009509D3 /* VectorViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119123526F7AAB2009509D3 /* VectorViewControllerModel.swift */; };
+		4119123826F7C1A7009509D3 /* DrawOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119123726F7C1A7009509D3 /* DrawOptionsViewController.swift */; };
+		4119123A26F7C4C1009509D3 /* VectorViewEditMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119123926F7C4C1009509D3 /* VectorViewEditMode.swift */; };
+		4119123C26F7C522009509D3 /* VectorDrawingOptionsPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119123B26F7C522009509D3 /* VectorDrawingOptionsPanelView.swift */; };
+		4119123E26F7C538009509D3 /* VectorDrawingOptionsPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4119123D26F7C538009509D3 /* VectorDrawingOptionsPanelView.xib */; };
 		41929E9F26F68CE10090F96F /* DVSVGConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 41929E9E26F68CE10090F96F /* DVSVGConverter.m */; };
 		41929EA226F697E00090F96F /* Html in Frameworks */ = {isa = PBXBuildFile; productRef = 41929EA126F697E00090F96F /* Html */; };
 		41929EA526F6983D0090F96F /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 41929EA426F6983D0090F96F /* UIColorHexSwift */; };
@@ -43,10 +47,14 @@
 /* Begin PBXFileReference section */
 		3C457A570B6A23226CC8D0CB /* Pods-draw-vector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-draw-vector.release.xcconfig"; path = "Target Support Files/Pods-draw-vector/Pods-draw-vector.release.xcconfig"; sourceTree = "<group>"; };
 		4119122A26F79C71009509D3 /* VectorPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorPath.swift; sourceTree = "<group>"; };
-		4119122D26F79FAD009509D3 /* VectorPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorPanelView.swift; sourceTree = "<group>"; };
-		4119122F26F79FC6009509D3 /* VectorPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VectorPanelView.xib; sourceTree = "<group>"; };
+		4119122D26F79FAD009509D3 /* VectorEditModePanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorEditModePanelView.swift; sourceTree = "<group>"; };
+		4119122F26F79FC6009509D3 /* VectorEditModePanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VectorEditModePanelView.xib; sourceTree = "<group>"; };
 		4119123326F7A84C009509D3 /* Nib+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nib+View.swift"; sourceTree = "<group>"; };
 		4119123526F7AAB2009509D3 /* VectorViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorViewControllerModel.swift; sourceTree = "<group>"; };
+		4119123726F7C1A7009509D3 /* DrawOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawOptionsViewController.swift; sourceTree = "<group>"; };
+		4119123926F7C4C1009509D3 /* VectorViewEditMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorViewEditMode.swift; sourceTree = "<group>"; };
+		4119123B26F7C522009509D3 /* VectorDrawingOptionsPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorDrawingOptionsPanelView.swift; sourceTree = "<group>"; };
+		4119123D26F7C538009509D3 /* VectorDrawingOptionsPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VectorDrawingOptionsPanelView.xib; sourceTree = "<group>"; };
 		41929E9C26F68CE10090F96F /* draw-vector-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "draw-vector-Bridging-Header.h"; sourceTree = "<group>"; };
 		41929E9D26F68CE10090F96F /* DVSVGConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVSVGConverter.h; sourceTree = "<group>"; };
 		41929E9E26F68CE10090F96F /* DVSVGConverter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DVSVGConverter.m; sourceTree = "<group>"; };
@@ -118,10 +126,14 @@
 				41929E9E26F68CE10090F96F /* DVSVGConverter.m */,
 				41929E9C26F68CE10090F96F /* draw-vector-Bridging-Header.h */,
 				4119122A26F79C71009509D3 /* VectorPath.swift */,
-				4119122D26F79FAD009509D3 /* VectorPanelView.swift */,
-				4119122F26F79FC6009509D3 /* VectorPanelView.xib */,
+				4119122D26F79FAD009509D3 /* VectorEditModePanelView.swift */,
+				4119122F26F79FC6009509D3 /* VectorEditModePanelView.xib */,
 				4119123326F7A84C009509D3 /* Nib+View.swift */,
 				4119123526F7AAB2009509D3 /* VectorViewControllerModel.swift */,
+				4119123726F7C1A7009509D3 /* DrawOptionsViewController.swift */,
+				4119123926F7C4C1009509D3 /* VectorViewEditMode.swift */,
+				4119123B26F7C522009509D3 /* VectorDrawingOptionsPanelView.swift */,
+				4119123D26F7C538009509D3 /* VectorDrawingOptionsPanelView.xib */,
 			);
 			path = "draw-vector";
 			sourceTree = "<group>";
@@ -205,8 +217,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4197F92E26F527AE0075C0BC /* LaunchScreen.storyboard in Resources */,
+				4119123E26F7C538009509D3 /* VectorDrawingOptionsPanelView.xib in Resources */,
 				4197F92B26F527AE0075C0BC /* Assets.xcassets in Resources */,
-				4119123026F79FC6009509D3 /* VectorPanelView.xib in Resources */,
+				4119123026F79FC6009509D3 /* VectorEditModePanelView.xib in Resources */,
 				4197F92926F527AD0075C0BC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,15 +273,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4119123C26F7C522009509D3 /* VectorDrawingOptionsPanelView.swift in Sources */,
 				4119123426F7A84C009509D3 /* Nib+View.swift in Sources */,
+				4119123826F7C1A7009509D3 /* DrawOptionsViewController.swift in Sources */,
 				4197F92626F527AD0075C0BC /* VectorViewController.swift in Sources */,
-				4119122E26F79FAD009509D3 /* VectorPanelView.swift in Sources */,
+				4119122E26F79FAD009509D3 /* VectorEditModePanelView.swift in Sources */,
 				41929E9F26F68CE10090F96F /* DVSVGConverter.m in Sources */,
 				4197F93626F527D10075C0BC /* VectorView.swift in Sources */,
 				4119122B26F79C71009509D3 /* VectorPath.swift in Sources */,
 				4119123626F7AAB2009509D3 /* VectorViewControllerModel.swift in Sources */,
 				4197F92226F527AD0075C0BC /* AppDelegate.swift in Sources */,
 				4197F92426F527AD0075C0BC /* SceneDelegate.swift in Sources */,
+				4119123A26F7C4C1009509D3 /* VectorViewEditMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
