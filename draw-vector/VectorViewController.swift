@@ -13,10 +13,12 @@ class VectorViewController: UIViewController {
     
     var previousPoint = CGPoint.zero
     let vectorView = VectorView()
+    
+    let viewModel = VectorViewControllerModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
         self.view.addSubview(self.vectorView)
         guard let panelView = self.panelView else {
             return
@@ -37,30 +39,40 @@ class VectorViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         let touch = touches.first!
         let location = touch.location(in: self.vectorView)
-        self.previousPoint = location
-        self.vectorView.beginPath(point: location)
+        
+        switch self.viewModel.viewMode {
+        case .draw:
+            self.previousPoint = location
+            self.vectorView.beginPath(point: location)
+        default: break
+        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         let touch = touches.first!
         let location = touch.location(in: self.vectorView)
         
-        if !(location.x == self.previousPoint.x && location.y == self.previousPoint.y) {
-            self.vectorView.movePath(point: location)
+        switch self.viewModel.viewMode {
+        case .draw:
+            if !(location.x == self.previousPoint.x && location.y == self.previousPoint.y) {
+                self.vectorView.movePath(point: location)
+            }
+        default: break
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         let touch = touches.first!
         let location = touch.location(in: self.vectorView)
         
-        if !(location.x == self.previousPoint.x && location.y == self.previousPoint.y) {
-            self.vectorView.closePath(point: location)
+        switch self.viewModel.viewMode {
+        case .draw:
+            if !(location.x == self.previousPoint.x && location.y == self.previousPoint.y) {
+                self.vectorView.closePath(point: location)
+            }
+        default: break
         }
     }
 }

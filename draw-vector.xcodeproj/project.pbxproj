@@ -11,6 +11,7 @@
 		4119122E26F79FAD009509D3 /* VectorPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119122D26F79FAD009509D3 /* VectorPanelView.swift */; };
 		4119123026F79FC6009509D3 /* VectorPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4119122F26F79FC6009509D3 /* VectorPanelView.xib */; };
 		4119123426F7A84C009509D3 /* Nib+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119123326F7A84C009509D3 /* Nib+View.swift */; };
+		4119123626F7AAB2009509D3 /* VectorViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119123526F7AAB2009509D3 /* VectorViewControllerModel.swift */; };
 		41929E9F26F68CE10090F96F /* DVSVGConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 41929E9E26F68CE10090F96F /* DVSVGConverter.m */; };
 		41929EA226F697E00090F96F /* Html in Frameworks */ = {isa = PBXBuildFile; productRef = 41929EA126F697E00090F96F /* Html */; };
 		41929EA526F6983D0090F96F /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 41929EA426F6983D0090F96F /* UIColorHexSwift */; };
@@ -45,6 +46,7 @@
 		4119122D26F79FAD009509D3 /* VectorPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorPanelView.swift; sourceTree = "<group>"; };
 		4119122F26F79FC6009509D3 /* VectorPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VectorPanelView.xib; sourceTree = "<group>"; };
 		4119123326F7A84C009509D3 /* Nib+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nib+View.swift"; sourceTree = "<group>"; };
+		4119123526F7AAB2009509D3 /* VectorViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorViewControllerModel.swift; sourceTree = "<group>"; };
 		41929E9C26F68CE10090F96F /* draw-vector-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "draw-vector-Bridging-Header.h"; sourceTree = "<group>"; };
 		41929E9D26F68CE10090F96F /* DVSVGConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVSVGConverter.h; sourceTree = "<group>"; };
 		41929E9E26F68CE10090F96F /* DVSVGConverter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DVSVGConverter.m; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				4119122D26F79FAD009509D3 /* VectorPanelView.swift */,
 				4119122F26F79FC6009509D3 /* VectorPanelView.xib */,
 				4119123326F7A84C009509D3 /* Nib+View.swift */,
+				4119123526F7AAB2009509D3 /* VectorViewControllerModel.swift */,
 			);
 			path = "draw-vector";
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				41929E9F26F68CE10090F96F /* DVSVGConverter.m in Sources */,
 				4197F93626F527D10075C0BC /* VectorView.swift in Sources */,
 				4119122B26F79C71009509D3 /* VectorPath.swift in Sources */,
+				4119123626F7AAB2009509D3 /* VectorViewControllerModel.swift in Sources */,
 				4197F92226F527AD0075C0BC /* AppDelegate.swift in Sources */,
 				4197F92426F527AD0075C0BC /* SceneDelegate.swift in Sources */,
 			);
