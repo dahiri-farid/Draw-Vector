@@ -18,4 +18,8 @@ enum VectorViewMode {
 
 class VectorViewControllerModel {
     var viewMode: VectorViewMode = .draw
+    
+    func save() {
+        
+    }
 }

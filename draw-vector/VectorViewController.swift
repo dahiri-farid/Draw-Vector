@@ -7,8 +7,7 @@
 
 import UIKit
 
-class VectorViewController: UIViewController {
-    
+class VectorViewController: UIViewController, VectorPanelViewDelegate {
     let panelView: VectorPanelView? = VectorPanelView.loadFromNib()
     
     var previousPoint = CGPoint.zero
@@ -16,6 +15,7 @@ class VectorViewController: UIViewController {
     
     let viewModel = VectorViewControllerModel()
 
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +23,7 @@ class VectorViewController: UIViewController {
         guard let panelView = self.panelView else {
             return
         }
+        panelView.delegate = self
         self.view.addSubview(panelView)
         
         panelView.translatesAutoresizingMaskIntoConstraints = false
@@ -36,8 +37,10 @@ class VectorViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.vectorView.frame = self.view.bounds
+        self.update()
     }
     
+    // MARK: Touches
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
         let location = touch.location(in: self.vectorView)
@@ -74,6 +77,42 @@ class VectorViewController: UIViewController {
             }
         default: break
         }
+    }
+    
+    // MARK: Configuration
+    func update() {
+        self.panelView?.viewMode = self.viewModel.viewMode
+    }
+    
+    // MARK: VectorPanelViewDelegate
+    func drawActionSelected() {
+        self.viewModel.viewMode = .draw
+        self.update()
+    }
+    
+    func drawOptionsActionSelected() {
+        self.viewModel.viewMode = .drawOptions
+        self.update()
+    }
+    
+    func moveActionSelected() {
+        self.viewModel.viewMode = .move
+        self.update()
+    }
+    
+    func scaleActionSelected() {
+        self.viewModel.viewMode = .scale
+        self.update()
+    }
+    
+    func editActionSelected() {
+        self.viewModel.viewMode = .edit
+        self.update()
+    }
+    
+    func deleteActionSelected() {
+        self.viewModel.viewMode = .delete
+        self.update()
     }
 }
 

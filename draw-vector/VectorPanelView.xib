@@ -23,39 +23,39 @@
                                 <action selector="drawActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="rtI-nD-I9M"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fw5-bD-bbT">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkF-xO-YHe">
                             <rect key="frame" x="0.0" y="173" width="414" height="30"/>
+                            <state key="normal" title="Draw Options"/>
+                            <connections>
+                                <action selector="drawOptionsActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="QTt-ys-4yc"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fw5-bD-bbT">
+                            <rect key="frame" x="0.0" y="346.5" width="414" height="30"/>
                             <state key="normal" title="Move"/>
                             <connections>
                                 <action selector="moveActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="MSd-C9-4UR"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnr-4T-Xjp">
-                            <rect key="frame" x="0.0" y="346.5" width="414" height="30"/>
+                            <rect key="frame" x="0.0" y="519.5" width="414" height="30"/>
                             <state key="normal" title="Scale"/>
                             <connections>
                                 <action selector="scaleActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="FTQ-ba-AqU"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9U-hL-Ra4">
-                            <rect key="frame" x="0.0" y="519.5" width="414" height="30"/>
+                            <rect key="frame" x="0.0" y="693" width="414" height="30"/>
                             <state key="normal" title="Edit"/>
                             <connections>
                                 <action selector="editActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="bAN-x2-Gt2"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vw-8m-nQ6">
-                            <rect key="frame" x="0.0" y="693" width="414" height="30"/>
+                            <rect key="frame" x="0.0" y="866" width="414" height="30"/>
                             <state key="normal" title="Delete"/>
                             <connections>
                                 <action selector="deleteActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="BjH-6O-DGm"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXS-3A-lxU">
-                            <rect key="frame" x="0.0" y="866" width="414" height="30"/>
-                            <state key="normal" title="Save"/>
-                            <connections>
-                                <action selector="saveActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="d9T-op-9rg"/>
                             </connections>
                         </button>
                     </subviews>
@@ -76,9 +76,9 @@
             <connections>
                 <outlet property="deleteButton" destination="3Vw-8m-nQ6" id="eEk-qi-5ze"/>
                 <outlet property="drawButton" destination="BLU-F1-g6M" id="Ifj-O3-2A6"/>
+                <outlet property="drawOptionsButton" destination="tkF-xO-YHe" id="6VP-SZ-rnI"/>
                 <outlet property="editButton" destination="o9U-hL-Ra4" id="umx-4M-pZg"/>
                 <outlet property="moveButton" destination="fw5-bD-bbT" id="oxj-qx-JOB"/>
-                <outlet property="saveButton" destination="UXS-3A-lxU" id="NwS-uk-jFE"/>
                 <outlet property="scaleButton" destination="Pnr-4T-Xjp" id="Axv-xp-b6G"/>
             </connections>
             <point key="canvasLocation" x="-46" y="104"/>
