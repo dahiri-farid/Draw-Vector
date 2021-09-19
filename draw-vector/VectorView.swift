@@ -17,28 +17,43 @@ class VectorView : UIView {
         self.vectorPathCollection.removeAll()
     }
     
-    func beginPath(point: CGPoint) {
-        let currentVectorPath = VectorPath()
-        currentVectorPath.path.append(point)
-        self.currentVectorPath = currentVectorPath
-        self.vectorPathCollection.append(currentVectorPath)
+    func beginPath(point: CGPoint, editMode: VectorViewEditMode) {
+        switch editMode {
+        case .draw:
+            let currentVectorPath = VectorPath()
+            currentVectorPath.path.append(point)
+            self.currentVectorPath = currentVectorPath
+            self.vectorPathCollection.append(currentVectorPath)
+        default: break
+        }
+        
         self.setNeedsDisplay()
     }
     
-    func movePath(point: CGPoint) {
+    func movePath(point: CGPoint, editMode: VectorViewEditMode) {
         guard let currentVectorPath = self.currentVectorPath else {
             return
         }
-        currentVectorPath.path.append(point)
+        switch editMode {
+        case .draw:
+            currentVectorPath.path.append(point)
+        default: break
+        }
+        
         self.setNeedsDisplay()
     }
     
-    func closePath(point: CGPoint) {
+    func closePath(point: CGPoint, editMode: VectorViewEditMode) {
         guard let currentVectorPath = self.currentVectorPath else {
             return
         }
-        self.vectorPathCollection.append(currentVectorPath)
-        self.currentVectorPath = nil
+        switch editMode {
+        case .draw:
+            self.vectorPathCollection.append(currentVectorPath)
+            self.currentVectorPath = nil
+        default: break
+        }
+        
         self.setNeedsDisplay()
     }
     

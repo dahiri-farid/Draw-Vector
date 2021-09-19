@@ -37,24 +37,16 @@ class VectorViewController: UIViewController, VectorEditPanelViewDelegate, Vecto
         let touch = touches.first!
         let location = touch.location(in: self.vectorView)
         
-        switch self.viewModel.viewMode {
-        case .draw:
-            self.previousPoint = location
-            self.vectorView.beginPath(point: location)
-        default: break
-        }
+        self.previousPoint = location
+        self.vectorView.beginPath(point: location, editMode: self.viewModel.viewMode)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
         let location = touch.location(in: self.vectorView)
         
-        switch self.viewModel.viewMode {
-        case .draw:
-            if !(location.x == self.previousPoint.x && location.y == self.previousPoint.y) {
-                self.vectorView.movePath(point: location)
-            }
-        default: break
+        if !(location.x == self.previousPoint.x && location.y == self.previousPoint.y) {
+            self.vectorView.movePath(point: location, editMode: self.viewModel.viewMode)
         }
     }
     
@@ -62,12 +54,8 @@ class VectorViewController: UIViewController, VectorEditPanelViewDelegate, Vecto
         let touch = touches.first!
         let location = touch.location(in: self.vectorView)
         
-        switch self.viewModel.viewMode {
-        case .draw:
-            if !(location.x == self.previousPoint.x && location.y == self.previousPoint.y) {
-                self.vectorView.closePath(point: location)
-            }
-        default: break
+        if !(location.x == self.previousPoint.x && location.y == self.previousPoint.y) {
+            self.vectorView.closePath(point: location, editMode: self.viewModel.viewMode)
         }
     }
     
