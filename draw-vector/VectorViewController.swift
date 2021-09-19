@@ -38,7 +38,7 @@ class VectorViewController: UIViewController {
         let location = touch.location(in: self.vectorView)
         
         if !(location.x == self.previousPoint.x && location.y == self.previousPoint.y) {
-            self.vectorView.beginPath(point: location)
+            self.vectorView.movePath(point: location)
         }
     }
     

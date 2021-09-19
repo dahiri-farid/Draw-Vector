@@ -9,24 +9,36 @@ import Foundation
 import UIKit
 
 class VectorView : UIView {
-    
-    var currentPath = [CGPoint]()
-    var pathCollection = [[CGPoint]]()
+    var currentVectorPath: VectorPath?
+    var vectorPathCollection = [VectorPath]()
     
     func reset() {
-        self.currentPath.removeAll()
-        self.pathCollection.removeAll()
+        self.currentVectorPath = nil
+        self.vectorPathCollection.removeAll()
     }
     
     func beginPath(point: CGPoint) {
-        self.currentPath.append(point)
-        self.pathCollection.append(self.currentPath)
+        let currentVectorPath = VectorPath()
+        currentVectorPath.path.append(point)
+        self.currentVectorPath = currentVectorPath
+        self.vectorPathCollection.append(currentVectorPath)
+        self.setNeedsDisplay()
+    }
+    
+    func movePath(point: CGPoint) {
+        guard let currentVectorPath = self.currentVectorPath else {
+            return
+        }
+        currentVectorPath.path.append(point)
         self.setNeedsDisplay()
     }
     
     func closePath(point: CGPoint) {
-        self.currentPath.append(point)
-        self.currentPath.removeAll()
+        guard let currentVectorPath = self.currentVectorPath else {
+            return
+        }
+        self.vectorPathCollection.append(currentVectorPath)
+        self.currentVectorPath = nil
         self.setNeedsDisplay()
     }
     
@@ -40,14 +52,14 @@ class VectorView : UIView {
         context.setFillColor(UIColor.yellow.cgColor)
         context.fill(bounds)
         
-        for path in self.pathCollection {
-            if path.count > 1 {
+        for vectorPath in self.vectorPathCollection {
+            if vectorPath.path.count > 1 {
                 let bezierPath = UIBezierPath()
                 
-                let origin = path.first!
+                let origin = vectorPath.path.first!
                 bezierPath.move(to: origin)
                 
-                for point in path[1...] {
+                for point in vectorPath.path[1...] {
                     bezierPath.addLine(to: point)
                 }
                 
