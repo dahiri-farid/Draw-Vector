@@ -112,28 +112,31 @@ class VectorView : UIView {
     
     // MARK: Touches
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first!
-        let location = touch.location(in: self)
-        
-        self.previousPoint = location
-        self.beginPath(point: location)
+        if touches.count == 1 {
+            let touch = touches.first!
+            let location = touch.location(in: self)
+            self.previousPoint = location
+            self.beginPath(point: location)
+        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first!
-        let location = touch.location(in: self)
-        
-        if !(location.x == self.previousPoint.x && location.y == self.previousPoint.y) {
-            self.movePath(point: location)
+        if touches.count == 1 {
+            let touch = touches.first!
+            let location = touch.location(in: self)
+            if !(location.x == self.previousPoint.x && location.y == self.previousPoint.y) {
+                self.movePath(point: location)
+            }
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first!
-        let location = touch.location(in: self)
-        
-        if !(location.x == self.previousPoint.x && location.y == self.previousPoint.y) {
-            self.closePath(point: location)
+        if touches.count == 1 {
+            let touch = touches.first!
+            let location = touch.location(in: self)
+            if !(location.x == self.previousPoint.x && location.y == self.previousPoint.y) {
+                self.closePath(point: location)
+            }
         }
     }
 }
