@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class VectorView : UIView {
+    var editMode = VectorViewEditMode.draw
     var currentVectorPath: VectorPath?
     var closedVectorPathCollection = [ClosedVectorPath]()
     var pathTranslationStartPoint = CGPoint.zero
@@ -21,8 +22,8 @@ class VectorView : UIView {
         self.pathTranslationCurrentPoint = CGPoint.zero
     }
     
-    func beginPath(point: CGPoint, editMode: VectorViewEditMode) {
-        switch editMode {
+    func beginPath(point: CGPoint) {
+        switch self.editMode {
         case .draw:
             let currentVectorPath = VectorPath()
             currentVectorPath.path.append(point)
@@ -35,8 +36,8 @@ class VectorView : UIView {
         self.setNeedsDisplay()
     }
     
-    func movePath(point: CGPoint, editMode: VectorViewEditMode) {
-        switch editMode {
+    func movePath(point: CGPoint) {
+        switch self.editMode {
         case .draw:
             guard let currentVectorPath = self.currentVectorPath else {
                 return
@@ -50,8 +51,8 @@ class VectorView : UIView {
         self.setNeedsDisplay()
     }
     
-    func closePath(point: CGPoint, editMode: VectorViewEditMode) {
-        switch editMode {
+    func closePath(point: CGPoint) {
+        switch self.editMode {
         case .draw:
             if let currentVectorPath = self.currentVectorPath {
                 self.closedVectorPathCollection.append(ClosedVectorPath(vectorPath: currentVectorPath))
@@ -89,9 +90,13 @@ class VectorView : UIView {
             let bezierPath = closedVectorPath.bezierPath
             if self.pathTranslationCurrentPoint != CGPoint.zero {
                 if bezierPath.contains(self.pathTranslationCurrentPoint) {
-                    let translationPoint = CGPoint(x: self.pathTranslationCurrentPoint.x - self.pathTranslationStartPoint.x, y: self.pathTranslationCurrentPoint.y - self.pathTranslationStartPoint.y)
-                    bezierPath.apply(CGAffineTransform(translationX: translationPoint.x, y: translationPoint.y))
-                    self.pathTranslationStartPoint = self.pathTranslationCurrentPoint
+                    switch self.editMode {
+                    case .move:
+                        let translationPoint = CGPoint(x: self.pathTranslationCurrentPoint.x - self.pathTranslationStartPoint.x, y: self.pathTranslationCurrentPoint.y - self.pathTranslationStartPoint.y)
+                        bezierPath.apply(CGAffineTransform(translationX: translationPoint.x, y: translationPoint.y))
+                        self.pathTranslationStartPoint = self.pathTranslationCurrentPoint
+                    default: break
+                    }
                     self.setNeedsDisplay()
                 }
             }
