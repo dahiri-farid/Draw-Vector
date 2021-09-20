@@ -36,16 +36,7 @@ class VectorView : UIView {
         }
     }
     
-    // MARK: draw
-    override func draw(_ rect: CGRect) {
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return
-        }
-        
-        context.setFillColor(UIColor.yellow.cgColor)
-        context.fill(bounds)
-        
-        self.drawCurrentVectorPath()
+    func drawClosedVectorPathCollection() {
         let closedVectorPathCollection = self.closedVectorPathCollection
         for closedVectorPath in closedVectorPathCollection {
             let bezierPath = closedVectorPath.bezierPath
@@ -68,6 +59,19 @@ class VectorView : UIView {
             bezierPath.stroke()
             bezierPath.fill()
         }
+    }
+    
+    // MARK: draw
+    override func draw(_ rect: CGRect) {
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return
+        }
+        
+        context.setFillColor(UIColor.yellow.cgColor)
+        context.fill(bounds)
+        
+        self.drawCurrentVectorPath()
+        self.drawClosedVectorPathCollection()
     }
     
     // MARK: touches
