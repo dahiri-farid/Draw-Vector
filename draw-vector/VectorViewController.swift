@@ -10,8 +10,6 @@ import UIKit
 class VectorViewController: UIViewController, VectorEditPanelViewDelegate, VectorDrawingOptionsPanelViewDelegate {
     let panelView: VectorEditModePanelView? = VectorEditModePanelView.loadFromNib()
     let drawOptionsPanelView: VectorDrawingOptionsPanelView? = VectorDrawingOptionsPanelView.loadFromNib()
-    
-    var previousPoint = CGPoint.zero
     let vectorView = VectorView()
     
     let viewModel = VectorViewControllerModel()
@@ -30,33 +28,6 @@ class VectorViewController: UIViewController, VectorEditPanelViewDelegate, Vecto
         
         self.vectorView.frame = self.view.bounds
         self.update()
-    }
-    
-    // MARK: Touches
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first!
-        let location = touch.location(in: self.vectorView)
-        
-        self.previousPoint = location
-        self.vectorView.beginPath(point: location)
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first!
-        let location = touch.location(in: self.vectorView)
-        
-        if !(location.x == self.previousPoint.x && location.y == self.previousPoint.y) {
-            self.vectorView.movePath(point: location)
-        }
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first!
-        let location = touch.location(in: self.vectorView)
-        
-        if !(location.x == self.previousPoint.x && location.y == self.previousPoint.y) {
-            self.vectorView.closePath(point: location)
-        }
     }
     
     // MARK: Configuration

@@ -12,6 +12,7 @@ class VectorView : UIView {
     var editMode = VectorViewEditMode.draw
     var currentVectorPath: VectorPath?
     var closedVectorPathCollection = [ClosedVectorPath]()
+    var previousPoint = CGPoint.zero
     var pathTranslationStartPoint = CGPoint.zero
     var pathTranslationCurrentPoint = CGPoint.zero
     
@@ -106,6 +107,33 @@ class VectorView : UIView {
             bezierPath.lineWidth = closedVectorPath.strokeWidth
             bezierPath.stroke()
             bezierPath.fill()
+        }
+    }
+    
+    // MARK: Touches
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first!
+        let location = touch.location(in: self)
+        
+        self.previousPoint = location
+        self.beginPath(point: location)
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first!
+        let location = touch.location(in: self)
+        
+        if !(location.x == self.previousPoint.x && location.y == self.previousPoint.y) {
+            self.movePath(point: location)
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first!
+        let location = touch.location(in: self)
+        
+        if !(location.x == self.previousPoint.x && location.y == self.previousPoint.y) {
+            self.closePath(point: location)
         }
     }
 }
