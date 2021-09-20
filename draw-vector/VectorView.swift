@@ -23,51 +23,7 @@ class VectorView : UIView {
         self.pathTranslationCurrentPoint = CGPoint.zero
     }
     
-    func beginPath(point: CGPoint) {
-        switch self.editMode {
-        case .draw:
-            let currentVectorPath = VectorPath()
-            currentVectorPath.path.append(point)
-            self.currentVectorPath = currentVectorPath
-        case .move:
-            self.pathTranslationStartPoint = point
-        default: break
-        }
-        
-        self.setNeedsDisplay()
-    }
-    
-    func movePath(point: CGPoint) {
-        switch self.editMode {
-        case .draw:
-            guard let currentVectorPath = self.currentVectorPath else {
-                return
-            }
-            currentVectorPath.path.append(point)
-        case .move:
-            self.pathTranslationCurrentPoint = point
-        default: break
-        }
-        
-        self.setNeedsDisplay()
-    }
-    
-    func closePath(point: CGPoint) {
-        switch self.editMode {
-        case .draw:
-            if let currentVectorPath = self.currentVectorPath {
-                self.closedVectorPathCollection.append(ClosedVectorPath(vectorPath: currentVectorPath))
-            }
-            self.currentVectorPath = nil
-        case .move:
-            self.pathTranslationCurrentPoint = CGPoint.zero
-            self.pathTranslationStartPoint = CGPoint.zero
-        default: break
-        }
-        
-        self.setNeedsDisplay()
-    }
-    
+    // MARK: draw
     override func draw(_ rect: CGRect) {
         guard let context = UIGraphicsGetCurrentContext() else {
             return
@@ -110,32 +66,96 @@ class VectorView : UIView {
         }
     }
     
-    // MARK: Touches
+    // MARK: touches
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if touches.count == 1 {
+        guard let event = event else {
+            return
+        }
+        guard let allTouches = event.allTouches else {
+            return
+        }
+        if allTouches.count == 1 {
             let touch = touches.first!
             let location = touch.location(in: self)
             self.previousPoint = location
-            self.beginPath(point: location)
+            switch self.editMode {
+            case .draw:
+                let currentVectorPath = VectorPath()
+                currentVectorPath.path.append(location)
+                self.currentVectorPath = currentVectorPath
+            case .move:
+                self.pathTranslationStartPoint = location
+            default: break
+            }
+            
+            self.setNeedsDisplay()
+        } else if allTouches.count == 2 {
+            if self.editMode == .scale {
+                print("scale begin")
+            }
         }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if touches.count == 1 {
+        guard let event = event else {
+            return
+        }
+        guard let allTouches = event.allTouches else {
+            return
+        }
+        if allTouches.count == 1 {
             let touch = touches.first!
             let location = touch.location(in: self)
             if !(location.x == self.previousPoint.x && location.y == self.previousPoint.y) {
-                self.movePath(point: location)
+                switch self.editMode {
+                case .draw:
+                    guard let currentVectorPath = self.currentVectorPath else {
+                        return
+                    }
+                    currentVectorPath.path.append(location)
+                case .move:
+                    self.pathTranslationCurrentPoint = location
+                default: break
+                }
+                
+                self.setNeedsDisplay()
+                self.previousPoint = location
+            }
+        } else if allTouches.count == 2 {
+            if self.editMode == .scale {
+                print("scale move")
             }
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if touches.count == 1 {
+        guard let event = event else {
+            return
+        }
+        guard let allTouches = event.allTouches else {
+            return
+        }
+        if allTouches.count == 1 {
             let touch = touches.first!
             let location = touch.location(in: self)
             if !(location.x == self.previousPoint.x && location.y == self.previousPoint.y) {
-                self.closePath(point: location)
+                switch self.editMode {
+                case .draw:
+                    if let currentVectorPath = self.currentVectorPath {
+                        self.closedVectorPathCollection.append(ClosedVectorPath(vectorPath: currentVectorPath))
+                    }
+                    self.currentVectorPath = nil
+                case .move:
+                    self.pathTranslationCurrentPoint = CGPoint.zero
+                    self.pathTranslationStartPoint = CGPoint.zero
+                default: break
+                }
+                
+                self.setNeedsDisplay()
+            }
+        } else if allTouches.count == 2 {
+            if self.editMode == .scale {
+                print("scale end")
             }
         }
     }
