@@ -12,7 +12,6 @@ class VectorView : UIView {
     var editMode = VectorViewEditMode.draw
     var currentVectorPath: VectorPath?
     var closedVectorPathCollection = [ClosedVectorPath]()
-    var previousPoint = CGPoint.zero
     var pathTranslationStartPoint = CGPoint.zero
     var pathTranslationCurrentPoint = CGPoint.zero
     
@@ -77,7 +76,6 @@ class VectorView : UIView {
         if allTouches.count == 1 {
             let touch = touches.first!
             let location = touch.location(in: self)
-            self.previousPoint = location
             switch self.editMode {
             case .draw:
                 let currentVectorPath = VectorPath()
@@ -106,21 +104,18 @@ class VectorView : UIView {
         if allTouches.count == 1 {
             let touch = touches.first!
             let location = touch.location(in: self)
-            if !(location.x == self.previousPoint.x && location.y == self.previousPoint.y) {
-                switch self.editMode {
-                case .draw:
-                    guard let currentVectorPath = self.currentVectorPath else {
-                        return
-                    }
-                    currentVectorPath.path.append(location)
-                case .move:
-                    self.pathTranslationCurrentPoint = location
-                default: break
+            switch self.editMode {
+            case .draw:
+                guard let currentVectorPath = self.currentVectorPath else {
+                    return
                 }
-                
-                self.setNeedsDisplay()
-                self.previousPoint = location
+                currentVectorPath.path.append(location)
+            case .move:
+                self.pathTranslationCurrentPoint = location
+            default: break
             }
+            
+            self.setNeedsDisplay()
         } else if allTouches.count == 2 {
             if self.editMode == .scale {
                 print("scale move")
@@ -136,23 +131,19 @@ class VectorView : UIView {
             return
         }
         if allTouches.count == 1 {
-            let touch = touches.first!
-            let location = touch.location(in: self)
-            if !(location.x == self.previousPoint.x && location.y == self.previousPoint.y) {
-                switch self.editMode {
-                case .draw:
-                    if let currentVectorPath = self.currentVectorPath {
-                        self.closedVectorPathCollection.append(ClosedVectorPath(vectorPath: currentVectorPath))
-                    }
-                    self.currentVectorPath = nil
-                case .move:
-                    self.pathTranslationCurrentPoint = CGPoint.zero
-                    self.pathTranslationStartPoint = CGPoint.zero
-                default: break
+            switch self.editMode {
+            case .draw:
+                if let currentVectorPath = self.currentVectorPath {
+                    self.closedVectorPathCollection.append(ClosedVectorPath(vectorPath: currentVectorPath))
                 }
-                
-                self.setNeedsDisplay()
+                self.currentVectorPath = nil
+            case .move:
+                self.pathTranslationCurrentPoint = CGPoint.zero
+                self.pathTranslationStartPoint = CGPoint.zero
+            default: break
             }
+            
+            self.setNeedsDisplay()
         } else if allTouches.count == 2 {
             if self.editMode == .scale {
                 print("scale end")
