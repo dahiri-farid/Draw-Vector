@@ -22,15 +22,8 @@ class VectorView : UIView {
         self.pathTranslationCurrentPoint = CGPoint.zero
     }
     
-    // MARK: draw
-    override func draw(_ rect: CGRect) {
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return
-        }
-        
-        context.setFillColor(UIColor.yellow.cgColor)
-        context.fill(bounds)
-        
+    // MARK: private
+    func drawCurrentVectorPath() {
         if let currentVectorPath = self.currentVectorPath {
             guard let bezierPath = currentVectorPath.bezierPath else {
                 fatalError()
@@ -41,6 +34,18 @@ class VectorView : UIView {
             bezierPath.fill()
             bezierPath.stroke()
         }
+    }
+    
+    // MARK: draw
+    override func draw(_ rect: CGRect) {
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return
+        }
+        
+        context.setFillColor(UIColor.yellow.cgColor)
+        context.fill(bounds)
+        
+        self.drawCurrentVectorPath()
         let closedVectorPathCollection = self.closedVectorPathCollection
         for closedVectorPath in closedVectorPathCollection {
             let bezierPath = closedVectorPath.bezierPath
