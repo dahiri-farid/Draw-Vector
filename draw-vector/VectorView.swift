@@ -8,18 +8,23 @@
 import Foundation
 import UIKit
 
+//Farid you only need to states:
+//1. Draw as it is now
+//2. Select - on select you should create a layer or even a UIView you will add the bezierPath on it, this way it will be much easier to manipulate it
+
 class VectorView : UIView {
     var editMode = VectorViewEditMode.draw
     var currentVectorPath: VectorPath?
     var closedVectorPathCollection = [ClosedVectorPath]()
-    var pathTranslationStartPoint = CGPoint.zero
-    var pathTranslationCurrentPoint = CGPoint.zero
+    var selectedVectorPath: VectorPath?
+    
+    var pathSelectionPoint : CGPoint?
     
     func reset() {
         self.currentVectorPath = nil
+        self.pathSelectionPoint = nil
+        self.selectedVectorPath = nil
         self.closedVectorPathCollection.removeAll()
-        self.pathTranslationStartPoint = CGPoint.zero
-        self.pathTranslationCurrentPoint = CGPoint.zero
     }
     
     // MARK: private
@@ -40,29 +45,18 @@ class VectorView : UIView {
         let closedVectorPathCollection = self.closedVectorPathCollection
         for closedVectorPath in closedVectorPathCollection {
             let bezierPath = closedVectorPath.bezierPath
-            if self.pathTranslationCurrentPoint != CGPoint.zero {
-                if bezierPath.contains(self.pathTranslationCurrentPoint) {
-                    switch self.editMode {
-                    case .move:
-                        let translationPoint = CGPoint(x: self.pathTranslationCurrentPoint.x - self.pathTranslationStartPoint.x, y: self.pathTranslationCurrentPoint.y - self.pathTranslationStartPoint.y)
-                        bezierPath.apply(CGAffineTransform(translationX: translationPoint.x, y: translationPoint.y))
-                        self.pathTranslationStartPoint = self.pathTranslationCurrentPoint
-                    default: break
-                    }
-                    self.setNeedsDisplay()
-                }
-            }
-            
             closedVectorPath.strokeColor.setFill()
             closedVectorPath.fillColor.setFill()
             bezierPath.lineWidth = closedVectorPath.strokeWidth
             bezierPath.stroke()
             bezierPath.fill()
+            print("bezierPath bounds \(bezierPath.bounds)")
         }
     }
     
     // MARK: draw
     override func draw(_ rect: CGRect) {
+        super.draw(rect)
         guard let context = UIGraphicsGetCurrentContext() else {
             return
         }
@@ -85,21 +79,13 @@ class VectorView : UIView {
         if allTouches.count == 1 {
             let touch = touches.first!
             let location = touch.location(in: self)
-            switch self.editMode {
-            case .draw:
                 let currentVectorPath = VectorPath()
                 currentVectorPath.path.append(location)
                 self.currentVectorPath = currentVectorPath
-            case .move:
-                self.pathTranslationStartPoint = location
-            default: break
-            }
             
             self.setNeedsDisplay()
         } else if allTouches.count == 2 {
-            if self.editMode == .scale {
-                print("scale begin")
-            }
+            
         }
     }
     
@@ -113,22 +99,13 @@ class VectorView : UIView {
         if allTouches.count == 1 {
             let touch = touches.first!
             let location = touch.location(in: self)
-            switch self.editMode {
-            case .draw:
-                guard let currentVectorPath = self.currentVectorPath else {
-                    return
-                }
-                currentVectorPath.path.append(location)
-            case .move:
-                self.pathTranslationCurrentPoint = location
-            default: break
+            guard let currentVectorPath = self.currentVectorPath else {
+                return
             }
+            currentVectorPath.path.append(location)
             
             self.setNeedsDisplay()
         } else if allTouches.count == 2 {
-            if self.editMode == .scale {
-                print("scale move")
-            }
         }
     }
     
@@ -140,23 +117,13 @@ class VectorView : UIView {
             return
         }
         if allTouches.count == 1 {
-            switch self.editMode {
-            case .draw:
-                if let currentVectorPath = self.currentVectorPath {
-                    self.closedVectorPathCollection.append(ClosedVectorPath(vectorPath: currentVectorPath))
-                }
-                self.currentVectorPath = nil
-            case .move:
-                self.pathTranslationCurrentPoint = CGPoint.zero
-                self.pathTranslationStartPoint = CGPoint.zero
-            default: break
+            if let currentVectorPath = self.currentVectorPath {
+                self.closedVectorPathCollection.append(ClosedVectorPath(vectorPath: currentVectorPath))
             }
+            self.currentVectorPath = nil
             
             self.setNeedsDisplay()
         } else if allTouches.count == 2 {
-            if self.editMode == .scale {
-                print("scale end")
-            }
         }
     }
 }

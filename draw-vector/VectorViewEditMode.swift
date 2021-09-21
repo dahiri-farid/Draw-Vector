@@ -9,7 +9,5 @@ import Foundation
 
 enum VectorViewEditMode {
     case draw
-    case move
-    case scale
-    case delete
+    case select
 }

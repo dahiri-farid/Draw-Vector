@@ -68,18 +68,8 @@ class VectorViewController: UIViewController, VectorEditPanelViewDelegate, Vecto
         self.update()
     }
     
-    func moveActionSelected() {
-        self.viewModel.viewMode = .move
-        self.update()
-    }
-    
-    func scaleActionSelected() {
-        self.viewModel.viewMode = .scale
-        self.update()
-    }
-
-    func deleteActionSelected() {
-        self.viewModel.viewMode = .delete
+    func selectActionSelected() {
+        self.viewModel.viewMode = .select
         self.update()
     }
     

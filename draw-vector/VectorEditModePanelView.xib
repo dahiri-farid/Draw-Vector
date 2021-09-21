@@ -24,24 +24,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fw5-bD-bbT">
-                            <rect key="frame" x="0.0" y="288.5" width="414" height="30"/>
-                            <state key="normal" title="Move"/>
-                            <connections>
-                                <action selector="moveActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="MSd-C9-4UR"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnr-4T-Xjp">
-                            <rect key="frame" x="0.0" y="577.5" width="414" height="30"/>
-                            <state key="normal" title="Scale"/>
-                            <connections>
-                                <action selector="scaleActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="FTQ-ba-AqU"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vw-8m-nQ6">
                             <rect key="frame" x="0.0" y="866" width="414" height="30"/>
-                            <state key="normal" title="Delete"/>
+                            <state key="normal" title="Select"/>
                             <connections>
-                                <action selector="deleteActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="BjH-6O-DGm"/>
+                                <action selector="selectActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="YI5-Io-Es8"/>
                             </connections>
                         </button>
                     </subviews>
@@ -60,10 +46,8 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="deleteButton" destination="3Vw-8m-nQ6" id="eEk-qi-5ze"/>
                 <outlet property="drawButton" destination="BLU-F1-g6M" id="Ifj-O3-2A6"/>
-                <outlet property="moveButton" destination="fw5-bD-bbT" id="oxj-qx-JOB"/>
-                <outlet property="scaleButton" destination="Pnr-4T-Xjp" id="Axv-xp-b6G"/>
+                <outlet property="selectButton" destination="fw5-bD-bbT" id="EhR-5h-FTt"/>
             </connections>
             <point key="canvasLocation" x="-46" y="104"/>
         </view>
