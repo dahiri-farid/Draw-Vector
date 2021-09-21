@@ -16,15 +16,23 @@ class VectorView : UIView {
     var editMode = VectorViewEditMode.draw
     var currentVectorPath: VectorPath?
     var closedVectorPathCollection = [ClosedVectorPath]()
-    var selectedVectorPath: VectorPath?
+    var selectedVectorPath: ClosedVectorPath?
+    var selectedClosedPathView: ClosedPathSelectionView?
+    
+    var pathTranslationStartPoint = CGPoint.zero
+    var pathTranslationCurrentPoint = CGPoint.zero
     
     var pathSelectionPoint : CGPoint?
     
     func reset() {
         self.currentVectorPath = nil
+        self.selectedVectorPath = nil
         self.pathSelectionPoint = nil
         self.selectedVectorPath = nil
         self.closedVectorPathCollection.removeAll()
+        
+        self.pathTranslationStartPoint = CGPoint.zero
+        self.pathTranslationCurrentPoint = CGPoint.zero
     }
     
     // MARK: private
@@ -41,16 +49,43 @@ class VectorView : UIView {
         }
     }
     
+    func drawSelectedVectorPath() {
+        // TODO: draw selected view here
+        let translationPoint = CGPoint(x: self.pathTranslationCurrentPoint.x - self.pathTranslationStartPoint.x, y: self.pathTranslationCurrentPoint.y - self.pathTranslationStartPoint.y)
+        
+        if let selectedClosedPathView = self.selectedClosedPathView {
+            selectedClosedPathView.frame = CGRect(x: selectedClosedPathView.frame.origin.x +
+                                                    translationPoint.x,
+                                                  y: selectedClosedPathView.frame.origin.y + translationPoint.y,
+                                                  width: selectedClosedPathView.frame.size.width,
+                                                  height: selectedClosedPathView.frame.size.height)
+            print("translation \(translationPoint)")
+        }
+        
+        self.pathTranslationStartPoint = self.pathTranslationCurrentPoint
+    }
+    
     func drawClosedVectorPathCollection() {
         let closedVectorPathCollection = self.closedVectorPathCollection
         for closedVectorPath in closedVectorPathCollection {
             let bezierPath = closedVectorPath.bezierPath
-            closedVectorPath.strokeColor.setFill()
-            closedVectorPath.fillColor.setFill()
-            bezierPath.lineWidth = closedVectorPath.strokeWidth
-            bezierPath.stroke()
-            bezierPath.fill()
-            print("bezierPath bounds \(bezierPath.bounds)")
+            if let pathSelectionPoint = self.pathSelectionPoint {
+                if bezierPath.contains(pathSelectionPoint) {
+                    self.selectedVectorPath = closedVectorPath
+                    self.setNeedsDisplay()
+                    self.pathSelectionPoint = nil
+                    let pathView = ClosedPathSelectionView(closedPath: closedVectorPath)
+                    self.addSubview(pathView)
+                    self.selectedClosedPathView = pathView
+                    self.closedVectorPathCollection = self.closedVectorPathCollection.filter { return $0 !== self.selectedVectorPath}
+                }
+            } else {
+                closedVectorPath.strokeColor.setFill()
+                closedVectorPath.fillColor.setFill()
+                bezierPath.lineWidth = closedVectorPath.strokeWidth
+                bezierPath.stroke()
+                bezierPath.fill()
+            }
         }
     }
     
@@ -67,7 +102,8 @@ class VectorView : UIView {
         switch self.editMode {
         case .draw:
             self.drawCurrentVectorPath()
-        default: break
+        case .select:
+            self.drawSelectedVectorPath()
         }
         
         self.drawClosedVectorPathCollection()
@@ -89,7 +125,12 @@ class VectorView : UIView {
                 let currentVectorPath = VectorPath()
                 currentVectorPath.path.append(location)
                 self.currentVectorPath = currentVectorPath
-            default: break
+            case .select:
+                if self.selectedClosedPathView == nil {
+                    self.pathSelectionPoint = location
+                }
+                self.pathTranslationStartPoint = location
+                self.pathTranslationCurrentPoint = location
             }
             
             self.setNeedsDisplay()
@@ -114,7 +155,9 @@ class VectorView : UIView {
                     return
                 }
                 currentVectorPath.path.append(location)
-            default: break
+            case .select:
+                self.pathTranslationCurrentPoint = location
+                break
             }
             
             self.setNeedsDisplay()
@@ -136,7 +179,9 @@ class VectorView : UIView {
                     self.closedVectorPathCollection.append(ClosedVectorPath(vectorPath: currentVectorPath))
                 }
                 self.currentVectorPath = nil
-            default: break
+            case .select:
+                self.pathTranslationCurrentPoint = CGPoint.zero
+                self.pathTranslationStartPoint = CGPoint.zero
             }
             
             self.setNeedsDisplay()
