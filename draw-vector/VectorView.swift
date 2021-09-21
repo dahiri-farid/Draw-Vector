@@ -83,6 +83,22 @@ class VectorView : UIView {
         }
     }
     
+    func detachSelectedVectorPath() {
+        guard let selectedClosedPathView = self.selectedClosedPathView else {
+            fatalError()
+        }
+        guard let selectedVectorPath = self.selectedVectorPath else {
+            fatalError()
+        }
+        let translationPoint = CGPoint(x: selectedClosedPathView.frame.origin.x - selectedVectorPath.bezierPath.bounds.origin.x, y: selectedClosedPathView.frame.origin.y - selectedVectorPath.bezierPath.bounds.origin.y)
+        selectedVectorPath.bezierPath.apply(CGAffineTransform(translationX: translationPoint.x, y: translationPoint.y))
+        selectedClosedPathView.removeFromSuperview()
+        self.selectedClosedPathView = nil
+        // TODO: should be inserted at its previous index
+        self.closedVectorPathCollection.append(selectedVectorPath)
+        self.selectedVectorPath = nil
+    }
+    
     // MARK: draw
     override func draw(_ rect: CGRect) {
         super.draw(rect)
@@ -120,7 +136,11 @@ class VectorView : UIView {
                 currentVectorPath.path.append(location)
                 self.currentVectorPath = currentVectorPath
             case .select:
-                if self.selectedClosedPathView == nil {
+                if let selectedClosedPathView = self.selectedClosedPathView {
+                    if selectedClosedPathView.frame.contains(location) == false {
+                        self.detachSelectedVectorPath()
+                    }
+                } else {
                     self.pathSelectionPoint = location
                 }
                 self.pathTranslationStartPoint = location
