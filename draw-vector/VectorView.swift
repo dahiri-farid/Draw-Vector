@@ -46,7 +46,6 @@ class VectorView : UIView {
     }
     
     func drawSelectedVectorPath() {
-        // TODO: draw selected view here
         let translationPoint = CGPoint(x: self.pathTranslationCurrentPoint.x - self.pathTranslationStartPoint.x, y: self.pathTranslationCurrentPoint.y - self.pathTranslationStartPoint.y)
         
         if let selectedClosedPathView = self.selectedClosedPathView {
@@ -55,7 +54,6 @@ class VectorView : UIView {
                                                   y: selectedClosedPathView.frame.origin.y + translationPoint.y,
                                                   width: selectedClosedPathView.frame.size.width,
                                                   height: selectedClosedPathView.frame.size.height)
-            print("translation \(translationPoint)")
         }
         
         self.pathTranslationStartPoint = self.pathTranslationCurrentPoint
