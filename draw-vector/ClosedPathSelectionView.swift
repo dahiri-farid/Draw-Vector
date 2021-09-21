@@ -10,11 +10,21 @@ import UIKit
 
 class ClosedPathSelectionView : UIView {
     let closedPath: ClosedVectorPath
+    let dashedBorderLayer = CAShapeLayer()
     
     init(closedPath: ClosedVectorPath) {
         self.closedPath = closedPath
+        
         super.init(frame: self.closedPath.bezierPath.bounds)
-        self.backgroundColor = .cyan
+        
+        self.dashedBorderLayer.fillColor = UIColor.clear.cgColor
+        self.dashedBorderLayer.strokeColor = UIColor.blue.cgColor
+        self.dashedBorderLayer.lineWidth = 2
+        self.dashedBorderLayer.lineJoin = CAShapeLayerLineJoin.round
+        self.dashedBorderLayer.lineDashPattern = [6,6]
+        self.layer.addSublayer(self.dashedBorderLayer)
+        
+        self.backgroundColor = .clear
     }
     
     required init?(coder: NSCoder) {
@@ -31,5 +41,9 @@ class ClosedPathSelectionView : UIView {
         bezierPath.apply(CGAffineTransform(translationX: -bezierPath.bounds.origin.x, y: -bezierPath.bounds.origin.y))
         bezierPath.fill()
         bezierPath.stroke()
+        
+        self.dashedBorderLayer.position = CGPoint(x: self.bounds.size.width / 2, y: self.bounds.size.height / 2)
+        self.dashedBorderLayer.path = UIBezierPath(roundedRect: self.bounds, cornerRadius: 5).cgPath
+        self.dashedBorderLayer.frame = self.bounds
     }
 }
