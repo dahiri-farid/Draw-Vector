@@ -8,10 +8,6 @@
 import Foundation
 import UIKit
 
-//Farid you only need to states:
-//1. Draw as it is now
-//2. Select - on select you should create a layer or even a UIView you will add the bezierPath on it, this way it will be much easier to manipulate it
-
 class VectorView : UIView {
     var editMode = VectorViewEditMode.draw
     var currentVectorPath: VectorPath?
