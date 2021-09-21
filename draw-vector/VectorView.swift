@@ -64,7 +64,12 @@ class VectorView : UIView {
         context.setFillColor(UIColor.yellow.cgColor)
         context.fill(bounds)
         
-        self.drawCurrentVectorPath()
+        switch self.editMode {
+        case .draw:
+            self.drawCurrentVectorPath()
+        default: break
+        }
+        
         self.drawClosedVectorPathCollection()
     }
     
@@ -79,9 +84,13 @@ class VectorView : UIView {
         if allTouches.count == 1 {
             let touch = touches.first!
             let location = touch.location(in: self)
+            switch self.editMode {
+            case .draw:
                 let currentVectorPath = VectorPath()
                 currentVectorPath.path.append(location)
                 self.currentVectorPath = currentVectorPath
+            default: break
+            }
             
             self.setNeedsDisplay()
         } else if allTouches.count == 2 {
@@ -99,10 +108,14 @@ class VectorView : UIView {
         if allTouches.count == 1 {
             let touch = touches.first!
             let location = touch.location(in: self)
-            guard let currentVectorPath = self.currentVectorPath else {
-                return
+            switch self.editMode {
+            case .draw:
+                guard let currentVectorPath = self.currentVectorPath else {
+                    return
+                }
+                currentVectorPath.path.append(location)
+            default: break
             }
-            currentVectorPath.path.append(location)
             
             self.setNeedsDisplay()
         } else if allTouches.count == 2 {
@@ -117,10 +130,14 @@ class VectorView : UIView {
             return
         }
         if allTouches.count == 1 {
-            if let currentVectorPath = self.currentVectorPath {
-                self.closedVectorPathCollection.append(ClosedVectorPath(vectorPath: currentVectorPath))
+            switch self.editMode {
+            case .draw:
+                if let currentVectorPath = self.currentVectorPath {
+                    self.closedVectorPathCollection.append(ClosedVectorPath(vectorPath: currentVectorPath))
+                }
+                self.currentVectorPath = nil
+            default: break
             }
-            self.currentVectorPath = nil
             
             self.setNeedsDisplay()
         } else if allTouches.count == 2 {
