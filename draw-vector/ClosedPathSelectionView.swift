@@ -7,15 +7,50 @@
 
 import Foundation
 import UIKit
+import PureLayout
 
 class ClosedPathSelectionView : UIView {
+    let topLeftCornerResizeAnchor = UIView()
+    let topRightCornerResizeAnchor = UIView()
+    let bottomLeftCornerResizeAnchor = UIView()
+    let bottomRightCornerResizeAnhcor = UIView()
+    
     let closedPath: ClosedVectorPath
     let dashedBorderLayer = CAShapeLayer()
     
     init(closedPath: ClosedVectorPath) {
         self.closedPath = closedPath
-        
         super.init(frame: self.closedPath.bezierPath.bounds)
+        
+        let anchorSide: CGFloat = 10
+        let anchorSize = CGSize(width: anchorSide, height: anchorSide)
+        self.topLeftCornerResizeAnchor.backgroundColor = .blue
+        self.topLeftCornerResizeAnchor.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(self.topLeftCornerResizeAnchor)
+        self.topLeftCornerResizeAnchor.autoPinEdge(toSuperviewEdge: .leading, withInset: -(anchorSide / 2))
+        self.topLeftCornerResizeAnchor.autoPinEdge(toSuperviewEdge: .top, withInset: -(anchorSide / 2))
+        self.topLeftCornerResizeAnchor.autoSetDimensions(to: anchorSize)
+        
+        self.topRightCornerResizeAnchor.backgroundColor = .blue
+        self.topRightCornerResizeAnchor.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(self.topRightCornerResizeAnchor)
+        self.topRightCornerResizeAnchor.autoPinEdge(toSuperviewEdge: .trailing, withInset: -(anchorSide / 2))
+        self.topRightCornerResizeAnchor.autoPinEdge(toSuperviewEdge: .top, withInset: -(anchorSide / 2))
+        self.topRightCornerResizeAnchor.autoSetDimensions(to: anchorSize)
+        
+        self.bottomLeftCornerResizeAnchor.backgroundColor = .blue
+        self.bottomLeftCornerResizeAnchor.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(self.bottomLeftCornerResizeAnchor)
+        self.bottomLeftCornerResizeAnchor.autoPinEdge(toSuperviewEdge: .leading, withInset: -(anchorSide / 2))
+        self.bottomLeftCornerResizeAnchor.autoPinEdge(toSuperviewEdge: .bottom, withInset: -(anchorSide / 2))
+        self.bottomLeftCornerResizeAnchor.autoSetDimensions(to: anchorSize)
+        
+        self.bottomRightCornerResizeAnhcor.backgroundColor = .blue
+        self.bottomRightCornerResizeAnhcor.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(self.bottomRightCornerResizeAnhcor)
+        self.bottomRightCornerResizeAnhcor.autoPinEdge(toSuperviewEdge: .trailing, withInset: -(anchorSide / 2))
+        self.bottomRightCornerResizeAnhcor.autoPinEdge(toSuperviewEdge: .bottom, withInset: -(anchorSide / 2))
+        self.bottomRightCornerResizeAnhcor.autoSetDimensions(to: anchorSize)
         
         self.dashedBorderLayer.fillColor = UIColor.clear.cgColor
         self.dashedBorderLayer.strokeColor = UIColor.blue.cgColor
@@ -25,6 +60,15 @@ class ClosedPathSelectionView : UIView {
         self.layer.addSublayer(self.dashedBorderLayer)
         
         self.backgroundColor = .clear
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.topLeftCornerResizeAnchor.layer.cornerRadius = self.topLeftCornerResizeAnchor.bounds.width / 2
+        self.topRightCornerResizeAnchor.layer.cornerRadius = self.topRightCornerResizeAnchor.bounds.width / 2
+        self.bottomLeftCornerResizeAnchor.layer.cornerRadius = self.bottomLeftCornerResizeAnchor.bounds.width / 2
+        self.bottomRightCornerResizeAnhcor.layer.cornerRadius = self.bottomRightCornerResizeAnhcor.bounds.width / 2
     }
     
     required init?(coder: NSCoder) {

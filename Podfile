@@ -7,4 +7,5 @@ target 'draw-vector' do
 
   # Pods for draw-vector
   pod 'MROGeometry'
+  pod 'PureLayout'
 end

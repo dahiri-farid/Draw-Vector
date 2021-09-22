@@ -1,16 +1,20 @@
 PODS:
   - MROGeometry (0.1.1)
+  - PureLayout (3.1.9)
 
 DEPENDENCIES:
   - MROGeometry
+  - PureLayout
 
 SPEC REPOS:
   trunk:
     - MROGeometry
+    - PureLayout
 
 SPEC CHECKSUMS:
   MROGeometry: 8c2bf11e870851a3ea8f5cbaa554fafb5fe5ac8c
+  PureLayout: 5fb5e5429519627d60d079ccb1eaa7265ce7cf88
 
-PODFILE CHECKSUM: be553b68b723661dd30d04a023d46faec99699f6
+PODFILE CHECKSUM: 8190caa5a7edbd0f9e24468a2a50388c5a730342
 
-COCOAPODS: 1.11.0
+COCOAPODS: 1.11.2
