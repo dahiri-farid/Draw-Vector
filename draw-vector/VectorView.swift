@@ -63,16 +63,14 @@ class VectorView : UIView {
         let closedVectorPathCollection = self.closedVectorPathCollection
         for closedVectorPath in closedVectorPathCollection {
             let bezierPath = closedVectorPath.bezierPath
-            if let pathSelectionPoint = self.pathSelectionPoint {
-                if bezierPath.contains(pathSelectionPoint) {
-                    self.selectedVectorPath = closedVectorPath
-                    self.setNeedsDisplay()
-                    self.pathSelectionPoint = nil
-                    let pathView = ClosedPathSelectionView(closedPath: closedVectorPath)
-                    self.addSubview(pathView)
-                    self.selectedClosedPathView = pathView
-                    self.closedVectorPathCollection = self.closedVectorPathCollection.filter { return $0 !== self.selectedVectorPath}
-                }
+            if let pathSelectionPoint = self.pathSelectionPoint, bezierPath.contains(pathSelectionPoint) {
+                self.selectedVectorPath = closedVectorPath
+                self.setNeedsDisplay()
+                self.pathSelectionPoint = nil
+                let pathView = ClosedPathSelectionView(closedPath: closedVectorPath)
+                self.addSubview(pathView)
+                self.selectedClosedPathView = pathView
+                self.closedVectorPathCollection = self.closedVectorPathCollection.filter { return $0 !== self.selectedVectorPath}
             } else {
                 closedVectorPath.strokeColor.setFill()
                 closedVectorPath.fillColor.setFill()
@@ -139,6 +137,7 @@ class VectorView : UIView {
                 if let selectedClosedPathView = self.selectedClosedPathView {
                     if selectedClosedPathView.frame.contains(location) == false {
                         self.detachSelectedVectorPath()
+                        self.pathSelectionPoint = location
                     }
                 } else {
                     self.pathSelectionPoint = location
