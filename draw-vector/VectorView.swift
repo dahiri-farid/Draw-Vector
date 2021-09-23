@@ -25,6 +25,9 @@ class VectorView : UIView {
     var selectedVectorPath: ClosedVectorPath?
     var selectedClosedPathView: ClosedPathSelectionView?
     
+    var closedPathViewSelectedResizeAnchorType = ClosedPathSelectionViewAnchorType.none
+    var pathResizeStartPoint = CGPoint.zero
+    var pathResizeCurrentPoint = CGPoint.zero
     var pathTranslationStartPoint = CGPoint.zero
     var pathTranslationCurrentPoint = CGPoint.zero
     
@@ -37,6 +40,9 @@ class VectorView : UIView {
         self.selectedVectorPath = nil
         self.closedVectorPathCollection.removeAll()
         
+        var closedPathViewSelectedResizeAnchorType = ClosedPathSelectionViewAnchorType.none
+        self.pathResizeStartPoint = CGPoint.zero
+        self.pathResizeCurrentPoint = CGPoint.zero
         self.pathTranslationStartPoint = CGPoint.zero
         self.pathTranslationCurrentPoint = CGPoint.zero
     }
@@ -57,15 +63,40 @@ class VectorView : UIView {
     
     func drawSelectedVectorPath() {
         let translationPoint = CGPoint(x: self.pathTranslationCurrentPoint.x - self.pathTranslationStartPoint.x, y: self.pathTranslationCurrentPoint.y - self.pathTranslationStartPoint.y)
+        let resizePoint = CGPoint(x: self.pathResizeCurrentPoint.x - self.pathResizeStartPoint.x, y: self.pathResizeCurrentPoint.y - self.pathResizeStartPoint.y)
         
         if let selectedClosedPathView = self.selectedClosedPathView {
-            selectedClosedPathView.frame = CGRect(x: selectedClosedPathView.frame.origin.x +
-                                                    translationPoint.x,
-                                                  y: selectedClosedPathView.frame.origin.y + translationPoint.y,
-                                                  width: selectedClosedPathView.frame.size.width,
-                                                  height: selectedClosedPathView.frame.size.height)
+            switch self.closedPathViewSelectedResizeAnchorType {
+            case .none:
+                selectedClosedPathView.frame = CGRect(x: selectedClosedPathView.frame.origin.x +
+                                                      translationPoint.x,
+                                                      y: selectedClosedPathView.frame.origin.y + translationPoint.y,
+                                                      width: selectedClosedPathView.frame.size.width,
+                                                      height: selectedClosedPathView.frame.size.height)
+            case .topLeft:
+                selectedClosedPathView.frame = CGRect(x: selectedClosedPathView.frame.origin.x + translationPoint.x,
+                                                      y: selectedClosedPathView.frame.origin.y + translationPoint.y,
+                                                      width: selectedClosedPathView.frame.size.width - translationPoint.x,
+                                                      height: selectedClosedPathView.frame.self.height - translationPoint.y)
+            case .topRight:
+                selectedClosedPathView.frame = CGRect(x: selectedClosedPathView.frame.origin.x,
+                                                      y: selectedClosedPathView.frame.origin.y + translationPoint.y,
+                                                      width: selectedClosedPathView.frame.size.width + translationPoint.x,
+                                                      height: selectedClosedPathView.frame.self.height - translationPoint.y)
+            case .bottomLeft:
+                selectedClosedPathView.frame = CGRect(x: selectedClosedPathView.frame.origin.x + translationPoint.x,
+                                                      y: selectedClosedPathView.frame.origin.y,
+                                                      width: selectedClosedPathView.frame.size.width - translationPoint.x,
+                                                      height: selectedClosedPathView.frame.self.height + translationPoint.y)
+            case .bottomRight:
+                selectedClosedPathView.frame = CGRect(x: selectedClosedPathView.frame.origin.x,
+                                                      y: selectedClosedPathView.frame.origin.y,
+                                                      width: selectedClosedPathView.frame.size.width + translationPoint.x,
+                                                      height: selectedClosedPathView.frame.self.height + translationPoint.y)
+            }
         }
         
+        self.pathResizeStartPoint = self.pathResizeCurrentPoint
         self.pathTranslationStartPoint = self.pathTranslationCurrentPoint
     }
     
@@ -145,13 +176,17 @@ class VectorView : UIView {
                 self.currentVectorPath = currentVectorPath
             case .select:
                 if let selectedClosedPathView = self.selectedClosedPathView {
-                    if selectedClosedPathView.frame.contains(location) == false {
+                    let selectedClosedPathViewLocation = touch.location(in: selectedClosedPathView)
+                    self.closedPathViewSelectedResizeAnchorType = selectedClosedPathView.resizeAnchorType(location: selectedClosedPathViewLocation)
+                    if selectedClosedPathView.frame.contains(location) == false, self.closedPathViewSelectedResizeAnchorType == .none {
                         self.detachSelectedVectorPath()
                         self.pathSelectionPoint = location
                     }
                 } else {
                     self.pathSelectionPoint = location
                 }
+                self.pathResizeStartPoint = location
+                self.pathResizeCurrentPoint = location
                 self.pathTranslationStartPoint = location
                 self.pathTranslationCurrentPoint = location
             }
@@ -180,6 +215,7 @@ class VectorView : UIView {
                 currentVectorPath.path.append(location)
             case .select:
                 self.pathTranslationCurrentPoint = location
+                self.pathResizeCurrentPoint = location
                 break
             }
             
@@ -203,8 +239,11 @@ class VectorView : UIView {
                 }
                 self.currentVectorPath = nil
             case .select:
+                // TODO: points should be nilled!
                 self.pathTranslationCurrentPoint = CGPoint.zero
                 self.pathTranslationStartPoint = CGPoint.zero
+                self.pathResizeCurrentPoint = CGPoint.zero
+                self.pathResizeStartPoint = CGPoint.zero
             }
             
             self.setNeedsDisplay()

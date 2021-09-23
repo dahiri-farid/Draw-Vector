@@ -9,6 +9,14 @@ import Foundation
 import UIKit
 import PureLayout
 
+enum ClosedPathSelectionViewAnchorType {
+    case none
+    case topLeft
+    case topRight
+    case bottomLeft
+    case bottomRight
+}
+
 class ClosedPathSelectionView : UIView {
     let topLeftCornerResizeAnchor = UIView()
     let topRightCornerResizeAnchor = UIView()
@@ -30,6 +38,7 @@ class ClosedPathSelectionView : UIView {
         self.topLeftCornerResizeAnchor.autoPinEdge(toSuperviewEdge: .leading, withInset: -(anchorSide / 2))
         self.topLeftCornerResizeAnchor.autoPinEdge(toSuperviewEdge: .top, withInset: -(anchorSide / 2))
         self.topLeftCornerResizeAnchor.autoSetDimensions(to: anchorSize)
+        self.topLeftCornerResizeAnchor.isUserInteractionEnabled = true
         
         self.topRightCornerResizeAnchor.backgroundColor = .blue
         self.topRightCornerResizeAnchor.translatesAutoresizingMaskIntoConstraints = false
@@ -37,6 +46,7 @@ class ClosedPathSelectionView : UIView {
         self.topRightCornerResizeAnchor.autoPinEdge(toSuperviewEdge: .trailing, withInset: -(anchorSide / 2))
         self.topRightCornerResizeAnchor.autoPinEdge(toSuperviewEdge: .top, withInset: -(anchorSide / 2))
         self.topRightCornerResizeAnchor.autoSetDimensions(to: anchorSize)
+        self.topRightCornerResizeAnchor.isUserInteractionEnabled = true
         
         self.bottomLeftCornerResizeAnchor.backgroundColor = .blue
         self.bottomLeftCornerResizeAnchor.translatesAutoresizingMaskIntoConstraints = false
@@ -44,6 +54,7 @@ class ClosedPathSelectionView : UIView {
         self.bottomLeftCornerResizeAnchor.autoPinEdge(toSuperviewEdge: .leading, withInset: -(anchorSide / 2))
         self.bottomLeftCornerResizeAnchor.autoPinEdge(toSuperviewEdge: .bottom, withInset: -(anchorSide / 2))
         self.bottomLeftCornerResizeAnchor.autoSetDimensions(to: anchorSize)
+        self.bottomLeftCornerResizeAnchor.isUserInteractionEnabled = true
         
         self.bottomRightCornerResizeAnhcor.backgroundColor = .blue
         self.bottomRightCornerResizeAnhcor.translatesAutoresizingMaskIntoConstraints = false
@@ -51,6 +62,7 @@ class ClosedPathSelectionView : UIView {
         self.bottomRightCornerResizeAnhcor.autoPinEdge(toSuperviewEdge: .trailing, withInset: -(anchorSide / 2))
         self.bottomRightCornerResizeAnhcor.autoPinEdge(toSuperviewEdge: .bottom, withInset: -(anchorSide / 2))
         self.bottomRightCornerResizeAnhcor.autoSetDimensions(to: anchorSize)
+        self.bottomRightCornerResizeAnhcor.isUserInteractionEnabled = true
         
         self.dashedBorderLayer.fillColor = UIColor.clear.cgColor
         self.dashedBorderLayer.strokeColor = UIColor.blue.cgColor
@@ -62,17 +74,20 @@ class ClosedPathSelectionView : UIView {
         self.backgroundColor = .clear
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        self.dashedBorderLayer.frame = self.bounds
         
         self.topLeftCornerResizeAnchor.layer.cornerRadius = self.topLeftCornerResizeAnchor.bounds.width / 2
         self.topRightCornerResizeAnchor.layer.cornerRadius = self.topRightCornerResizeAnchor.bounds.width / 2
         self.bottomLeftCornerResizeAnchor.layer.cornerRadius = self.bottomLeftCornerResizeAnchor.bounds.width / 2
         self.bottomRightCornerResizeAnhcor.layer.cornerRadius = self.bottomRightCornerResizeAnhcor.bounds.width / 2
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        self.setNeedsDisplay()
     }
     
     override func draw(_ rect: CGRect) {
@@ -83,11 +98,26 @@ class ClosedPathSelectionView : UIView {
         self.closedPath.strokeColor.setStroke()
         bezierPath.lineWidth = self.closedPath.strokeWidth
         bezierPath.apply(CGAffineTransform(translationX: -bezierPath.bounds.origin.x, y: -bezierPath.bounds.origin.y))
+        bezierPath.apply(CGAffineTransform(scaleX: self.bounds.width / bezierPath.bounds.width, y: self.bounds.height / bezierPath.bounds.height))
         bezierPath.fill()
         bezierPath.stroke()
         
         self.dashedBorderLayer.position = CGPoint(x: self.bounds.size.width / 2, y: self.bounds.size.height / 2)
         self.dashedBorderLayer.path = UIBezierPath(roundedRect: self.bounds, cornerRadius: 5).cgPath
         self.dashedBorderLayer.frame = self.bounds
+    }
+    
+    func resizeAnchorType(location: CGPoint) -> ClosedPathSelectionViewAnchorType {
+        if self.topLeftCornerResizeAnchor.frame.contains(location) {
+            return .topLeft
+        } else if self.topRightCornerResizeAnchor.frame.contains(location) {
+            return .topRight
+        } else if self.bottomLeftCornerResizeAnchor.frame.contains(location) {
+            return .bottomLeft
+        } else if self.bottomRightCornerResizeAnhcor.frame.contains(location) {
+            return .bottomRight
+        }
+        
+        return .none
     }
 }
