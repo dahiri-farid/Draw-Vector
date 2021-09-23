@@ -97,8 +97,8 @@ class ClosedPathSelectionView : UIView {
         self.closedPath.fillColor.setFill()
         self.closedPath.strokeColor.setStroke()
         bezierPath.lineWidth = self.closedPath.strokeWidth
-        self.closedPath.scale = CGPoint(x: self.bounds.width / bezierPath.bounds.width, y: self.bounds.height / bezierPath.bounds.height)
-        bezierPath.apply(CGAffineTransform(scaleX: self.closedPath.scale.x, y: self.closedPath.scale.y))
+        let pathScale = CGPoint(x: self.bounds.width / bezierPath.bounds.width, y: self.bounds.height / bezierPath.bounds.height)
+        bezierPath.apply(CGAffineTransform(scaleX: pathScale.x, y: pathScale.y))
         self.closedPath.bezierPath = bezierPath.copy() as! UIBezierPath
         bezierPath.apply(CGAffineTransform(translationX: -bezierPath.bounds.origin.x, y: -bezierPath.bounds.origin.y))
         bezierPath.fill()
