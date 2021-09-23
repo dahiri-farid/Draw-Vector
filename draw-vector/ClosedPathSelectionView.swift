@@ -30,7 +30,7 @@ class ClosedPathSelectionView : UIView {
         self.closedPath = closedPath
         super.init(frame: self.closedPath.bezierPath.bounds)
         
-        let anchorSide: CGFloat = 10
+        let anchorSide: CGFloat = 20
         let anchorSize = CGSize(width: anchorSide, height: anchorSide)
         self.topLeftCornerResizeAnchor.backgroundColor = .blue
         self.topLeftCornerResizeAnchor.translatesAutoresizingMaskIntoConstraints = false
@@ -68,7 +68,7 @@ class ClosedPathSelectionView : UIView {
         self.dashedBorderLayer.strokeColor = UIColor.blue.cgColor
         self.dashedBorderLayer.lineWidth = 2
         self.dashedBorderLayer.lineJoin = CAShapeLayerLineJoin.round
-        self.dashedBorderLayer.lineDashPattern = [6,6]
+        self.dashedBorderLayer.lineDashPattern = [6, 6]
         self.layer.addSublayer(self.dashedBorderLayer)
         
         self.backgroundColor = .clear
@@ -97,8 +97,10 @@ class ClosedPathSelectionView : UIView {
         self.closedPath.fillColor.setFill()
         self.closedPath.strokeColor.setStroke()
         bezierPath.lineWidth = self.closedPath.strokeWidth
+        self.closedPath.scale = CGPoint(x: self.bounds.width / bezierPath.bounds.width, y: self.bounds.height / bezierPath.bounds.height)
+        bezierPath.apply(CGAffineTransform(scaleX: self.closedPath.scale.x, y: self.closedPath.scale.y))
+        self.closedPath.bezierPath = bezierPath.copy() as! UIBezierPath
         bezierPath.apply(CGAffineTransform(translationX: -bezierPath.bounds.origin.x, y: -bezierPath.bounds.origin.y))
-        bezierPath.apply(CGAffineTransform(scaleX: self.bounds.width / bezierPath.bounds.width, y: self.bounds.height / bezierPath.bounds.height))
         bezierPath.fill()
         bezierPath.stroke()
         
