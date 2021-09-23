@@ -9,7 +9,17 @@ import Foundation
 import UIKit
 
 class VectorView : UIView {
-    var editMode = VectorViewEditMode.draw
+    var editMode = VectorViewEditMode.draw {
+        didSet {
+            if editMode == .draw {
+                if self.selectedClosedPathView != nil {
+                    self.pathSelectionPoint = nil
+                    self.detachSelectedVectorPath()
+                    self.setNeedsDisplay()
+                }
+            }
+        }
+    }
     var currentVectorPath: VectorPath?
     var closedVectorPathCollection = [ClosedVectorPath]()
     var selectedVectorPath: ClosedVectorPath?
