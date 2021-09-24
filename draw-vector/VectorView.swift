@@ -215,7 +215,6 @@ class VectorView : UIView {
             }
             
             self.setNeedsDisplay()
-        } else if allTouches.count == 2 {
         }
     }
     
@@ -239,7 +238,6 @@ class VectorView : UIView {
             }
             
             self.setNeedsDisplay()
-        } else if allTouches.count == 2 {
         }
     }
 }
