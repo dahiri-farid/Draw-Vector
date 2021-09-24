@@ -1,3 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-draw-vector/Pods-draw-vector-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Colorful/Colorful.framework
 ${BUILT_PRODUCTS_DIR}/MROGeometry/MROGeometry.framework
 ${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework

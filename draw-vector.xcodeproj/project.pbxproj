@@ -18,6 +18,9 @@
 		4119123E26F7C538009509D3 /* VectorDrawingOptionsPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4119123D26F7C538009509D3 /* VectorDrawingOptionsPanelView.xib */; };
 		4119124226F7E535009509D3 /* ClosedVectorPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119124126F7E535009509D3 /* ClosedVectorPath.swift */; };
 		413146EB26FA5E3900E25B7D /* ClosedPathSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413146EA26FA5E3900E25B7D /* ClosedPathSelectionView.swift */; };
+		4178542726FE3B0800A0874D /* VectorColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178542626FE3B0800A0874D /* VectorColorPickerView.swift */; };
+		4178542926FE3B1300A0874D /* VectorColorPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4178542826FE3B1300A0874D /* VectorColorPickerView.xib */; };
+		4178543326FE514600A0874D /* DrawOptionsViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178543226FE514600A0874D /* DrawOptionsViewControllerModel.swift */; };
 		41929E9F26F68CE10090F96F /* DVSVGConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 41929E9E26F68CE10090F96F /* DVSVGConverter.m */; };
 		41929EA226F697E00090F96F /* Html in Frameworks */ = {isa = PBXBuildFile; productRef = 41929EA126F697E00090F96F /* Html */; };
 		41929EA526F6983D0090F96F /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 41929EA426F6983D0090F96F /* UIColorHexSwift */; };
@@ -59,6 +62,9 @@
 		4119123D26F7C538009509D3 /* VectorDrawingOptionsPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VectorDrawingOptionsPanelView.xib; sourceTree = "<group>"; };
 		4119124126F7E535009509D3 /* ClosedVectorPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedVectorPath.swift; sourceTree = "<group>"; };
 		413146EA26FA5E3900E25B7D /* ClosedPathSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedPathSelectionView.swift; sourceTree = "<group>"; };
+		4178542626FE3B0800A0874D /* VectorColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorColorPickerView.swift; sourceTree = "<group>"; };
+		4178542826FE3B1300A0874D /* VectorColorPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VectorColorPickerView.xib; sourceTree = "<group>"; };
+		4178543226FE514600A0874D /* DrawOptionsViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawOptionsViewControllerModel.swift; sourceTree = "<group>"; };
 		417E228326FBD83E001D3A98 /* draw-vector.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "draw-vector.entitlements"; sourceTree = "<group>"; };
 		41929E9C26F68CE10090F96F /* draw-vector-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "draw-vector-Bridging-Header.h"; sourceTree = "<group>"; };
 		41929E9D26F68CE10090F96F /* DVSVGConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVSVGConverter.h; sourceTree = "<group>"; };
@@ -98,6 +104,75 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4178542B26FE4E4600A0874D /* Vector View */ = {
+			isa = PBXGroup;
+			children = (
+				4197F92526F527AD0075C0BC /* VectorViewController.swift */,
+				4178542D26FE4E5D00A0874D /* View */,
+				4178542C26FE4E5300A0874D /* Model */,
+			);
+			path = "Vector View";
+			sourceTree = "<group>";
+		};
+		4178542C26FE4E5300A0874D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4119122A26F79C71009509D3 /* VectorPath.swift */,
+				4119123926F7C4C1009509D3 /* VectorViewEditMode.swift */,
+				4119124126F7E535009509D3 /* ClosedVectorPath.swift */,
+				4119123526F7AAB2009509D3 /* VectorViewControllerModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4178542D26FE4E5D00A0874D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				413146EA26FA5E3900E25B7D /* ClosedPathSelectionView.swift */,
+				4119123B26F7C522009509D3 /* VectorDrawingOptionsPanelView.swift */,
+				4119123D26F7C538009509D3 /* VectorDrawingOptionsPanelView.xib */,
+				4119122D26F79FAD009509D3 /* VectorEditModePanelView.swift */,
+				4119122F26F79FC6009509D3 /* VectorEditModePanelView.xib */,
+				4197F93526F527D10075C0BC /* VectorView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4178542E26FE4EAB00A0874D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4119123326F7A84C009509D3 /* Nib+View.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		4178542F26FE4F2500A0874D /* Drawing Options */ = {
+			isa = PBXGroup;
+			children = (
+				4178543126FE513500A0874D /* Model */,
+				4119123726F7C1A7009509D3 /* DrawOptionsViewController.swift */,
+				4178543026FE4F3000A0874D /* View */,
+			);
+			path = "Drawing Options";
+			sourceTree = "<group>";
+		};
+		4178543026FE4F3000A0874D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4178542626FE3B0800A0874D /* VectorColorPickerView.swift */,
+				4178542826FE3B1300A0874D /* VectorColorPickerView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4178543126FE513500A0874D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4178543226FE514600A0874D /* DrawOptionsViewControllerModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4197F91526F527AD0075C0BC = {
 			isa = PBXGroup;
 			children = (
@@ -119,29 +194,19 @@
 		4197F92026F527AD0075C0BC /* draw-vector */ = {
 			isa = PBXGroup;
 			children = (
+				4178542F26FE4F2500A0874D /* Drawing Options */,
+				4178542E26FE4EAB00A0874D /* Extension */,
+				4178542B26FE4E4600A0874D /* Vector View */,
 				417E228326FBD83E001D3A98 /* draw-vector.entitlements */,
 				4197F92126F527AD0075C0BC /* AppDelegate.swift */,
 				4197F92326F527AD0075C0BC /* SceneDelegate.swift */,
-				4197F92526F527AD0075C0BC /* VectorViewController.swift */,
 				4197F92726F527AD0075C0BC /* Main.storyboard */,
 				4197F92A26F527AE0075C0BC /* Assets.xcassets */,
 				4197F92C26F527AE0075C0BC /* LaunchScreen.storyboard */,
 				4197F92F26F527AE0075C0BC /* Info.plist */,
-				4197F93526F527D10075C0BC /* VectorView.swift */,
 				41929E9D26F68CE10090F96F /* DVSVGConverter.h */,
 				41929E9E26F68CE10090F96F /* DVSVGConverter.m */,
 				41929E9C26F68CE10090F96F /* draw-vector-Bridging-Header.h */,
-				4119122A26F79C71009509D3 /* VectorPath.swift */,
-				4119122D26F79FAD009509D3 /* VectorEditModePanelView.swift */,
-				4119122F26F79FC6009509D3 /* VectorEditModePanelView.xib */,
-				4119123326F7A84C009509D3 /* Nib+View.swift */,
-				4119123526F7AAB2009509D3 /* VectorViewControllerModel.swift */,
-				4119123726F7C1A7009509D3 /* DrawOptionsViewController.swift */,
-				4119123926F7C4C1009509D3 /* VectorViewEditMode.swift */,
-				4119123B26F7C522009509D3 /* VectorDrawingOptionsPanelView.swift */,
-				4119123D26F7C538009509D3 /* VectorDrawingOptionsPanelView.xib */,
-				4119124126F7E535009509D3 /* ClosedVectorPath.swift */,
-				413146EA26FA5E3900E25B7D /* ClosedPathSelectionView.swift */,
 			);
 			path = "draw-vector";
 			sourceTree = "<group>";
@@ -227,6 +292,7 @@
 				4197F92E26F527AE0075C0BC /* LaunchScreen.storyboard in Resources */,
 				4119123E26F7C538009509D3 /* VectorDrawingOptionsPanelView.xib in Resources */,
 				4197F92B26F527AE0075C0BC /* Assets.xcassets in Resources */,
+				4178542926FE3B1300A0874D /* VectorColorPickerView.xib in Resources */,
 				4119123026F79FC6009509D3 /* VectorEditModePanelView.xib in Resources */,
 				4197F92926F527AD0075C0BC /* Main.storyboard in Resources */,
 			);
@@ -285,10 +351,12 @@
 				4119123426F7A84C009509D3 /* Nib+View.swift in Sources */,
 				4119123826F7C1A7009509D3 /* DrawOptionsViewController.swift in Sources */,
 				4119124226F7E535009509D3 /* ClosedVectorPath.swift in Sources */,
+				4178542726FE3B0800A0874D /* VectorColorPickerView.swift in Sources */,
 				4197F92626F527AD0075C0BC /* VectorViewController.swift in Sources */,
 				4119122E26F79FAD009509D3 /* VectorEditModePanelView.swift in Sources */,
 				41929E9F26F68CE10090F96F /* DVSVGConverter.m in Sources */,
 				4197F93626F527D10075C0BC /* VectorView.swift in Sources */,
+				4178543326FE514600A0874D /* DrawOptionsViewControllerModel.swift in Sources */,
 				413146EB26FA5E3900E25B7D /* ClosedPathSelectionView.swift in Sources */,
 				4119122B26F79C71009509D3 /* VectorPath.swift in Sources */,
 				4119123626F7AAB2009509D3 /* VectorViewControllerModel.swift in Sources */,

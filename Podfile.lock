@@ -1,20 +1,24 @@
 PODS:
+  - Colorful (3.0.0)
   - MROGeometry (0.1.1)
   - PureLayout (3.1.9)
 
 DEPENDENCIES:
+  - Colorful (~> 3.0)
   - MROGeometry
   - PureLayout
 
 SPEC REPOS:
   trunk:
+    - Colorful
     - MROGeometry
     - PureLayout
 
 SPEC CHECKSUMS:
+  Colorful: 9e093edacaa9fb73512ad9da157f0707b82d2542
   MROGeometry: 8c2bf11e870851a3ea8f5cbaa554fafb5fe5ac8c
   PureLayout: 5fb5e5429519627d60d079ccb1eaa7265ce7cf88
 
-PODFILE CHECKSUM: 8190caa5a7edbd0f9e24468a2a50388c5a730342
+PODFILE CHECKSUM: 9f756250fecf086e1690196dbac69ed2f5de46f2
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.10.2

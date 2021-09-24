@@ -7,140 +7,178 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1869CE3C64CB1E8A87EBD8CB4207CAAD /* PathParser.h in Headers */ = {isa = PBXBuildFile; fileRef = ACBB8A55217D67198BA4CEEC7740C9A5 /* PathParser.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1B20500A3163AA497C76EB30FD506940 /* CGPathReader.h in Headers */ = {isa = PBXBuildFile; fileRef = CC689A0D45651D800E616E35D935DD0D /* CGPathReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1EEF68CF4F49C230CC89DB838CFA3669 /* NSArray+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = CFE85208105357CEC9FCD0267DED7EF4 /* NSArray+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		21D8C1194CE7D5401FE0D73341D73D3A /* Pods-draw-vector-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CE5C116DF99FE1305E296320512749 /* Pods-draw-vector-dummy.m */; };
-		2410105C82340E63ADF078DAFAD71229 /* MROGeometry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6527AC0716D599CF54CF3D549B6A70B0 /* MROGeometry-dummy.m */; };
-		253201FFCEA478C99A3970C5E3722B74 /* NSLayoutConstraint+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = D9C578195408CD00A6246092DF786FD6 /* NSLayoutConstraint+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4266E12515DA03B1911CBE5A0891AFAE /* MROCGPointMath.c in Sources */ = {isa = PBXBuildFile; fileRef = 30D010EEF4AEF225656F13A763E175F2 /* MROCGPointMath.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		463FCE8CCEF62FC2F77D0DCE7FAC92C2 /* NSCoder_MROCGPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F2A9EF907660739426B591FE5E5C3E3 /* NSCoder_MROCGPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4A3E057801126F54459EF3273AF88D8A /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3C7CD2F30D0FDCF47A5104F3693BCA /* NSLayoutConstraint+PureLayout.m */; };
-		4A5F7E869608C75DE24C358DD123964E /* Pods-draw-vector-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 25F433137112530686B4D04EB7D31E4A /* Pods-draw-vector-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4B6DFFA937E35E23F45DC619C1EAB573 /* PureLayoutDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = D42AE963B351CE40AE2D74E7E874FF91 /* PureLayoutDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5CE616642703204B2C00C0F31C5BA677 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B68540C55CA43970CDF0C24725F02FA /* CoreGraphics.framework */; };
-		5F07ADC2794D591D0F39377C1D0CC803 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59040624F92B050B2ECF8FA644B47678 /* Foundation.framework */; };
-		6484AA105191AA4E415BBCDA35580C97 /* TrafoParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A077447DE213D8DFBD8D515B8FAD90 /* TrafoParser.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		67574E0AAA9E58393D1C2E1B4C5E1707 /* PureLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D335437EB862D105AAF27234E4FB146 /* PureLayout-dummy.m */; };
-		6BF14B5D50B15033B4C6C91A58292C45 /* RagelParser.h in Headers */ = {isa = PBXBuildFile; fileRef = FB01E0609D244C2738251191B26A3EBA /* RagelParser.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7AA71EEF757CCE6E3FFFDF89DED8D68C /* RagelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BDAB202C24D67488B37CF7A82D88F75B /* RagelParser.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		85DE2B4884E90F6830B4B7F86BB9411D /* PathBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 686BCF183BB3F6D3892521DA19B3A5CE /* PathBuilder.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		87BBBAF1F66B27E2153592C17D22499B /* PureLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 489E10C4AE8031D599FA1C0E8516D4E5 /* PureLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8CDC73E1BC5CC030BC31CB816667B063 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F7CE95AFADF31F78D391DB6875CFBD /* NSArray+PureLayout.m */; };
-		8DD3C94718B2D4C1445D2F8FFCCB3F6E /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D2D65B989D56D8817FF98D4262E8AF /* ALView+PureLayout.m */; };
-		9C48ECCC4A83C99AE43C5E8553BBECD5 /* CGPathReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 580150C4C0E286F1BE45F581E341D3C5 /* CGPathReader.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		A09F87FCCA040B336EF2FBF847881FB2 /* CGPathWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = A6DDAAAF2DC5C3D0218DB591AF4F61F6 /* CGPathWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A4BD557A02AD349947D8617B1003713A /* PathParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 166C713E7525A900A8FEADAB77F400E7 /* PathParser.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		AC36291056E8772EA26BECF0CDF39E5E /* TrafoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 89291FB38A3CAD3F253EBD85FFE9773F /* TrafoParser.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		B7775391C9C7FB76EC7616CA37E04B7B /* PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = B3CA8306D747D7FF5B40926BBE0D14F4 /* PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF1B60C0FB6C7D8D35687D6A72CC387E /* PathBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = C284844732AE6E53A40F0E9F3B601497 /* PathBuilder.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C2BFEEB7472F206B1A4105BE60E11E6B /* NSCoder_MROCGPath.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1EE6860E536CC6D2F6E9924B57D8A6 /* NSCoder_MROCGPath.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		C2C472778023D48F6FB35619C554F088 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59040624F92B050B2ECF8FA644B47678 /* Foundation.framework */; };
-		C48883845D739B5D005B90914BD32632 /* ALView+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 41D8FCFB9A0BE4EBC634A06D47FCA853 /* ALView+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C74753B4FBB3D3CD720E7B6DE5AAFBF9 /* CGPathWriter.c in Sources */ = {isa = PBXBuildFile; fileRef = 4DE38BE09C9F2DD12159B1D1D72C874D /* CGPathWriter.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		C91790192E090C1FA15F0BBBFB0ED231 /* PureLayout+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F0B56D1F26F891BB35950E5A876FC08 /* PureLayout+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D885FC8B0D2D5FA225CFC5BDD3557E66 /* MROGeometry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F91F9EFB9AF157F64AE734A6BD48CD7 /* MROGeometry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E099615F3729D4459B41F1AA2403775A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59040624F92B050B2ECF8FA644B47678 /* Foundation.framework */; };
-		F81360EE69584AC94E2F20339325B3E6 /* MROCGPointMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 156832FC5C36837684781E44F7B3C5DC /* MROCGPointMath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		012CFA4C01EF8ECA73AAF3BBEFD2CBF5 /* PureLayoutDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BF9E0D5D8523045B6F4FCEE7F4E79C1 /* PureLayoutDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		113CE9DF654D708E3B154F448B8CB5FF /* ColorMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02ECE7D9E05E5B6AD1E5CB1500AAC8D /* ColorMapView.swift */; };
+		129AD3704930C28226E00E01EBEE48F4 /* ColorMapCursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596CBF43EF987A802D48C22438B40B1B /* ColorMapCursor.swift */; };
+		245C74B032EF53C8E83BB7793799574A /* CGPathWriter.c in Sources */ = {isa = PBXBuildFile; fileRef = B1E844E6A3A0C36F6EC3E5D800CD9F63 /* CGPathWriter.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		27776178D7F57C4322C000B83AB23FC9 /* PathBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7845A44F76861E3B37F5BD78F8BBBC76 /* PathBuilder.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2DDA38485AF14C66F51918BBDAF9256E /* RagelParser.h in Headers */ = {isa = PBXBuildFile; fileRef = D6D8F040EB11B3160614FBF56440210D /* RagelParser.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		32EDEA130822115B615C0ADB7ECEB4DF /* PathParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A4028A5EFF7E9741A3868B1E30CED18F /* PathParser.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		4CAA67791129541CEE5D6F6C71239C26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59040624F92B050B2ECF8FA644B47678 /* Foundation.framework */; };
+		4FA5C3FBA6974D64D0A84383ED0F9851 /* RagelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C34A15CC7FBC610F0CF7712E7D89CB1 /* RagelParser.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		50506D6CBB50B6DCC66F02E5361B0C39 /* PureLayout+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 559759AAC5657C08CC53408C0D7EC46B /* PureLayout+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50834A78578E96C1F3B93985ED7F99B1 /* Colorful-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AC70957F54EDEDDA755BEA68D70DFA56 /* Colorful-dummy.m */; };
+		5983A0EDA75307CD1FD447DF2D4F26A1 /* TrafoParser.h in Headers */ = {isa = PBXBuildFile; fileRef = CD123789B4A96E0FCDA66C14458DD610 /* TrafoParser.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5D1F2D5F9EE7CB73E8B3E18ABDE15C85 /* NSLayoutConstraint+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 04715CC323F76682CD28DE812459D0CC /* NSLayoutConstraint+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60EF5053EC3EC7CFD21E95D291659D9A /* NSCoder_MROCGPath.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9847B77327E6C6FF4012B2A70F9E1B /* NSCoder_MROCGPath.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		632BDCB013BD674CE1612A2E035365C1 /* MROGeometry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A4C743D2A78A50472103D7F96637544 /* MROGeometry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69FA23FA121BC3528F4235E2D787939C /* Colorful-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A8353F25D8E7F122272CEC99DD9DEBAC /* Colorful-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		83D08F0A49F23BCFE3AD5633F8521D5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59040624F92B050B2ECF8FA644B47678 /* Foundation.framework */; };
+		897A20CB69A3B5C48364EA7C70AD8621 /* NSArray+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = D246C297384D7CA9ED3BD85AEA53F662 /* NSArray+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		90E11860B6F9BDC73E00A1AF0116A0BA /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7496DD53969CF7FDBEFE3F569D95FE /* ALView+PureLayout.m */; };
+		9B280597808CF84F670864943A1570D1 /* MROGeometry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8145298C58D133A788B06A840FAA7A8D /* MROGeometry-dummy.m */; };
+		A00D019E543443274D73FBEAEE40F922 /* Pods-draw-vector-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CE5C116DF99FE1305E296320512749 /* Pods-draw-vector-dummy.m */; };
+		A629634F981C2B32DABC9606B36980E7 /* PathBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FB96A4E1E3D7E1250C104B8FCBA880 /* PathBuilder.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A662FC332AEB300FCD5098A37A0939BE /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D70F345203B6D1B66E79AD04241879 /* ColorPicker.swift */; };
+		ABCEA67225B5BE39FE8398275D208B32 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B68540C55CA43970CDF0C24725F02FA /* CoreGraphics.framework */; };
+		AD39F3E4D8DCF952A183E4F198396F1D /* PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = AB09820377642CD819D1261409C0F85D /* PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE028A669BDCC596930B9CD7B34C231D /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E74599E127C4441E19FFCC45F9E74699 /* NSArray+PureLayout.m */; };
+		AEC3B34A8ACBDD78BB57A64F06AC354F /* BrightnessCursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E520308D120BE49E0393AB96900BF8 /* BrightnessCursor.swift */; };
+		B4F5BC726C4E3A5F1D97D60B2C0472B3 /* MROCGPointMath.h in Headers */ = {isa = PBXBuildFile; fileRef = FA7B154D9725EECC0602CBB134695DC9 /* MROCGPointMath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA0F76C2041446D0E8C5BC3B24E18FF2 /* CGPathWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = AC494C7B5DB6018787C76C1D2E151763 /* CGPathWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C7036503F2DE8C66705B8EC78BB7CF93 /* NSCoder_MROCGPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AD7A5FF26D21013975F75BA9F719770 /* NSCoder_MROCGPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAEF5A694258EA759B5AC90CBEB72CCC /* PureLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA085B97FB13EF3089CD50D21709D0D4 /* PureLayout-dummy.m */; };
+		CC548525428E7619A0CE9662B5D22890 /* PathParser.h in Headers */ = {isa = PBXBuildFile; fileRef = B07C1830723AEA3BFEF6A6A3DA09472B /* PathParser.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CFCF459361F16ED33F8B01ADB01199E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59040624F92B050B2ECF8FA644B47678 /* Foundation.framework */; };
+		D2CA314E7A219CA3ED847D2948A5B091 /* CGPathReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CCC42E61D31D299727B5B1722CC886E /* CGPathReader.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D8042415DD7BDE733A8EB4F29355176D /* TrafoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8939251EAE118AB28C369E15FD1A7752 /* TrafoParser.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D98AFF9A88B0BA358CBF0E720252A2C0 /* MROCGPointMath.c in Sources */ = {isa = PBXBuildFile; fileRef = 4B042965EA1C97D3743EB1B364F5E974 /* MROCGPointMath.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		DAF86742B772D1BE0EFB9C9AB16A799B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59040624F92B050B2ECF8FA644B47678 /* Foundation.framework */; };
+		DBF45D59546F58E4F8118B65DBC9B0F4 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4044D3800A05F158DDDFF500C563B4 /* NSLayoutConstraint+PureLayout.m */; };
+		DC02384DF979B167E1BA77155327A147 /* CGPathReader.h in Headers */ = {isa = PBXBuildFile; fileRef = EE13DC9C184BA0F9D323204406197AE9 /* CGPathReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF03C6CFA598B0401917E8AFB3C564D7 /* ColorfulEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2563C9AFA034F1BB09605B2A942F15 /* ColorfulEntity.swift */; };
+		DF3D7E16E983CC1FC0A2BC8D7E020531 /* BrightnessSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3084F227AAC93357E6F6E4B4A29FF /* BrightnessSlider.swift */; };
+		E121A4BB21AAF2FE5465C386B3E19039 /* PureLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 09FA3B711BDD7AC44B579678F57CBDFE /* PureLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED5733B4E9330D212E914935391A1295 /* ALView+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = EA5A492CD5193B47070C0D046D880B5F /* ALView+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F2DE25F3EE2D801A6847F98F061B8154 /* Pods-draw-vector-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 25F433137112530686B4D04EB7D31E4A /* Pods-draw-vector-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		295ED9F30CE1187D40EB81FC08DDDC58 /* PBXContainerItemProxy */ = {
+		625A6F177EC186521CE031A5ADCC449A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 06F5CDD6235E25837519792853B145A1;
 			remoteInfo = PureLayout;
 		};
-		D3A08D53D53009577B384954D73FF687 /* PBXContainerItemProxy */ = {
+		62F6CB214F61F928834704FD489E4444 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 535639BC0AA438AF51B1DAC4F327BAC2;
 			remoteInfo = MROGeometry;
 		};
+		BBC130D9D6886A268A63CBB99E79EE98 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0BB23E38358EC80363667EF7366D412;
+			remoteInfo = Colorful;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04715CC323F76682CD28DE812459D0CC /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "PureLayout/PureLayout/include/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		05B0099B7C0FBC2FFD028698616A5620 /* MROGeometry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MROGeometry.modulemap; sourceTree = "<group>"; };
+		078B758BAB86A5CDAE445643C5AE6156 /* Colorful.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Colorful.framework; path = Colorful.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09FA3B711BDD7AC44B579678F57CBDFE /* PureLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-umbrella.h"; sourceTree = "<group>"; };
+		0FDE39F063D65794810A087AE75BC614 /* PureLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PureLayout.modulemap; sourceTree = "<group>"; };
 		12CE5C116DF99FE1305E296320512749 /* Pods-draw-vector-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-draw-vector-dummy.m"; sourceTree = "<group>"; };
-		156832FC5C36837684781E44F7B3C5DC /* MROCGPointMath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MROCGPointMath.h; path = MROGeometry/MROCGPointMath.h; sourceTree = "<group>"; };
-		166C713E7525A900A8FEADAB77F400E7 /* PathParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PathParser.m; path = MROGeometry/PathParser.m; sourceTree = "<group>"; };
+		18D3084F227AAC93357E6F6E4B4A29FF /* BrightnessSlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BrightnessSlider.swift; path = Colorful/Classes/BrightnessSlider.swift; sourceTree = "<group>"; };
+		1A84556C597B47356D5A1DFAF3635A93 /* PureLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PureLayout.release.xcconfig; sourceTree = "<group>"; };
+		1B4044D3800A05F158DDDFF500C563B4 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+PureLayout.m"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		20B13751BCFE702318D70B737CB630F5 /* MROGeometry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MROGeometry.release.xcconfig; sourceTree = "<group>"; };
 		25F433137112530686B4D04EB7D31E4A /* Pods-draw-vector-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-draw-vector-umbrella.h"; sourceTree = "<group>"; };
-		2826DD9B7C2EBB247B80BE4F43F66293 /* MROGeometry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MROGeometry-prefix.pch"; sourceTree = "<group>"; };
-		29A077447DE213D8DFBD8D515B8FAD90 /* TrafoParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TrafoParser.h; path = MROGeometry/TrafoParser.h; sourceTree = "<group>"; };
-		30D010EEF4AEF225656F13A763E175F2 /* MROCGPointMath.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MROCGPointMath.c; path = MROGeometry/MROCGPointMath.c; sourceTree = "<group>"; };
-		32D2D65B989D56D8817FF98D4262E8AF /* ALView+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "PureLayout/PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
+		2AD7A5FF26D21013975F75BA9F719770 /* NSCoder_MROCGPath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NSCoder_MROCGPath.h; path = MROGeometry/NSCoder_MROCGPath.h; sourceTree = "<group>"; };
+		2D7496DD53969CF7FDBEFE3F569D95FE /* ALView+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "PureLayout/PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
+		30E520308D120BE49E0393AB96900BF8 /* BrightnessCursor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BrightnessCursor.swift; path = Colorful/Classes/BrightnessCursor.swift; sourceTree = "<group>"; };
+		32D205EEB533F21CC849A0F8758041C0 /* Colorful.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Colorful.debug.xcconfig; sourceTree = "<group>"; };
 		3416877AD13494F8B00792323842A61A /* Pods-draw-vector-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-draw-vector-acknowledgements.markdown"; sourceTree = "<group>"; };
-		41D8FCFB9A0BE4EBC634A06D47FCA853 /* ALView+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ALView+PureLayout.h"; path = "PureLayout/PureLayout/include/ALView+PureLayout.h"; sourceTree = "<group>"; };
-		489E10C4AE8031D599FA1C0E8516D4E5 /* PureLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-umbrella.h"; sourceTree = "<group>"; };
+		3C34A15CC7FBC610F0CF7712E7D89CB1 /* RagelParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RagelParser.m; path = MROGeometry/RagelParser.m; sourceTree = "<group>"; };
+		3CDCCD01804660AE8584A0F1E4054488 /* Colorful-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Colorful-prefix.pch"; sourceTree = "<group>"; };
+		430CD49518A9A6A20329C471B54AD90F /* Colorful-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Colorful-Info.plist"; sourceTree = "<group>"; };
+		45E64E3956312D980962F7EA2D386EC1 /* PureLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PureLayout.debug.xcconfig; sourceTree = "<group>"; };
+		4A4C743D2A78A50472103D7F96637544 /* MROGeometry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MROGeometry-umbrella.h"; sourceTree = "<group>"; };
+		4B042965EA1C97D3743EB1B364F5E974 /* MROCGPointMath.c */ = {isa = PBXFileReference; includeInIndex = 1; name = MROCGPointMath.c; path = MROGeometry/MROCGPointMath.c; sourceTree = "<group>"; };
 		4B68540C55CA43970CDF0C24725F02FA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		4DE38BE09C9F2DD12159B1D1D72C874D /* CGPathWriter.c */ = {isa = PBXFileReference; includeInIndex = 1; name = CGPathWriter.c; path = MROGeometry/CGPathWriter.c; sourceTree = "<group>"; };
-		4F2A9EF907660739426B591FE5E5C3E3 /* NSCoder_MROCGPath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NSCoder_MROCGPath.h; path = MROGeometry/NSCoder_MROCGPath.h; sourceTree = "<group>"; };
+		5315A203D63D6B27DAE0B61D2B57E2CF /* Colorful.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Colorful.modulemap; sourceTree = "<group>"; };
 		53CC775C269AAC825D8C4E3FADDD44D4 /* Pods-draw-vector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-draw-vector.release.xcconfig"; sourceTree = "<group>"; };
-		578013CC4C72729E93877C4436E09727 /* PureLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-prefix.pch"; sourceTree = "<group>"; };
-		580150C4C0E286F1BE45F581E341D3C5 /* CGPathReader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGPathReader.m; path = MROGeometry/CGPathReader.m; sourceTree = "<group>"; };
+		559759AAC5657C08CC53408C0D7EC46B /* PureLayout+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "PureLayout/PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
 		59040624F92B050B2ECF8FA644B47678 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		62F7CE95AFADF31F78D391DB6875CFBD /* NSArray+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "PureLayout/PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
-		6527AC0716D599CF54CF3D549B6A70B0 /* MROGeometry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MROGeometry-dummy.m"; sourceTree = "<group>"; };
-		686BCF183BB3F6D3892521DA19B3A5CE /* PathBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PathBuilder.m; path = MROGeometry/PathBuilder.m; sourceTree = "<group>"; };
-		6D335437EB862D105AAF27234E4FB146 /* PureLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PureLayout-dummy.m"; sourceTree = "<group>"; };
-		6F0B56D1F26F891BB35950E5A876FC08 /* PureLayout+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "PureLayout/PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
-		6F91F9EFB9AF157F64AE734A6BD48CD7 /* MROGeometry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MROGeometry-umbrella.h"; sourceTree = "<group>"; };
-		72A142A0847E4EAE145FD1654F59EA06 /* PureLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PureLayout.debug.xcconfig; sourceTree = "<group>"; };
+		596CBF43EF987A802D48C22438B40B1B /* ColorMapCursor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorMapCursor.swift; path = Colorful/Classes/ColorMapCursor.swift; sourceTree = "<group>"; };
+		5BF9E0D5D8523045B6F4FCEE7F4E79C1 /* PureLayoutDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = PureLayout/PureLayout/include/PureLayoutDefines.h; sourceTree = "<group>"; };
+		5D2563C9AFA034F1BB09605B2A942F15 /* ColorfulEntity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorfulEntity.swift; path = Colorful/Classes/ColorfulEntity.swift; sourceTree = "<group>"; };
+		68FB96A4E1E3D7E1250C104B8FCBA880 /* PathBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PathBuilder.m; path = MROGeometry/PathBuilder.m; sourceTree = "<group>"; };
+		7845A44F76861E3B37F5BD78F8BBBC76 /* PathBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PathBuilder.h; path = MROGeometry/PathBuilder.h; sourceTree = "<group>"; };
+		7CCC42E61D31D299727B5B1722CC886E /* CGPathReader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CGPathReader.m; path = MROGeometry/CGPathReader.m; sourceTree = "<group>"; };
+		8145298C58D133A788B06A840FAA7A8D /* MROGeometry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MROGeometry-dummy.m"; sourceTree = "<group>"; };
 		8840681B47FBB58A50C4EAE29DAD54DB /* Pods-draw-vector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-draw-vector.debug.xcconfig"; sourceTree = "<group>"; };
-		89291FB38A3CAD3F253EBD85FFE9773F /* TrafoParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TrafoParser.m; path = MROGeometry/TrafoParser.m; sourceTree = "<group>"; };
-		94B2E3BA262BEDDB77E2D701342EEB26 /* MROGeometry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MROGeometry.debug.xcconfig; sourceTree = "<group>"; };
-		99D04C7CA3E4CEAF6F4869971373FDB2 /* PureLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PureLayout.modulemap; sourceTree = "<group>"; };
+		8939251EAE118AB28C369E15FD1A7752 /* TrafoParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TrafoParser.m; path = MROGeometry/TrafoParser.m; sourceTree = "<group>"; };
+		94EE461C28F601A16CE877CFD8146C34 /* MROGeometry-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MROGeometry-Info.plist"; sourceTree = "<group>"; };
+		97D70F345203B6D1B66E79AD04241879 /* ColorPicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorPicker.swift; path = Colorful/Classes/ColorPicker.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A6DDAAAF2DC5C3D0218DB591AF4F61F6 /* CGPathWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGPathWriter.h; path = MROGeometry/CGPathWriter.h; sourceTree = "<group>"; };
+		A4028A5EFF7E9741A3868B1E30CED18F /* PathParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PathParser.m; path = MROGeometry/PathParser.m; sourceTree = "<group>"; };
+		A559FBD6F82D22FD45D9B01C9D65DBEA /* MROGeometry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MROGeometry.debug.xcconfig; sourceTree = "<group>"; };
+		A8353F25D8E7F122272CEC99DD9DEBAC /* Colorful-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Colorful-umbrella.h"; sourceTree = "<group>"; };
+		AA9847B77327E6C6FF4012B2A70F9E1B /* NSCoder_MROCGPath.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NSCoder_MROCGPath.m; path = MROGeometry/NSCoder_MROCGPath.m; sourceTree = "<group>"; };
+		AB09820377642CD819D1261409C0F85D /* PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayout.h; path = PureLayout/PureLayout/include/PureLayout.h; sourceTree = "<group>"; };
+		AC494C7B5DB6018787C76C1D2E151763 /* CGPathWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGPathWriter.h; path = MROGeometry/CGPathWriter.h; sourceTree = "<group>"; };
+		AC61A18875152880FBA7D51609F6257B /* Colorful.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Colorful.release.xcconfig; sourceTree = "<group>"; };
+		AC70957F54EDEDDA755BEA68D70DFA56 /* Colorful-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Colorful-dummy.m"; sourceTree = "<group>"; };
 		AC8D6B8B97CD339F1C6EFC7125A0B9DB /* Pods-draw-vector-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-draw-vector-Info.plist"; sourceTree = "<group>"; };
-		ACBB8A55217D67198BA4CEEC7740C9A5 /* PathParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PathParser.h; path = MROGeometry/PathParser.h; sourceTree = "<group>"; };
-		AF3C7CD2F30D0FDCF47A5104F3693BCA /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+PureLayout.m"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
-		B197F1B5377ACF11D1BBB373FE4030CB /* MROGeometry */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MROGeometry; path = MROGeometry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3CA8306D747D7FF5B40926BBE0D14F4 /* PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayout.h; path = PureLayout/PureLayout/include/PureLayout.h; sourceTree = "<group>"; };
-		BB6C810E0CBD0739826A8329EAF545DA /* Pods-draw-vector */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-draw-vector"; path = Pods_draw_vector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDAB202C24D67488B37CF7A82D88F75B /* RagelParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RagelParser.m; path = MROGeometry/RagelParser.m; sourceTree = "<group>"; };
-		C284844732AE6E53A40F0E9F3B601497 /* PathBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PathBuilder.h; path = MROGeometry/PathBuilder.h; sourceTree = "<group>"; };
-		C8E986DDC9B7B28A1B437E99E6E26D6C /* PureLayout-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PureLayout-Info.plist"; sourceTree = "<group>"; };
-		CC689A0D45651D800E616E35D935DD0D /* CGPathReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGPathReader.h; path = MROGeometry/CGPathReader.h; sourceTree = "<group>"; };
-		CD1EE6860E536CC6D2F6E9924B57D8A6 /* NSCoder_MROCGPath.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NSCoder_MROCGPath.m; path = MROGeometry/NSCoder_MROCGPath.m; sourceTree = "<group>"; };
-		CFE85208105357CEC9FCD0267DED7EF4 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+PureLayout.h"; path = "PureLayout/PureLayout/include/NSArray+PureLayout.h"; sourceTree = "<group>"; };
-		D33FE14C619592A7E3F9A655260A976B /* MROGeometry-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MROGeometry-Info.plist"; sourceTree = "<group>"; };
-		D42AE963B351CE40AE2D74E7E874FF91 /* PureLayoutDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = PureLayout/PureLayout/include/PureLayoutDefines.h; sourceTree = "<group>"; };
+		AEFCB266F0C14AC2DDC03B3EA0EC572E /* PureLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-prefix.pch"; sourceTree = "<group>"; };
+		B07C1830723AEA3BFEF6A6A3DA09472B /* PathParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PathParser.h; path = MROGeometry/PathParser.h; sourceTree = "<group>"; };
+		B197F1B5377ACF11D1BBB373FE4030CB /* MROGeometry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MROGeometry.framework; path = MROGeometry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1E844E6A3A0C36F6EC3E5D800CD9F63 /* CGPathWriter.c */ = {isa = PBXFileReference; includeInIndex = 1; name = CGPathWriter.c; path = MROGeometry/CGPathWriter.c; sourceTree = "<group>"; };
+		BA085B97FB13EF3089CD50D21709D0D4 /* PureLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PureLayout-dummy.m"; sourceTree = "<group>"; };
+		BB6C810E0CBD0739826A8329EAF545DA /* Pods_draw_vector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_draw_vector.framework; path = "Pods-draw-vector.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD123789B4A96E0FCDA66C14458DD610 /* TrafoParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TrafoParser.h; path = MROGeometry/TrafoParser.h; sourceTree = "<group>"; };
+		D02ECE7D9E05E5B6AD1E5CB1500AAC8D /* ColorMapView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorMapView.swift; path = Colorful/Classes/ColorMapView.swift; sourceTree = "<group>"; };
+		D246C297384D7CA9ED3BD85AEA53F662 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+PureLayout.h"; path = "PureLayout/PureLayout/include/NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		D6D8F040EB11B3160614FBF56440210D /* RagelParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RagelParser.h; path = MROGeometry/RagelParser.h; sourceTree = "<group>"; };
 		D863C56E3DBEAE63AD7D899BDF594814 /* Pods-draw-vector.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-draw-vector.modulemap"; sourceTree = "<group>"; };
-		D9C578195408CD00A6246092DF786FD6 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "PureLayout/PureLayout/include/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
-		D9E5FB6E9F3EC8B9C29AEF7CFCEE819D /* PureLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PureLayout.release.xcconfig; sourceTree = "<group>"; };
 		DF0C5CDDB7F6EF7D93B3E3ED359F62E0 /* Pods-draw-vector-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-draw-vector-frameworks.sh"; sourceTree = "<group>"; };
-		E4E7B3DD46ABB0DBBB56BD5AE90E4911 /* PureLayout */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PureLayout; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7537EA4A1CB22009E19B4207B35DD08 /* MROGeometry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MROGeometry.modulemap; sourceTree = "<group>"; };
+		E4E7B3DD46ABB0DBBB56BD5AE90E4911 /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PureLayout.framework; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E74599E127C4441E19FFCC45F9E74699 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "PureLayout/PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
 		E9F276F4D71AC6F0C47848F4BBDB2C25 /* Pods-draw-vector-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-draw-vector-acknowledgements.plist"; sourceTree = "<group>"; };
-		FB01E0609D244C2738251191B26A3EBA /* RagelParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RagelParser.h; path = MROGeometry/RagelParser.h; sourceTree = "<group>"; };
-		FCB9FBCB6F993CBDA3BE7733DA38F9D4 /* MROGeometry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MROGeometry.release.xcconfig; sourceTree = "<group>"; };
+		EA5A492CD5193B47070C0D046D880B5F /* ALView+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ALView+PureLayout.h"; path = "PureLayout/PureLayout/include/ALView+PureLayout.h"; sourceTree = "<group>"; };
+		EE13DC9C184BA0F9D323204406197AE9 /* CGPathReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CGPathReader.h; path = MROGeometry/CGPathReader.h; sourceTree = "<group>"; };
+		F415505D6EB566E0388578BF3F99A742 /* PureLayout-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PureLayout-Info.plist"; sourceTree = "<group>"; };
+		F743C9D8898E722DEC01C9C6842EDD77 /* MROGeometry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MROGeometry-prefix.pch"; sourceTree = "<group>"; };
+		FA7B154D9725EECC0602CBB134695DC9 /* MROCGPointMath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MROCGPointMath.h; path = MROGeometry/MROCGPointMath.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		672ACBC6D7458861EC39EC13D65AB503 /* Frameworks */ = {
+		0D428E24A60F2BB44F1E7F156C585784 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CE616642703204B2C00C0F31C5BA677 /* CoreGraphics.framework in Frameworks */,
-				C2C472778023D48F6FB35619C554F088 /* Foundation.framework in Frameworks */,
+				CFCF459361F16ED33F8B01ADB01199E2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9D5B06B560F877F6B60CDEFB0BCF7F47 /* Frameworks */ = {
+		8CE2581199D015FBD49339618568A315 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E099615F3729D4459B41F1AA2403775A /* Foundation.framework in Frameworks */,
+				ABCEA67225B5BE39FE8398275D208B32 /* CoreGraphics.framework in Frameworks */,
+				DAF86742B772D1BE0EFB9C9AB16A799B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F66DC7D75F34CF3AD916F0F966B993B6 /* Frameworks */ = {
+		BE18A384B8FAEC904C9BD99F819FB142 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F07ADC2794D591D0F39377C1D0CC803 /* Foundation.framework in Frameworks */,
+				83D08F0A49F23BCFE3AD5633F8521D5B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F309600B89BA7FD4EA62859EEFF7E433 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CAA67791129541CEE5D6F6C71239C26 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,55 +193,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1EA982467A061F24A8D0D69E64BE52C6 /* MROGeometry */ = {
-			isa = PBXGroup;
-			children = (
-				CC689A0D45651D800E616E35D935DD0D /* CGPathReader.h */,
-				580150C4C0E286F1BE45F581E341D3C5 /* CGPathReader.m */,
-				4DE38BE09C9F2DD12159B1D1D72C874D /* CGPathWriter.c */,
-				A6DDAAAF2DC5C3D0218DB591AF4F61F6 /* CGPathWriter.h */,
-				30D010EEF4AEF225656F13A763E175F2 /* MROCGPointMath.c */,
-				156832FC5C36837684781E44F7B3C5DC /* MROCGPointMath.h */,
-				4F2A9EF907660739426B591FE5E5C3E3 /* NSCoder_MROCGPath.h */,
-				CD1EE6860E536CC6D2F6E9924B57D8A6 /* NSCoder_MROCGPath.m */,
-				C284844732AE6E53A40F0E9F3B601497 /* PathBuilder.h */,
-				686BCF183BB3F6D3892521DA19B3A5CE /* PathBuilder.m */,
-				ACBB8A55217D67198BA4CEEC7740C9A5 /* PathParser.h */,
-				166C713E7525A900A8FEADAB77F400E7 /* PathParser.m */,
-				FB01E0609D244C2738251191B26A3EBA /* RagelParser.h */,
-				BDAB202C24D67488B37CF7A82D88F75B /* RagelParser.m */,
-				29A077447DE213D8DFBD8D515B8FAD90 /* TrafoParser.h */,
-				89291FB38A3CAD3F253EBD85FFE9773F /* TrafoParser.m */,
-				54E12BB14191FE233C8507AAE41D4C51 /* Support Files */,
-			);
-			name = MROGeometry;
-			path = MROGeometry;
-			sourceTree = "<group>";
-		};
-		26BA3C404FF11EC3E21A01B3326FEA43 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				99D04C7CA3E4CEAF6F4869971373FDB2 /* PureLayout.modulemap */,
-				6D335437EB862D105AAF27234E4FB146 /* PureLayout-dummy.m */,
-				C8E986DDC9B7B28A1B437E99E6E26D6C /* PureLayout-Info.plist */,
-				578013CC4C72729E93877C4436E09727 /* PureLayout-prefix.pch */,
-				489E10C4AE8031D599FA1C0E8516D4E5 /* PureLayout-umbrella.h */,
-				72A142A0847E4EAE145FD1654F59EA06 /* PureLayout.debug.xcconfig */,
-				D9E5FB6E9F3EC8B9C29AEF7CFCEE819D /* PureLayout.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/PureLayout";
-			sourceTree = "<group>";
-		};
-		272A534920F09CCFB866E6F8F6380B08 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1EA982467A061F24A8D0D69E64BE52C6 /* MROGeometry */,
-				515620B0566C533C930151E1A4F88743 /* PureLayout */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		36857E922CA6E3A311598144B1E47A80 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,37 +201,34 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		515620B0566C533C930151E1A4F88743 /* PureLayout */ = {
+		45B0CEF3C9A5626B3C69228774839300 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				41D8FCFB9A0BE4EBC634A06D47FCA853 /* ALView+PureLayout.h */,
-				32D2D65B989D56D8817FF98D4262E8AF /* ALView+PureLayout.m */,
-				CFE85208105357CEC9FCD0267DED7EF4 /* NSArray+PureLayout.h */,
-				62F7CE95AFADF31F78D391DB6875CFBD /* NSArray+PureLayout.m */,
-				D9C578195408CD00A6246092DF786FD6 /* NSLayoutConstraint+PureLayout.h */,
-				AF3C7CD2F30D0FDCF47A5104F3693BCA /* NSLayoutConstraint+PureLayout.m */,
-				B3CA8306D747D7FF5B40926BBE0D14F4 /* PureLayout.h */,
-				6F0B56D1F26F891BB35950E5A876FC08 /* PureLayout+Internal.h */,
-				D42AE963B351CE40AE2D74E7E874FF91 /* PureLayoutDefines.h */,
-				26BA3C404FF11EC3E21A01B3326FEA43 /* Support Files */,
-			);
-			name = PureLayout;
-			path = PureLayout;
-			sourceTree = "<group>";
-		};
-		54E12BB14191FE233C8507AAE41D4C51 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E7537EA4A1CB22009E19B4207B35DD08 /* MROGeometry.modulemap */,
-				6527AC0716D599CF54CF3D549B6A70B0 /* MROGeometry-dummy.m */,
-				D33FE14C619592A7E3F9A655260A976B /* MROGeometry-Info.plist */,
-				2826DD9B7C2EBB247B80BE4F43F66293 /* MROGeometry-prefix.pch */,
-				6F91F9EFB9AF157F64AE734A6BD48CD7 /* MROGeometry-umbrella.h */,
-				94B2E3BA262BEDDB77E2D701342EEB26 /* MROGeometry.debug.xcconfig */,
-				FCB9FBCB6F993CBDA3BE7733DA38F9D4 /* MROGeometry.release.xcconfig */,
+				0FDE39F063D65794810A087AE75BC614 /* PureLayout.modulemap */,
+				BA085B97FB13EF3089CD50D21709D0D4 /* PureLayout-dummy.m */,
+				F415505D6EB566E0388578BF3F99A742 /* PureLayout-Info.plist */,
+				AEFCB266F0C14AC2DDC03B3EA0EC572E /* PureLayout-prefix.pch */,
+				09FA3B711BDD7AC44B579678F57CBDFE /* PureLayout-umbrella.h */,
+				45E64E3956312D980962F7EA2D386EC1 /* PureLayout.debug.xcconfig */,
+				1A84556C597B47356D5A1DFAF3635A93 /* PureLayout.release.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/MROGeometry";
+			path = "../Target Support Files/PureLayout";
+			sourceTree = "<group>";
+		};
+		633A0DB0EF6C9BDCFE650E6277088B5C /* Colorful */ = {
+			isa = PBXGroup;
+			children = (
+				30E520308D120BE49E0393AB96900BF8 /* BrightnessCursor.swift */,
+				18D3084F227AAC93357E6F6E4B4A29FF /* BrightnessSlider.swift */,
+				5D2563C9AFA034F1BB09605B2A942F15 /* ColorfulEntity.swift */,
+				596CBF43EF987A802D48C22438B40B1B /* ColorMapCursor.swift */,
+				D02ECE7D9E05E5B6AD1E5CB1500AAC8D /* ColorMapView.swift */,
+				97D70F345203B6D1B66E79AD04241879 /* ColorPicker.swift */,
+				8C9BB93C6790C202BC59A5F5126240CB /* Support Files */,
+			);
+			name = Colorful;
+			path = Colorful;
 			sourceTree = "<group>";
 		};
 		7313276722E4F65544F1BEA553147948 /* Pods-draw-vector */ = {
@@ -271,23 +257,107 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		8C9BB93C6790C202BC59A5F5126240CB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5315A203D63D6B27DAE0B61D2B57E2CF /* Colorful.modulemap */,
+				AC70957F54EDEDDA755BEA68D70DFA56 /* Colorful-dummy.m */,
+				430CD49518A9A6A20329C471B54AD90F /* Colorful-Info.plist */,
+				3CDCCD01804660AE8584A0F1E4054488 /* Colorful-prefix.pch */,
+				A8353F25D8E7F122272CEC99DD9DEBAC /* Colorful-umbrella.h */,
+				32D205EEB533F21CC849A0F8758041C0 /* Colorful.debug.xcconfig */,
+				AC61A18875152880FBA7D51609F6257B /* Colorful.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Colorful";
+			sourceTree = "<group>";
+		};
+		97474CCE631AA777D7AF31E6FAEFC859 /* PureLayout */ = {
+			isa = PBXGroup;
+			children = (
+				EA5A492CD5193B47070C0D046D880B5F /* ALView+PureLayout.h */,
+				2D7496DD53969CF7FDBEFE3F569D95FE /* ALView+PureLayout.m */,
+				D246C297384D7CA9ED3BD85AEA53F662 /* NSArray+PureLayout.h */,
+				E74599E127C4441E19FFCC45F9E74699 /* NSArray+PureLayout.m */,
+				04715CC323F76682CD28DE812459D0CC /* NSLayoutConstraint+PureLayout.h */,
+				1B4044D3800A05F158DDDFF500C563B4 /* NSLayoutConstraint+PureLayout.m */,
+				AB09820377642CD819D1261409C0F85D /* PureLayout.h */,
+				559759AAC5657C08CC53408C0D7EC46B /* PureLayout+Internal.h */,
+				5BF9E0D5D8523045B6F4FCEE7F4E79C1 /* PureLayoutDefines.h */,
+				45B0CEF3C9A5626B3C69228774839300 /* Support Files */,
+			);
+			name = PureLayout;
+			path = PureLayout;
+			sourceTree = "<group>";
+		};
+		A64B693DEEAAED740378BD292B59365C /* MROGeometry */ = {
+			isa = PBXGroup;
+			children = (
+				EE13DC9C184BA0F9D323204406197AE9 /* CGPathReader.h */,
+				7CCC42E61D31D299727B5B1722CC886E /* CGPathReader.m */,
+				B1E844E6A3A0C36F6EC3E5D800CD9F63 /* CGPathWriter.c */,
+				AC494C7B5DB6018787C76C1D2E151763 /* CGPathWriter.h */,
+				4B042965EA1C97D3743EB1B364F5E974 /* MROCGPointMath.c */,
+				FA7B154D9725EECC0602CBB134695DC9 /* MROCGPointMath.h */,
+				2AD7A5FF26D21013975F75BA9F719770 /* NSCoder_MROCGPath.h */,
+				AA9847B77327E6C6FF4012B2A70F9E1B /* NSCoder_MROCGPath.m */,
+				7845A44F76861E3B37F5BD78F8BBBC76 /* PathBuilder.h */,
+				68FB96A4E1E3D7E1250C104B8FCBA880 /* PathBuilder.m */,
+				B07C1830723AEA3BFEF6A6A3DA09472B /* PathParser.h */,
+				A4028A5EFF7E9741A3868B1E30CED18F /* PathParser.m */,
+				D6D8F040EB11B3160614FBF56440210D /* RagelParser.h */,
+				3C34A15CC7FBC610F0CF7712E7D89CB1 /* RagelParser.m */,
+				CD123789B4A96E0FCDA66C14458DD610 /* TrafoParser.h */,
+				8939251EAE118AB28C369E15FD1A7752 /* TrafoParser.m */,
+				EA8D383C9D5AD11E2D3F0C73B362CFC9 /* Support Files */,
+			);
+			name = MROGeometry;
+			path = MROGeometry;
+			sourceTree = "<group>";
+		};
+		B305D67F0D93A9FEC1E19C1E52807E6E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				633A0DB0EF6C9BDCFE650E6277088B5C /* Colorful */,
+				A64B693DEEAAED740378BD292B59365C /* MROGeometry */,
+				97474CCE631AA777D7AF31E6FAEFC859 /* PureLayout */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
-				272A534920F09CCFB866E6F8F6380B08 /* Pods */,
-				E310DFBBC735B112B24E6BFA7356C844 /* Products */,
+				B305D67F0D93A9FEC1E19C1E52807E6E /* Pods */,
+				FC91CA0E9E5F9BB27581D71DC9D39BCD /* Products */,
 				36857E922CA6E3A311598144B1E47A80 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		E310DFBBC735B112B24E6BFA7356C844 /* Products */ = {
+		EA8D383C9D5AD11E2D3F0C73B362CFC9 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B197F1B5377ACF11D1BBB373FE4030CB /* MROGeometry */,
-				BB6C810E0CBD0739826A8329EAF545DA /* Pods-draw-vector */,
-				E4E7B3DD46ABB0DBBB56BD5AE90E4911 /* PureLayout */,
+				05B0099B7C0FBC2FFD028698616A5620 /* MROGeometry.modulemap */,
+				8145298C58D133A788B06A840FAA7A8D /* MROGeometry-dummy.m */,
+				94EE461C28F601A16CE877CFD8146C34 /* MROGeometry-Info.plist */,
+				F743C9D8898E722DEC01C9C6842EDD77 /* MROGeometry-prefix.pch */,
+				4A4C743D2A78A50472103D7F96637544 /* MROGeometry-umbrella.h */,
+				A559FBD6F82D22FD45D9B01C9D65DBEA /* MROGeometry.debug.xcconfig */,
+				20B13751BCFE702318D70B737CB630F5 /* MROGeometry.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MROGeometry";
+			sourceTree = "<group>";
+		};
+		FC91CA0E9E5F9BB27581D71DC9D39BCD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				078B758BAB86A5CDAE445643C5AE6156 /* Colorful.framework */,
+				B197F1B5377ACF11D1BBB373FE4030CB /* MROGeometry.framework */,
+				BB6C810E0CBD0739826A8329EAF545DA /* Pods_draw_vector.framework */,
+				E4E7B3DD46ABB0DBBB56BD5AE90E4911 /* PureLayout.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -295,41 +365,49 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		BAB9DBF18E66EB9FA4ED8C99C7DA9AC4 /* Headers */ = {
+		47D7FBCB5E3A326E97FBB794BE623EAC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A5F7E869608C75DE24C358DD123964E /* Pods-draw-vector-umbrella.h in Headers */,
+				DC02384DF979B167E1BA77155327A147 /* CGPathReader.h in Headers */,
+				BA0F76C2041446D0E8C5BC3B24E18FF2 /* CGPathWriter.h in Headers */,
+				B4F5BC726C4E3A5F1D97D60B2C0472B3 /* MROCGPointMath.h in Headers */,
+				632BDCB013BD674CE1612A2E035365C1 /* MROGeometry-umbrella.h in Headers */,
+				C7036503F2DE8C66705B8EC78BB7CF93 /* NSCoder_MROCGPath.h in Headers */,
+				27776178D7F57C4322C000B83AB23FC9 /* PathBuilder.h in Headers */,
+				CC548525428E7619A0CE9662B5D22890 /* PathParser.h in Headers */,
+				2DDA38485AF14C66F51918BBDAF9256E /* RagelParser.h in Headers */,
+				5983A0EDA75307CD1FD447DF2D4F26A1 /* TrafoParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BD64FBC241099DD94FDA763D7050B8D6 /* Headers */ = {
+		54C5CD02847AF1A38BA62D292C150030 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B20500A3163AA497C76EB30FD506940 /* CGPathReader.h in Headers */,
-				A09F87FCCA040B336EF2FBF847881FB2 /* CGPathWriter.h in Headers */,
-				F81360EE69584AC94E2F20339325B3E6 /* MROCGPointMath.h in Headers */,
-				D885FC8B0D2D5FA225CFC5BDD3557E66 /* MROGeometry-umbrella.h in Headers */,
-				463FCE8CCEF62FC2F77D0DCE7FAC92C2 /* NSCoder_MROCGPath.h in Headers */,
-				BF1B60C0FB6C7D8D35687D6A72CC387E /* PathBuilder.h in Headers */,
-				1869CE3C64CB1E8A87EBD8CB4207CAAD /* PathParser.h in Headers */,
-				6BF14B5D50B15033B4C6C91A58292C45 /* RagelParser.h in Headers */,
-				6484AA105191AA4E415BBCDA35580C97 /* TrafoParser.h in Headers */,
+				ED5733B4E9330D212E914935391A1295 /* ALView+PureLayout.h in Headers */,
+				897A20CB69A3B5C48364EA7C70AD8621 /* NSArray+PureLayout.h in Headers */,
+				5D1F2D5F9EE7CB73E8B3E18ABDE15C85 /* NSLayoutConstraint+PureLayout.h in Headers */,
+				AD39F3E4D8DCF952A183E4F198396F1D /* PureLayout.h in Headers */,
+				50506D6CBB50B6DCC66F02E5361B0C39 /* PureLayout+Internal.h in Headers */,
+				E121A4BB21AAF2FE5465C386B3E19039 /* PureLayout-umbrella.h in Headers */,
+				012CFA4C01EF8ECA73AAF3BBEFD2CBF5 /* PureLayoutDefines.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E81957AAEF5FEDD397C5425F057B5B75 /* Headers */ = {
+		567DD544B190825A19A6BEDA1EB5F39E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C48883845D739B5D005B90914BD32632 /* ALView+PureLayout.h in Headers */,
-				1EEF68CF4F49C230CC89DB838CFA3669 /* NSArray+PureLayout.h in Headers */,
-				253201FFCEA478C99A3970C5E3722B74 /* NSLayoutConstraint+PureLayout.h in Headers */,
-				B7775391C9C7FB76EC7616CA37E04B7B /* PureLayout.h in Headers */,
-				C91790192E090C1FA15F0BBBFB0ED231 /* PureLayout+Internal.h in Headers */,
-				87BBBAF1F66B27E2153592C17D22499B /* PureLayout-umbrella.h in Headers */,
-				4B6DFFA937E35E23F45DC619C1EAB573 /* PureLayoutDefines.h in Headers */,
+				69FA23FA121BC3528F4235E2D787939C /* Colorful-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6530DA268CDF914073B2A288DE88DD2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2DE25F3EE2D801A6847F98F061B8154 /* Pods-draw-vector-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,12 +416,12 @@
 /* Begin PBXNativeTarget section */
 		06F5CDD6235E25837519792853B145A1 /* PureLayout */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7D963C8C86D4CA497DEF3C6C012CD93B /* Build configuration list for PBXNativeTarget "PureLayout" */;
+			buildConfigurationList = 97C7148CC41A8E2AE2997FBA410BDDCE /* Build configuration list for PBXNativeTarget "PureLayout" */;
 			buildPhases = (
-				E81957AAEF5FEDD397C5425F057B5B75 /* Headers */,
-				AEA95D4A6EF7ABB5A798DC84153F6F6C /* Sources */,
-				9D5B06B560F877F6B60CDEFB0BCF7F47 /* Frameworks */,
-				261646C511CA38C074F880A2F90639B7 /* Resources */,
+				54C5CD02847AF1A38BA62D292C150030 /* Headers */,
+				D40A35B0FE6C420CD6BD3A6FD6C3DE47 /* Sources */,
+				0D428E24A60F2BB44F1E7F156C585784 /* Frameworks */,
+				693D6118C8EA30DA148B4891A30AFD5E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -351,17 +429,17 @@
 			);
 			name = PureLayout;
 			productName = PureLayout;
-			productReference = E4E7B3DD46ABB0DBBB56BD5AE90E4911 /* PureLayout */;
+			productReference = E4E7B3DD46ABB0DBBB56BD5AE90E4911 /* PureLayout.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		535639BC0AA438AF51B1DAC4F327BAC2 /* MROGeometry */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8DF0B666B231611D14E293C78599619E /* Build configuration list for PBXNativeTarget "MROGeometry" */;
+			buildConfigurationList = 5B95C94BF83463E4DC38A4E35147D02C /* Build configuration list for PBXNativeTarget "MROGeometry" */;
 			buildPhases = (
-				BD64FBC241099DD94FDA763D7050B8D6 /* Headers */,
-				B9580D55C82F10F2B4547BB1D473C87C /* Sources */,
-				672ACBC6D7458861EC39EC13D65AB503 /* Frameworks */,
-				4D0C228F6D28D17921C3052D9B84CEA3 /* Resources */,
+				47D7FBCB5E3A326E97FBB794BE623EAC /* Headers */,
+				96350F440013160FD0DCFA8A78B0EE63 /* Sources */,
+				8CE2581199D015FBD49339618568A315 /* Frameworks */,
+				67414F928B7E5DBE3A5FC771D2853880 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -369,27 +447,46 @@
 			);
 			name = MROGeometry;
 			productName = MROGeometry;
-			productReference = B197F1B5377ACF11D1BBB373FE4030CB /* MROGeometry */;
+			productReference = B197F1B5377ACF11D1BBB373FE4030CB /* MROGeometry.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		A2550E07D4FF3556588B3690048EF4A1 /* Pods-draw-vector */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D51090C6A384B9196A83C90EF09F3685 /* Build configuration list for PBXNativeTarget "Pods-draw-vector" */;
+			buildConfigurationList = 0ACC3D85962F9BB6D887E25E8A5DBE67 /* Build configuration list for PBXNativeTarget "Pods-draw-vector" */;
 			buildPhases = (
-				BAB9DBF18E66EB9FA4ED8C99C7DA9AC4 /* Headers */,
-				08D2F8DCA91A4E936411636FF114DAF2 /* Sources */,
-				F66DC7D75F34CF3AD916F0F966B993B6 /* Frameworks */,
-				54E39BC0A05413546931C617CFDC894F /* Resources */,
+				D6530DA268CDF914073B2A288DE88DD2 /* Headers */,
+				312DC57C5B7D027F1DD744B6B04482AF /* Sources */,
+				F309600B89BA7FD4EA62859EEFF7E433 /* Frameworks */,
+				039134BD528381CA551664271D0C56FB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				67CD4121FD0B10834654F331A0050945 /* PBXTargetDependency */,
-				343C8F1F66B4728FBB57F089E8CD418F /* PBXTargetDependency */,
+				9A5015276C0A0E6D2C792E0C7A5B36CA /* PBXTargetDependency */,
+				F849B0247DAAEFE05A640459D479DBE8 /* PBXTargetDependency */,
+				BAE425FA8DDD2E7CE54A72A029360C14 /* PBXTargetDependency */,
 			);
 			name = "Pods-draw-vector";
-			productName = Pods_draw_vector;
-			productReference = BB6C810E0CBD0739826A8329EAF545DA /* Pods-draw-vector */;
+			productName = "Pods-draw-vector";
+			productReference = BB6C810E0CBD0739826A8329EAF545DA /* Pods_draw_vector.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D0BB23E38358EC80363667EF7366D412 /* Colorful */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3F34DDE224D2942E796BE6C710B0C9E /* Build configuration list for PBXNativeTarget "Colorful" */;
+			buildPhases = (
+				567DD544B190825A19A6BEDA1EB5F39E /* Headers */,
+				335E5E3A20FC74C7739BB7C2AB43E5D2 /* Sources */,
+				BE18A384B8FAEC904C9BD99F819FB142 /* Frameworks */,
+				400E8ABE5FFBDDC43B5089802FEF5574 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Colorful;
+			productName = Colorful;
+			productReference = 078B758BAB86A5CDAE445643C5AE6156 /* Colorful.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -406,14 +503,15 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				Base,
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = E310DFBBC735B112B24E6BFA7356C844 /* Products */;
+			productRefGroup = FC91CA0E9E5F9BB27581D71DC9D39BCD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				D0BB23E38358EC80363667EF7366D412 /* Colorful */,
 				535639BC0AA438AF51B1DAC4F327BAC2 /* MROGeometry */,
 				A2550E07D4FF3556588B3690048EF4A1 /* Pods-draw-vector */,
 				06F5CDD6235E25837519792853B145A1 /* PureLayout */,
@@ -422,21 +520,28 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		261646C511CA38C074F880A2F90639B7 /* Resources */ = {
+		039134BD528381CA551664271D0C56FB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4D0C228F6D28D17921C3052D9B84CEA3 /* Resources */ = {
+		400E8ABE5FFBDDC43B5089802FEF5574 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		54E39BC0A05413546931C617CFDC894F /* Resources */ = {
+		67414F928B7E5DBE3A5FC771D2853880 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		693D6118C8EA30DA148B4891A30AFD5E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -446,132 +551,80 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		08D2F8DCA91A4E936411636FF114DAF2 /* Sources */ = {
+		312DC57C5B7D027F1DD744B6B04482AF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21D8C1194CE7D5401FE0D73341D73D3A /* Pods-draw-vector-dummy.m in Sources */,
+				A00D019E543443274D73FBEAEE40F922 /* Pods-draw-vector-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AEA95D4A6EF7ABB5A798DC84153F6F6C /* Sources */ = {
+		335E5E3A20FC74C7739BB7C2AB43E5D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DD3C94718B2D4C1445D2F8FFCCB3F6E /* ALView+PureLayout.m in Sources */,
-				8CDC73E1BC5CC030BC31CB816667B063 /* NSArray+PureLayout.m in Sources */,
-				4A3E057801126F54459EF3273AF88D8A /* NSLayoutConstraint+PureLayout.m in Sources */,
-				67574E0AAA9E58393D1C2E1B4C5E1707 /* PureLayout-dummy.m in Sources */,
+				AEC3B34A8ACBDD78BB57A64F06AC354F /* BrightnessCursor.swift in Sources */,
+				DF3D7E16E983CC1FC0A2BC8D7E020531 /* BrightnessSlider.swift in Sources */,
+				50834A78578E96C1F3B93985ED7F99B1 /* Colorful-dummy.m in Sources */,
+				DF03C6CFA598B0401917E8AFB3C564D7 /* ColorfulEntity.swift in Sources */,
+				129AD3704930C28226E00E01EBEE48F4 /* ColorMapCursor.swift in Sources */,
+				113CE9DF654D708E3B154F448B8CB5FF /* ColorMapView.swift in Sources */,
+				A662FC332AEB300FCD5098A37A0939BE /* ColorPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B9580D55C82F10F2B4547BB1D473C87C /* Sources */ = {
+		96350F440013160FD0DCFA8A78B0EE63 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C48ECCC4A83C99AE43C5E8553BBECD5 /* CGPathReader.m in Sources */,
-				C74753B4FBB3D3CD720E7B6DE5AAFBF9 /* CGPathWriter.c in Sources */,
-				4266E12515DA03B1911CBE5A0891AFAE /* MROCGPointMath.c in Sources */,
-				2410105C82340E63ADF078DAFAD71229 /* MROGeometry-dummy.m in Sources */,
-				C2BFEEB7472F206B1A4105BE60E11E6B /* NSCoder_MROCGPath.m in Sources */,
-				85DE2B4884E90F6830B4B7F86BB9411D /* PathBuilder.m in Sources */,
-				A4BD557A02AD349947D8617B1003713A /* PathParser.m in Sources */,
-				7AA71EEF757CCE6E3FFFDF89DED8D68C /* RagelParser.m in Sources */,
-				AC36291056E8772EA26BECF0CDF39E5E /* TrafoParser.m in Sources */,
+				D2CA314E7A219CA3ED847D2948A5B091 /* CGPathReader.m in Sources */,
+				245C74B032EF53C8E83BB7793799574A /* CGPathWriter.c in Sources */,
+				D98AFF9A88B0BA358CBF0E720252A2C0 /* MROCGPointMath.c in Sources */,
+				9B280597808CF84F670864943A1570D1 /* MROGeometry-dummy.m in Sources */,
+				60EF5053EC3EC7CFD21E95D291659D9A /* NSCoder_MROCGPath.m in Sources */,
+				A629634F981C2B32DABC9606B36980E7 /* PathBuilder.m in Sources */,
+				32EDEA130822115B615C0ADB7ECEB4DF /* PathParser.m in Sources */,
+				4FA5C3FBA6974D64D0A84383ED0F9851 /* RagelParser.m in Sources */,
+				D8042415DD7BDE733A8EB4F29355176D /* TrafoParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D40A35B0FE6C420CD6BD3A6FD6C3DE47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90E11860B6F9BDC73E00A1AF0116A0BA /* ALView+PureLayout.m in Sources */,
+				AE028A669BDCC596930B9CD7B34C231D /* NSArray+PureLayout.m in Sources */,
+				DBF45D59546F58E4F8118B65DBC9B0F4 /* NSLayoutConstraint+PureLayout.m in Sources */,
+				CAEF5A694258EA759B5AC90CBEB72CCC /* PureLayout-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		343C8F1F66B4728FBB57F089E8CD418F /* PBXTargetDependency */ = {
+		9A5015276C0A0E6D2C792E0C7A5B36CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Colorful;
+			target = D0BB23E38358EC80363667EF7366D412 /* Colorful */;
+			targetProxy = BBC130D9D6886A268A63CBB99E79EE98 /* PBXContainerItemProxy */;
+		};
+		BAE425FA8DDD2E7CE54A72A029360C14 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PureLayout;
 			target = 06F5CDD6235E25837519792853B145A1 /* PureLayout */;
-			targetProxy = 295ED9F30CE1187D40EB81FC08DDDC58 /* PBXContainerItemProxy */;
+			targetProxy = 625A6F177EC186521CE031A5ADCC449A /* PBXContainerItemProxy */;
 		};
-		67CD4121FD0B10834654F331A0050945 /* PBXTargetDependency */ = {
+		F849B0247DAAEFE05A640459D479DBE8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MROGeometry;
 			target = 535639BC0AA438AF51B1DAC4F327BAC2 /* MROGeometry */;
-			targetProxy = D3A08D53D53009577B384954D73FF687 /* PBXContainerItemProxy */;
+			targetProxy = 62F6CB214F61F928834704FD489E4444 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1528FA8FBCCE03F73E95995599AACCCB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8840681B47FBB58A50C4EAE29DAD54DB /* Pods-draw-vector.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-draw-vector/Pods-draw-vector-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-draw-vector/Pods-draw-vector.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		542EB4B467E88DE27834E412E3EE56A9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9E5FB6E9F3EC8B9C29AEF7CFCEE819D /* PureLayout.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PureLayout/PureLayout-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/PureLayout/PureLayout.modulemap";
-				PRODUCT_MODULE_NAME = PureLayout;
-				PRODUCT_NAME = PureLayout;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		6A78BA51A2531CE3DB3456F0C7D9D576 /* Release */ = {
+		02329D4C5995AC47F4649C2DDAFDEC00 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 53CC775C269AAC825D8C4E3FADDD44D4 /* Pods-draw-vector.release.xcconfig */;
 			buildSettings = {
@@ -609,9 +662,9 @@
 			};
 			name = Release;
 		};
-		74C9FFC9EF4874A1E4A7CA6BAD3C89AC /* Debug */ = {
+		07373457F2EF59A3537C59F033127726 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94B2E3BA262BEDDB77E2D701342EEB26 /* MROGeometry.debug.xcconfig */;
+			baseConfigurationReference = A559FBD6F82D22FD45D9B01C9D65DBEA /* MROGeometry.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -643,9 +696,9 @@
 			};
 			name = Debug;
 		};
-		7985DB1554E1D3342B74D277E7BA3750 /* Debug */ = {
+		0BF74671749B9EC575A614A19A961622 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72A142A0847E4EAE145FD1654F59EA06 /* PureLayout.debug.xcconfig */;
+			baseConfigurationReference = 45E64E3956312D980962F7EA2D386EC1 /* PureLayout.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -671,6 +724,149 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		15E6720A421C5A556E8008E359C0B602 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A84556C597B47356D5A1DFAF3635A93 /* PureLayout.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PureLayout/PureLayout-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PureLayout/PureLayout.modulemap";
+				PRODUCT_MODULE_NAME = PureLayout;
+				PRODUCT_NAME = PureLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3694A79E2A60A8049950CD94B7C504A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC61A18875152880FBA7D51609F6257B /* Colorful.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Colorful/Colorful-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Colorful/Colorful-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Colorful/Colorful.modulemap";
+				PRODUCT_MODULE_NAME = Colorful;
+				PRODUCT_NAME = Colorful;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3F6B6558A2FC5EEDD21F2684177E1E8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32D205EEB533F21CC849A0F8758041C0 /* Colorful.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Colorful/Colorful-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Colorful/Colorful-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Colorful/Colorful.modulemap";
+				PRODUCT_MODULE_NAME = Colorful;
+				PRODUCT_NAME = Colorful;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		419885D98ABC3241FE590619944B9739 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8840681B47FBB58A50C4EAE29DAD54DB /* Pods-draw-vector.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-draw-vector/Pods-draw-vector-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-draw-vector/Pods-draw-vector.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -805,9 +1001,9 @@
 			};
 			name = Release;
 		};
-		FA43B250997256673C3883FBE20E669F /* Release */ = {
+		FDA610960C155D05BC7D6386E8B4DEBF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCB9FBCB6F993CBDA3BE7733DA38F9D4 /* MROGeometry.release.xcconfig */;
+			baseConfigurationReference = 20B13751BCFE702318D70B737CB630F5 /* MROGeometry.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -843,6 +1039,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0ACC3D85962F9BB6D887E25E8A5DBE67 /* Build configuration list for PBXNativeTarget "Pods-draw-vector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				419885D98ABC3241FE590619944B9739 /* Debug */,
+				02329D4C5995AC47F4649C2DDAFDEC00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -852,29 +1057,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7D963C8C86D4CA497DEF3C6C012CD93B /* Build configuration list for PBXNativeTarget "PureLayout" */ = {
+		5B95C94BF83463E4DC38A4E35147D02C /* Build configuration list for PBXNativeTarget "MROGeometry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7985DB1554E1D3342B74D277E7BA3750 /* Debug */,
-				542EB4B467E88DE27834E412E3EE56A9 /* Release */,
+				07373457F2EF59A3537C59F033127726 /* Debug */,
+				FDA610960C155D05BC7D6386E8B4DEBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8DF0B666B231611D14E293C78599619E /* Build configuration list for PBXNativeTarget "MROGeometry" */ = {
+		97C7148CC41A8E2AE2997FBA410BDDCE /* Build configuration list for PBXNativeTarget "PureLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				74C9FFC9EF4874A1E4A7CA6BAD3C89AC /* Debug */,
-				FA43B250997256673C3883FBE20E669F /* Release */,
+				0BF74671749B9EC575A614A19A961622 /* Debug */,
+				15E6720A421C5A556E8008E359C0B602 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D51090C6A384B9196A83C90EF09F3685 /* Build configuration list for PBXNativeTarget "Pods-draw-vector" */ = {
+		E3F34DDE224D2942E796BE6C710B0C9E /* Build configuration list for PBXNativeTarget "Colorful" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1528FA8FBCCE03F73E95995599AACCCB /* Debug */,
-				6A78BA51A2531CE3DB3456F0C7D9D576 /* Release */,
+				3F6B6558A2FC5EEDD21F2684177E1E8D /* Debug */,
+				3694A79E2A60A8049950CD94B7C504A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
