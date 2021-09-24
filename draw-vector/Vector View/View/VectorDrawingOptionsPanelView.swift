@@ -9,21 +9,27 @@ import Foundation
 import UIKit
 
 protocol VectorDrawingOptionsPanelViewDelegate : NSObject {
-    func drawOptionsActionSelected()
-    func pathDrawOptionsActionSelected()
+    func vectorDrawingOptionsPanelViewOptionsSelected(view: VectorDrawingOptionsPanelView)
+    func vectorDrawingOptionsPanelViewCanvasSelected(view: VectorDrawingOptionsPanelView)
 }
 
 class VectorDrawingOptionsPanelView : UIView {
     weak var delegate: VectorDrawingOptionsPanelViewDelegate?
     
     @IBOutlet var drawOptionsButton: UIButton?
-    @IBOutlet var pathDrawOptionsButton: UIButton?
+    @IBOutlet var canvasOptionsButton: UIButton?
     
     @IBAction func drawOptionsAction(sender: Any) {
-        
+        guard let delegate = self.delegate else {
+            fatalError()
+        }
+        delegate.vectorDrawingOptionsPanelViewOptionsSelected(view: self)
     }
     
-    @IBAction func pathDrawOptionsAction(sender: Any) {
-        
+    @IBAction func canvasOptionsAction(sender: Any) {
+        guard let delegate = self.delegate else {
+            fatalError()
+        }
+        delegate.vectorDrawingOptionsPanelViewCanvasSelected(view: self)
     }
 }

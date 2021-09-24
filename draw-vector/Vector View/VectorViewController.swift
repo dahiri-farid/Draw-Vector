@@ -74,12 +74,11 @@ class VectorViewController: UIViewController, VectorEditPanelViewDelegate, Vecto
     }
     
     // MARK: VectorDrawingOptionsPanelViewDelegate
-    func drawOptionsActionSelected() {
+    func vectorDrawingOptionsPanelViewCanvasSelected(view: VectorDrawingOptionsPanelView) {
         
     }
     
-    func pathDrawOptionsActionSelected() {
-        
+    func vectorDrawingOptionsPanelViewOptionsSelected(view: VectorDrawingOptionsPanelView) {
     }
 }
 
