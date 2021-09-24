@@ -69,12 +69,18 @@ class VectorColorPickerView: UIView {
         delegate.vectorColorPickerViewDidUpdate(lineColor: pathLineColor, backgroundColor: pathBackgroundColor)
     }
     
-    func configure(backgroundColor: UIColor, lineColor: UIColor) {
+    func configure(backgroundColor: UIColor, lineColor: UIColor?) {
         self.pathBackgroundInitialColor = backgroundColor
         self.pathLineInitialColor = lineColor
         self.pathBackgroundColor = self.pathBackgroundInitialColor
         self.pathLineColor = self.pathLineInitialColor
         self.colorPickerView.set(color: backgroundColor, colorSpace: .sRGB)
+        guard let segmentedControl = self.segmentedControl else {
+            fatalError()
+        }
+        if lineColor == nil {
+            segmentedControl.isEnabled = false
+        }
     }
 
     @IBAction func segmentedControlValueChanged(sender: Any) {

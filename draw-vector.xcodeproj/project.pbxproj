@@ -13,7 +13,7 @@
 		4119123426F7A84C009509D3 /* Nib+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119123326F7A84C009509D3 /* Nib+View.swift */; };
 		4119123626F7AAB2009509D3 /* VectorViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119123526F7AAB2009509D3 /* VectorViewControllerModel.swift */; };
 		4119123826F7C1A7009509D3 /* DrawOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119123726F7C1A7009509D3 /* DrawOptionsViewController.swift */; };
-		4119123A26F7C4C1009509D3 /* VectorViewEditMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119123926F7C4C1009509D3 /* VectorViewEditMode.swift */; };
+		4119123A26F7C4C1009509D3 /* CanvasEditMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119123926F7C4C1009509D3 /* CanvasEditMode.swift */; };
 		4119123C26F7C522009509D3 /* VectorDrawingOptionsPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119123B26F7C522009509D3 /* VectorDrawingOptionsPanelView.swift */; };
 		4119123E26F7C538009509D3 /* VectorDrawingOptionsPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4119123D26F7C538009509D3 /* VectorDrawingOptionsPanelView.xib */; };
 		4119124226F7E535009509D3 /* ClosedVectorPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119124126F7E535009509D3 /* ClosedVectorPath.swift */; };
@@ -21,6 +21,8 @@
 		4178542726FE3B0800A0874D /* VectorColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178542626FE3B0800A0874D /* VectorColorPickerView.swift */; };
 		4178542926FE3B1300A0874D /* VectorColorPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4178542826FE3B1300A0874D /* VectorColorPickerView.xib */; };
 		4178543326FE514600A0874D /* DrawOptionsViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178543226FE514600A0874D /* DrawOptionsViewControllerModel.swift */; };
+		4178543626FE5F5100A0874D /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178543526FE5F5100A0874D /* Canvas.swift */; };
+		4178543826FE5F5F00A0874D /* CanvasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178543726FE5F5F00A0874D /* CanvasController.swift */; };
 		41929E9F26F68CE10090F96F /* DVSVGConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 41929E9E26F68CE10090F96F /* DVSVGConverter.m */; };
 		41929EA226F697E00090F96F /* Html in Frameworks */ = {isa = PBXBuildFile; productRef = 41929EA126F697E00090F96F /* Html */; };
 		41929EA526F6983D0090F96F /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 41929EA426F6983D0090F96F /* UIColorHexSwift */; };
@@ -57,7 +59,7 @@
 		4119123326F7A84C009509D3 /* Nib+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nib+View.swift"; sourceTree = "<group>"; };
 		4119123526F7AAB2009509D3 /* VectorViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorViewControllerModel.swift; sourceTree = "<group>"; };
 		4119123726F7C1A7009509D3 /* DrawOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawOptionsViewController.swift; sourceTree = "<group>"; };
-		4119123926F7C4C1009509D3 /* VectorViewEditMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorViewEditMode.swift; sourceTree = "<group>"; };
+		4119123926F7C4C1009509D3 /* CanvasEditMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasEditMode.swift; sourceTree = "<group>"; };
 		4119123B26F7C522009509D3 /* VectorDrawingOptionsPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorDrawingOptionsPanelView.swift; sourceTree = "<group>"; };
 		4119123D26F7C538009509D3 /* VectorDrawingOptionsPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VectorDrawingOptionsPanelView.xib; sourceTree = "<group>"; };
 		4119124126F7E535009509D3 /* ClosedVectorPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedVectorPath.swift; sourceTree = "<group>"; };
@@ -65,6 +67,8 @@
 		4178542626FE3B0800A0874D /* VectorColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorColorPickerView.swift; sourceTree = "<group>"; };
 		4178542826FE3B1300A0874D /* VectorColorPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VectorColorPickerView.xib; sourceTree = "<group>"; };
 		4178543226FE514600A0874D /* DrawOptionsViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawOptionsViewControllerModel.swift; sourceTree = "<group>"; };
+		4178543526FE5F5100A0874D /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		4178543726FE5F5F00A0874D /* CanvasController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasController.swift; sourceTree = "<group>"; };
 		417E228326FBD83E001D3A98 /* draw-vector.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "draw-vector.entitlements"; sourceTree = "<group>"; };
 		41929E9C26F68CE10090F96F /* draw-vector-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "draw-vector-Bridging-Header.h"; sourceTree = "<group>"; };
 		41929E9D26F68CE10090F96F /* DVSVGConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVSVGConverter.h; sourceTree = "<group>"; };
@@ -117,9 +121,6 @@
 		4178542C26FE4E5300A0874D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4119122A26F79C71009509D3 /* VectorPath.swift */,
-				4119123926F7C4C1009509D3 /* VectorViewEditMode.swift */,
-				4119124126F7E535009509D3 /* ClosedVectorPath.swift */,
 				4119123526F7AAB2009509D3 /* VectorViewControllerModel.swift */,
 			);
 			path = Model;
@@ -173,6 +174,18 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		4178543426FE5F2900A0874D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4119122A26F79C71009509D3 /* VectorPath.swift */,
+				4119124126F7E535009509D3 /* ClosedVectorPath.swift */,
+				4119123926F7C4C1009509D3 /* CanvasEditMode.swift */,
+				4178543526FE5F5100A0874D /* Canvas.swift */,
+				4178543726FE5F5F00A0874D /* CanvasController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		4197F91526F527AD0075C0BC = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +207,7 @@
 		4197F92026F527AD0075C0BC /* draw-vector */ = {
 			isa = PBXGroup;
 			children = (
+				4178543426FE5F2900A0874D /* Core */,
 				4178542F26FE4F2500A0874D /* Drawing Options */,
 				4178542E26FE4EAB00A0874D /* Extension */,
 				4178542B26FE4E4600A0874D /* Vector View */,
@@ -348,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4119123C26F7C522009509D3 /* VectorDrawingOptionsPanelView.swift in Sources */,
+				4178543626FE5F5100A0874D /* Canvas.swift in Sources */,
 				4119123426F7A84C009509D3 /* Nib+View.swift in Sources */,
 				4119123826F7C1A7009509D3 /* DrawOptionsViewController.swift in Sources */,
 				4119124226F7E535009509D3 /* ClosedVectorPath.swift in Sources */,
@@ -357,12 +372,13 @@
 				41929E9F26F68CE10090F96F /* DVSVGConverter.m in Sources */,
 				4197F93626F527D10075C0BC /* VectorView.swift in Sources */,
 				4178543326FE514600A0874D /* DrawOptionsViewControllerModel.swift in Sources */,
+				4178543826FE5F5F00A0874D /* CanvasController.swift in Sources */,
 				413146EB26FA5E3900E25B7D /* ClosedPathSelectionView.swift in Sources */,
 				4119122B26F79C71009509D3 /* VectorPath.swift in Sources */,
 				4119123626F7AAB2009509D3 /* VectorViewControllerModel.swift in Sources */,
 				4197F92226F527AD0075C0BC /* AppDelegate.swift in Sources */,
 				4197F92426F527AD0075C0BC /* SceneDelegate.swift in Sources */,
-				4119123A26F7C4C1009509D3 /* VectorViewEditMode.swift in Sources */,
+				4119123A26F7C4C1009509D3 /* CanvasEditMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

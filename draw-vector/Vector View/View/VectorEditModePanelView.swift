@@ -19,7 +19,7 @@ class VectorEditModePanelView : UIView {
     @IBOutlet var drawButton: UIButton?
     @IBOutlet var selectButton: UIButton?
     
-    var viewMode: VectorViewEditMode = .draw {
+    var viewMode: CanvasEditMode = .draw {
         didSet {
             self.unselectAllButtons()
             switch viewMode {

@@ -8,9 +8,10 @@
 import Foundation
 
 class VectorViewControllerModel {
-    var viewMode: VectorViewEditMode = .draw
+    var viewMode: CanvasEditMode = .draw
+    let canvasController: CanvasController
     
-    func save() {
-        
+    init(canvasController: CanvasController) {
+        self.canvasController = canvasController
     }
 }

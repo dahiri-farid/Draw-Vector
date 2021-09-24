@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class VectorView : UIView {
-    var editMode = VectorViewEditMode.draw {
+    var editMode = CanvasEditMode.draw {
         didSet {
             if editMode == .draw {
                 if self.selectedClosedPathView != nil {

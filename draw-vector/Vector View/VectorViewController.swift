@@ -12,12 +12,14 @@ class VectorViewController: UIViewController, VectorEditPanelViewDelegate, Vecto
     let drawOptionsPanelView: VectorDrawingOptionsPanelView? = VectorDrawingOptionsPanelView.loadFromNib()
     let vectorView = VectorView()
     
-    let viewModel = VectorViewControllerModel()
+    var viewModel: VectorViewControllerModel?
 
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // TODO: move this outside soon
+        self.configure(canvasController: CanvasController())
         self.view.addSubview(self.vectorView)
         self.setupPanelView()
         self.setupDrawOptionsPanelView()
@@ -28,6 +30,11 @@ class VectorViewController: UIViewController, VectorEditPanelViewDelegate, Vecto
         
         self.vectorView.frame = self.view.bounds
         self.update()
+    }
+    
+    // MARK: Public
+    func configure(canvasController: CanvasController) {
+        self.viewModel = VectorViewControllerModel(canvasController: canvasController)
     }
     
     // MARK: Configuration
@@ -58,18 +65,27 @@ class VectorViewController: UIViewController, VectorEditPanelViewDelegate, Vecto
     }
     
     func update() {
-        self.panelView?.viewMode = self.viewModel.viewMode
-        self.vectorView.editMode = self.viewModel.viewMode
+        guard let viewModel = self.viewModel else {
+            fatalError()
+        }
+        self.panelView?.viewMode = viewModel.viewMode
+        self.vectorView.editMode = viewModel.viewMode
     }
     
     // MARK: VectorPanelViewDelegate
     func drawActionSelected() {
-        self.viewModel.viewMode = .draw
+        guard let viewModel = self.viewModel else {
+            fatalError()
+        }
+        viewModel.viewMode = .draw
         self.update()
     }
     
     func selectActionSelected() {
-        self.viewModel.viewMode = .select
+        guard let viewModel = self.viewModel else {
+            fatalError()
+        }
+        viewModel.viewMode = .select
         self.update()
     }
     
