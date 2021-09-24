@@ -26,8 +26,8 @@ class VectorView : UIView {
     var selectedClosedPathView: ClosedPathSelectionView?
     
     var closedPathViewSelectedResizeAnchorType = ClosedPathSelectionViewAnchorType.none
-    var pathTranslationStartPoint = CGPoint.zero
-    var pathTranslationCurrentPoint = CGPoint.zero
+    var pathTranslationStartPoint: CGPoint?
+    var pathTranslationCurrentPoint: CGPoint?
     
     var pathSelectionPoint : CGPoint?
     
@@ -58,9 +58,9 @@ class VectorView : UIView {
     }
     
     func drawSelectedVectorPath() {
-        let translationPoint = CGPoint(x: self.pathTranslationCurrentPoint.x - self.pathTranslationStartPoint.x, y: self.pathTranslationCurrentPoint.y - self.pathTranslationStartPoint.y)
-        
-        if let selectedClosedPathView = self.selectedClosedPathView {
+        if let selectedClosedPathView = self.selectedClosedPathView, let pathTranslationCurrentPoint = self.pathTranslationCurrentPoint, let pathTranslationStartPoint = self.pathTranslationStartPoint  {
+            let translationPoint = CGPoint(x: pathTranslationCurrentPoint.x - pathTranslationStartPoint.x,
+                                           y: pathTranslationCurrentPoint.y - pathTranslationStartPoint.y)
             var selectedClosedPathViewFrame = selectedClosedPathView.frame
             switch self.closedPathViewSelectedResizeAnchorType {
             case .none:
@@ -232,9 +232,8 @@ class VectorView : UIView {
                 }
                 self.currentVectorPath = nil
             case .select:
-                // TODO: points should be nilled!
-                self.pathTranslationCurrentPoint = CGPoint.zero
-                self.pathTranslationStartPoint = CGPoint.zero
+                self.pathTranslationCurrentPoint = nil
+                self.pathTranslationStartPoint = nil
             }
             
             self.setNeedsDisplay()
