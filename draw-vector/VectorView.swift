@@ -39,8 +39,8 @@ class VectorView : UIView {
         self.closedVectorPathCollection.removeAll()
         
         self.closedPathViewSelectedResizeAnchorType = ClosedPathSelectionViewAnchorType.none
-        self.pathTranslationStartPoint = CGPoint.zero
-        self.pathTranslationCurrentPoint = CGPoint.zero
+        self.pathTranslationStartPoint = nil
+        self.pathTranslationCurrentPoint = nil
     }
     
     // MARK: private
