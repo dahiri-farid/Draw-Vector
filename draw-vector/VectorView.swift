@@ -14,7 +14,7 @@ class VectorView : UIView {
             if editMode == .draw {
                 if self.selectedClosedPathView != nil {
                     self.pathSelectionPoint = nil
-                    self.detachSelectedVectorPath()
+                    self.removeSelectedVectorPath()
                     self.setNeedsDisplay()
                 }
             }
@@ -57,8 +57,10 @@ class VectorView : UIView {
         }
     }
     
-    func drawSelectedVectorPath() {
-        if let selectedClosedPathView = self.selectedClosedPathView, let pathTranslationCurrentPoint = self.pathTranslationCurrentPoint, let pathTranslationStartPoint = self.pathTranslationStartPoint  {
+    func updateSelectedVectorPathLayout() {
+        if let selectedClosedPathView = self.selectedClosedPathView,
+           let pathTranslationCurrentPoint = self.pathTranslationCurrentPoint,
+            let pathTranslationStartPoint = self.pathTranslationStartPoint {
             let translationPoint = CGPoint(x: pathTranslationCurrentPoint.x - pathTranslationStartPoint.x,
                                            y: pathTranslationCurrentPoint.y - pathTranslationStartPoint.y)
             var selectedClosedPathViewFrame = selectedClosedPathView.frame
@@ -118,7 +120,7 @@ class VectorView : UIView {
         }
     }
     
-    func detachSelectedVectorPath() {
+    func removeSelectedVectorPath() {
         guard let selectedClosedPathView = self.selectedClosedPathView else {
             fatalError()
         }
@@ -148,7 +150,7 @@ class VectorView : UIView {
         case .draw:
             self.drawCurrentVectorPath()
         case .select:
-            self.drawSelectedVectorPath()
+            self.updateSelectedVectorPathLayout()
         }
         
         self.drawClosedVectorPathCollection()
@@ -175,7 +177,7 @@ class VectorView : UIView {
                     let selectedClosedPathViewLocation = touch.location(in: selectedClosedPathView)
                     self.closedPathViewSelectedResizeAnchorType = selectedClosedPathView.resizeAnchorType(location: selectedClosedPathViewLocation)
                     if selectedClosedPathView.frame.contains(location) == false, self.closedPathViewSelectedResizeAnchorType == .none {
-                        self.detachSelectedVectorPath()
+                        self.removeSelectedVectorPath()
                         self.pathSelectionPoint = location
                     }
                 } else {
