@@ -14,6 +14,15 @@ class DrawOptionsViewControllerModel {
             return self.canvasController.canvas
         }
     }
+    var backgroundColor: UIColor {
+        get {
+            if let selectedVectorPath = canvas.selectedVectorPath {
+                return selectedVectorPath.fillColor
+            } else {
+                return canvas.backgroundColor
+            }
+        }
+    }
     
     private let canvasController: CanvasController
     
@@ -22,6 +31,10 @@ class DrawOptionsViewControllerModel {
     }
     
     func updateBackgroundColor(color: UIColor) {
-        self.canvasController.updateBackgroundColor(color: color)
+        if let selectedVectorPath = canvas.selectedVectorPath {
+            self.canvasController.updateSelectedVectorPathBackgroundColor(color: color)
+        } else {
+            self.canvasController.updateBackgroundColor(color: color)
+        }
     }
 }

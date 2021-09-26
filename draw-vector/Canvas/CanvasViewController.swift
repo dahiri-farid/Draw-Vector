@@ -189,6 +189,10 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
         self.update()
     }
     
+    func didUpdateSelectedVectorPathBackgroundColor() {
+        self.update()
+    }
+    
     // MARK: VectorDrawingOptionsPanelViewDelegate
     func drawingOptionsPanelViewCanvasSelected(view: DrawingOptionsPanelView) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

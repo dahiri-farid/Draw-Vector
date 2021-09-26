@@ -10,6 +10,7 @@ import Foundation
 protocol CanvasViewControllerModelDelegate: NSObject {
     func didUpdateSelectedVectorPath()
     func didUpdateBackgroundColor()
+    func didUpdateSelectedVectorPathBackgroundColor()
 }
 
 class CanvasViewControllerModel: NSObject, CanvasControllerDelegate {
@@ -84,5 +85,12 @@ class CanvasViewControllerModel: NSObject, CanvasControllerDelegate {
             fatalError()
         }
         delegate.didUpdateBackgroundColor()
+    }
+    
+    func canvasDidUpdateSelectedVectorPathBackgroundColor() {
+        guard let delegate = self.delegate else {
+            fatalError()
+        }
+        delegate.didUpdateSelectedVectorPathBackgroundColor()
     }
 }

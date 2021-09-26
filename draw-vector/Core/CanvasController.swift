@@ -10,6 +10,7 @@ import UIKit
 
 protocol CanvasControllerDelegate: NSObject {
     func canvasDidUpdateBackgroundColor()
+    func canvasDidUpdateSelectedVectorPathBackgroundColor()
 }
 
 class CanvasController {
@@ -107,5 +108,15 @@ class CanvasController {
             fatalError()
         }
         delegate.canvasDidUpdateBackgroundColor()
+    }
+    
+    func updateSelectedVectorPathBackgroundColor(color: UIColor) {
+        if let selectedVectorPath = self._canvas.selectedVectorPath {
+            selectedVectorPath.fillColor = color
+            guard let delegate = self.delegate else {
+                fatalError()
+            }
+            delegate.canvasDidUpdateSelectedVectorPathBackgroundColor()
+        }
     }
 }

@@ -31,7 +31,7 @@ class DrawOptionsViewController : UIViewController, ColorPickerViewDelegate {
         
         let viewModel = DrawOptionsViewControllerModel(canvasController: canvasController)
         self.viewModel = viewModel
-        colorPickerView.configure(backgroundColor: viewModel.canvas.backgroundColor)
+        colorPickerView.configure(backgroundColor: viewModel.backgroundColor)
     }
     
     // MARK: VectorColorPickerViewDelegate
