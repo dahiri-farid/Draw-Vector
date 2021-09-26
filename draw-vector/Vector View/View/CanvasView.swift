@@ -12,9 +12,7 @@ protocol CanvasViewDelegate: NSObject {
     var canvas: ICanvas { get }
     
     func reset()
-    func drawCurrentVectorPath()
     func updateSelectedVectorPathLayout()
-    func drawClosedVectorPathCollection()
     func removeSelectedVectorPath()
 }
 
@@ -42,19 +40,31 @@ class CanvasView : UIView {
     
     var pathSelectionPoint : CGPoint?
     
-    func reset() {
-        self.currentVectorPath = nil
-        self.selectedVectorPath = nil
-        self.pathSelectionPoint = nil
-        self.selectedVectorPath = nil
-        self.closedVectorPathCollection.removeAll()
+    // MARK: private
+    func drawClosedVectorPathCollection() {
+        let closedVectorPathCollection = self.closedVectorPathCollection
+        for closedVectorPath in closedVectorPathCollection {
+            if let pathSelectionPoint = self.pathSelectionPoint, closedVectorPath.bezierPath.contains(pathSelectionPoint) {
+                self.selectedVectorPath = closedVectorPath
+                self.pathSelectionPoint = nil
+                let pathView = ClosedPathSelectionView(closedPath: closedVectorPath)
+                self.addSubview(pathView)
+                self.selectedClosedPathView = pathView
+                self.closedVectorPathCollection = self.closedVectorPathCollection.filter { return $0 !== self.selectedVectorPath}
+                break
+            }
+        }
         
-        self.closedPathViewSelectedResizeAnchorType = ClosedPathSelectionViewAnchorType.none
-        self.pathTranslationStartPoint = nil
-        self.pathTranslationCurrentPoint = nil
+        for closedVectorPath in closedVectorPathCollection {
+            let bezierPath = closedVectorPath.bezierPath
+            closedVectorPath.strokeColor.setFill()
+            closedVectorPath.fillColor.setFill()
+            bezierPath.lineWidth = closedVectorPath.strokeWidth
+            bezierPath.stroke()
+            bezierPath.fill()
+        }
     }
     
-    // MARK: private
     func drawCurrentVectorPath() {
         if let currentVectorPath = self.currentVectorPath {
             guard let bezierPath = currentVectorPath.bezierPath else {
@@ -66,6 +76,19 @@ class CanvasView : UIView {
             bezierPath.fill()
             bezierPath.stroke()
         }
+    }
+    
+    // MARK: exportable methods
+    func reset() {
+        self.currentVectorPath = nil
+        self.selectedVectorPath = nil
+        self.pathSelectionPoint = nil
+        self.selectedVectorPath = nil
+        self.closedVectorPathCollection.removeAll()
+        
+        self.closedPathViewSelectedResizeAnchorType = ClosedPathSelectionViewAnchorType.none
+        self.pathTranslationStartPoint = nil
+        self.pathTranslationCurrentPoint = nil
     }
     
     func updateSelectedVectorPathLayout() {
@@ -107,28 +130,6 @@ class CanvasView : UIView {
         }
         
         self.pathTranslationStartPoint = self.pathTranslationCurrentPoint
-    }
-    
-    func drawClosedVectorPathCollection() {
-        let closedVectorPathCollection = self.closedVectorPathCollection
-        for closedVectorPath in closedVectorPathCollection {
-            let bezierPath = closedVectorPath.bezierPath
-            if let pathSelectionPoint = self.pathSelectionPoint, bezierPath.contains(pathSelectionPoint) {
-                self.selectedVectorPath = closedVectorPath
-                self.setNeedsDisplay()
-                self.pathSelectionPoint = nil
-                let pathView = ClosedPathSelectionView(closedPath: closedVectorPath)
-                self.addSubview(pathView)
-                self.selectedClosedPathView = pathView
-                self.closedVectorPathCollection = self.closedVectorPathCollection.filter { return $0 !== self.selectedVectorPath}
-            } else {
-                closedVectorPath.strokeColor.setFill()
-                closedVectorPath.fillColor.setFill()
-                bezierPath.lineWidth = closedVectorPath.strokeWidth
-                bezierPath.stroke()
-                bezierPath.fill()
-            }
-        }
     }
     
     func removeSelectedVectorPath() {
