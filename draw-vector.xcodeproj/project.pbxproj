@@ -23,6 +23,8 @@
 		4178543626FE5F5100A0874D /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178543526FE5F5100A0874D /* Canvas.swift */; };
 		4178543826FE5F5F00A0874D /* CanvasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178543726FE5F5F00A0874D /* CanvasController.swift */; };
 		4178543A26FF39E400A0874D /* ICanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178543926FF39E400A0874D /* ICanvas.swift */; };
+		417E3A7A2700F62A00246402 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417E3A792700F62A00246402 /* BrowserViewController.swift */; };
+		417E3A7D2700F65A00246402 /* BrowserViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417E3A7C2700F65A00246402 /* BrowserViewControllerModel.swift */; };
 		41929E9F26F68CE10090F96F /* DVSVGConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 41929E9E26F68CE10090F96F /* DVSVGConverter.m */; };
 		41929EA226F697E00090F96F /* Html in Frameworks */ = {isa = PBXBuildFile; productRef = 41929EA126F697E00090F96F /* Html */; };
 		41929EA526F6983D0090F96F /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 41929EA426F6983D0090F96F /* UIColorHexSwift */; };
@@ -70,6 +72,8 @@
 		4178543726FE5F5F00A0874D /* CanvasController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasController.swift; sourceTree = "<group>"; };
 		4178543926FF39E400A0874D /* ICanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICanvas.swift; sourceTree = "<group>"; };
 		417E228326FBD83E001D3A98 /* draw-vector.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "draw-vector.entitlements"; sourceTree = "<group>"; };
+		417E3A792700F62A00246402 /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
+		417E3A7C2700F65A00246402 /* BrowserViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewControllerModel.swift; sourceTree = "<group>"; };
 		41929E9C26F68CE10090F96F /* draw-vector-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "draw-vector-Bridging-Header.h"; sourceTree = "<group>"; };
 		41929E9D26F68CE10090F96F /* DVSVGConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVSVGConverter.h; sourceTree = "<group>"; };
 		41929E9E26F68CE10090F96F /* DVSVGConverter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DVSVGConverter.m; sourceTree = "<group>"; };
@@ -186,6 +190,42 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		417E3A782700F5F500246402 /* Browser */ = {
+			isa = PBXGroup;
+			children = (
+				417E3A7B2700F63D00246402 /* Model */,
+				417E3A792700F62A00246402 /* BrowserViewController.swift */,
+			);
+			path = Browser;
+			sourceTree = "<group>";
+		};
+		417E3A7B2700F63D00246402 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				417E3A7C2700F65A00246402 /* BrowserViewControllerModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		417E3A7E2700F67E00246402 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				41929E9D26F68CE10090F96F /* DVSVGConverter.h */,
+				41929E9E26F68CE10090F96F /* DVSVGConverter.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		417E3A7F2700F68A00246402 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4197F92A26F527AE0075C0BC /* Assets.xcassets */,
+				4197F92C26F527AE0075C0BC /* LaunchScreen.storyboard */,
+				4197F92726F527AD0075C0BC /* Main.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		4197F91526F527AD0075C0BC = {
 			isa = PBXGroup;
 			children = (
@@ -207,20 +247,18 @@
 		4197F92026F527AD0075C0BC /* draw-vector */ = {
 			isa = PBXGroup;
 			children = (
+				4197F92F26F527AE0075C0BC /* Info.plist */,
+				417E228326FBD83E001D3A98 /* draw-vector.entitlements */,
+				417E3A7F2700F68A00246402 /* Resources */,
+				417E3A7E2700F67E00246402 /* Utils */,
+				4197F92126F527AD0075C0BC /* AppDelegate.swift */,
+				417E3A782700F5F500246402 /* Browser */,
+				4178542B26FE4E4600A0874D /* Canvas */,
 				4178543426FE5F2900A0874D /* Core */,
+				41929E9C26F68CE10090F96F /* draw-vector-Bridging-Header.h */,
 				4178542F26FE4F2500A0874D /* Drawing Options */,
 				4178542E26FE4EAB00A0874D /* Extension */,
-				4178542B26FE4E4600A0874D /* Canvas */,
-				417E228326FBD83E001D3A98 /* draw-vector.entitlements */,
-				4197F92126F527AD0075C0BC /* AppDelegate.swift */,
 				4197F92326F527AD0075C0BC /* SceneDelegate.swift */,
-				4197F92726F527AD0075C0BC /* Main.storyboard */,
-				4197F92A26F527AE0075C0BC /* Assets.xcassets */,
-				4197F92C26F527AE0075C0BC /* LaunchScreen.storyboard */,
-				4197F92F26F527AE0075C0BC /* Info.plist */,
-				41929E9D26F68CE10090F96F /* DVSVGConverter.h */,
-				41929E9E26F68CE10090F96F /* DVSVGConverter.m */,
-				41929E9C26F68CE10090F96F /* draw-vector-Bridging-Header.h */,
 			);
 			path = "draw-vector";
 			sourceTree = "<group>";
@@ -371,12 +409,14 @@
 				4197F92626F527AD0075C0BC /* CanvasViewController.swift in Sources */,
 				4119122E26F79FAD009509D3 /* CanvasEditModePanelView.swift in Sources */,
 				41929E9F26F68CE10090F96F /* DVSVGConverter.m in Sources */,
+				417E3A7D2700F65A00246402 /* BrowserViewControllerModel.swift in Sources */,
 				4197F93626F527D10075C0BC /* CanvasView.swift in Sources */,
 				4178543826FE5F5F00A0874D /* CanvasController.swift in Sources */,
 				413146EB26FA5E3900E25B7D /* ClosedPathSelectionView.swift in Sources */,
 				4119122B26F79C71009509D3 /* VectorPath.swift in Sources */,
 				4119123626F7AAB2009509D3 /* CanvasViewControllerModel.swift in Sources */,
 				4197F92226F527AD0075C0BC /* AppDelegate.swift in Sources */,
+				417E3A7A2700F62A00246402 /* BrowserViewController.swift in Sources */,
 				4197F92426F527AD0075C0BC /* SceneDelegate.swift in Sources */,
 				4119123A26F7C4C1009509D3 /* CanvasEditMode.swift in Sources */,
 			);
