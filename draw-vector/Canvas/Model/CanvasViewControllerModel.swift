@@ -13,7 +13,11 @@ class CanvasViewControllerModel {
             return self.canvasController.canvas
         }
     }
-    var viewMode: CanvasEditMode = .draw
+    var viewMode: CanvasEditMode {
+        get {
+            return self.canvasController.canvas.editMode
+        }
+    }
     private let canvasController: CanvasController
     
     init(canvasController: CanvasController) {
@@ -58,5 +62,9 @@ class CanvasViewControllerModel {
     
     func selectClosedVectorPath(atPoint: CGPoint) -> Bool {
         return self.canvasController.selectClosedVectorPath(atPoint: atPoint)
+    }
+    
+    func updateMode(mode: CanvasEditMode) {
+        self.canvasController.updateMode(editMode: mode)
     }
 }

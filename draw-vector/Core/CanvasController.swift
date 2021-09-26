@@ -95,4 +95,8 @@ class CanvasController {
     func updateStartPathTranslation(point: CGPoint) {
         self._canvas.pathTranslationStartPoint = point
     }
+    
+    func updateMode(editMode: CanvasEditMode) {
+        self._canvas.editMode = editMode
+    }
 }

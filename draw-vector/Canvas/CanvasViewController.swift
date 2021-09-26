@@ -84,7 +84,7 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
         guard let viewModel = self.viewModel else {
             fatalError()
         }
-        viewModel.viewMode = .draw
+        viewModel.updateMode(mode: .draw)
         self.update()
     }
     
@@ -92,7 +92,7 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
         guard let viewModel = self.viewModel else {
             fatalError()
         }
-        viewModel.viewMode = .select
+        viewModel.updateMode(mode: .select)
         self.update()
     }
     
