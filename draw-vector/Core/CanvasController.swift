@@ -47,4 +47,52 @@ class CanvasController {
         
         return self._canvas.selectedVectorPath != nil
     }
+    
+    func removeSelectedVectorPath() {
+        guard let selectedVectorPath = self._canvas.selectedVectorPath else {
+            fatalError()
+        }
+
+        // TODO: should be inserted at its previous index
+        self._canvas.closedVectorPathCollection.append(selectedVectorPath)
+        self._canvas.selectedVectorPath = nil
+    }
+    
+    func updateCurrentVectorPath(point: CGPoint) {
+        if self._canvas.currentVectorPath == nil {
+            self._canvas.currentVectorPath = VectorPath()
+        }
+        guard let currentVectorPath = self._canvas.currentVectorPath else {
+            fatalError()
+        }
+        currentVectorPath.path.append(point)
+    }
+    
+    func closeCurrentVectorPath() {
+        if let currentVectorPath = self._canvas.currentVectorPath {
+            self._canvas.closedVectorPathCollection.append(ClosedVectorPath(vectorPath: currentVectorPath))
+        }
+        self._canvas.currentVectorPath = nil
+    }
+    
+    func updatePathSelection(point: CGPoint) {
+        self._canvas.pathSelectionPoint = point
+    }
+    
+    func updateClosedPathViewSelectedResizeAnchorType(anchorType: ClosedPathSelectionViewAnchorType) {
+        self._canvas.closedPathViewSelectedResizeAnchorType = anchorType
+    }
+    
+    func clearTranslationPath() {
+        self._canvas.pathTranslationCurrentPoint = nil
+        self._canvas.pathTranslationStartPoint = nil
+    }
+    
+    func updateCurrentPathTranslation(point: CGPoint) {
+        self._canvas.pathTranslationCurrentPoint = point
+    }
+    
+    func updateStartPathTranslation(point: CGPoint) {
+        self._canvas.pathTranslationStartPoint = point
+    }
 }
