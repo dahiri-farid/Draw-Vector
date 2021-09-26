@@ -29,7 +29,7 @@
                             <rect key="frame" x="0.0" y="866" width="414" height="30"/>
                             <state key="normal" title="Canvas"/>
                             <connections>
-                                <action selector="canvasOptionsActionWithSender:" destination="iN0-l3-epB" eventType="touchDragInside" id="QKH-yV-ASF"/>
+                                <action selector="canvasOptionsActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ur7-uZ-itL"/>
                             </connections>
                         </button>
                     </subviews>
