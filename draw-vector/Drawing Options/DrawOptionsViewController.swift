@@ -9,8 +9,8 @@ import PureLayout
 import UIKit
 
 class DrawOptionsViewController : UIViewController, VectorColorPickerViewDelegate {
-    
-    var colorPickerView: VectorColorPickerView? = VectorColorPickerView.loadFromNib()
+    private var colorPickerView: VectorColorPickerView? = VectorColorPickerView.loadFromNib()
+    private var viewModel: DrawOptionsViewControllerModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +24,21 @@ class DrawOptionsViewController : UIViewController, VectorColorPickerViewDelegat
         self.colorPickerView = colorPickerView
     }
     
+    func configure(canvasController: CanvasController) {
+        guard let colorPickerView = self.colorPickerView else {
+            fatalError()
+        }
+        
+        let viewModel = DrawOptionsViewControllerModel(canvasController: canvasController)
+        self.viewModel = viewModel
+        colorPickerView.configure(backgroundColor: viewModel.canvas.backgroundColor)
+    }
+    
     // MARK: VectorColorPickerViewDelegate
     func vectorColorPickerViewDidUpdate(backgroundColor: UIColor) {
-        
+        guard let viewModel = self.viewModel else {
+            fatalError()
+        }
+        viewModel.updateBackgroundColor(color: backgroundColor)
     }
 }

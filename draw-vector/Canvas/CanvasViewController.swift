@@ -185,6 +185,10 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
         self.update()
     }
     
+    func didUpdateBackgroundColor() {
+        self.update()
+    }
+    
     // MARK: VectorDrawingOptionsPanelViewDelegate
     func drawingOptionsPanelViewCanvasSelected(view: DrawingOptionsPanelView) {
         guard let navigationController = self.navigationController else {
@@ -192,6 +196,7 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
         }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DrawOptionsViewController") as! DrawOptionsViewController
+        vc.configure(canvasController: self.viewModel!.canvasController)
         navigationController.present(vc, animated: true, completion: nil)
     }
     
@@ -201,6 +206,7 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
         }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DrawOptionsViewController") as! DrawOptionsViewController
+        vc.configure(canvasController: self.viewModel!.canvasController)
         navigationController.present(vc, animated: true, completion: nil)
     }
 }

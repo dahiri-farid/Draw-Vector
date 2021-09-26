@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ICanvas {
+    var backgroundColor: UIColor { get }
     var editMode: CanvasEditMode { get }
     var currentVectorPath: VectorPath? { get }
     var closedVectorPathCollection: [ClosedVectorPath] { get }

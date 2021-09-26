@@ -40,18 +40,27 @@ class CanvasView : UIView {
     
     // MARK: public
     func update() {
-        if self.dataSource!.canvas.editMode == .draw {
+        guard let dataSource = self.dataSource else {
+            fatalError()
+        }
+        if dataSource.canvas.editMode == .draw {
             if self.selectedClosedPathView != nil {
                 self.removeSelectedVectorPathView()
-                self.setNeedsDisplay()
             }
         }
+        self.setNeedsDisplay()
     }
     
     // MARK: private
     func drawSelectedVectorPathIfNeeded() {
-        if let pathSelectionPoint = self.dataSource!.canvas.pathSelectionPoint, self.delegate!.selectClosedVectorPath(atPoint: pathSelectionPoint) {
-            if let selectedVectorPath = self.dataSource!.canvas.selectedVectorPath {
+        guard let dataSource = self.dataSource else {
+            fatalError()
+        }
+        guard let delegate = self.delegate else {
+            fatalError()
+        }
+        if let pathSelectionPoint = dataSource.canvas.pathSelectionPoint, delegate.selectClosedVectorPath(atPoint: pathSelectionPoint) {
+            if let selectedVectorPath = dataSource.canvas.selectedVectorPath {
                 let pathView = ClosedPathSelectionView(closedPath: selectedVectorPath)
                 self.addSubview(pathView)
                 self.selectedClosedPathView = pathView
@@ -60,7 +69,10 @@ class CanvasView : UIView {
     }
     
     func drawClosedVectorPathCollection() {
-        for closedVectorPath in self.dataSource!.canvas.closedVectorPathCollection {
+        guard let dataSource = self.dataSource else {
+            fatalError()
+        }
+        for closedVectorPath in dataSource.canvas.closedVectorPathCollection {
             let bezierPath = closedVectorPath.bezierPath
             closedVectorPath.strokeColor.setFill()
             closedVectorPath.fillColor.setFill()
@@ -71,7 +83,10 @@ class CanvasView : UIView {
     }
     
     func drawCurrentVectorPath() {
-        if let currentVectorPath = self.dataSource!.canvas.currentVectorPath {
+        guard let dataSource = self.dataSource else {
+            fatalError()
+        }
+        if let currentVectorPath = dataSource.canvas.currentVectorPath {
             guard let bezierPath = currentVectorPath.bezierPath else {
                 fatalError()
             }
@@ -84,15 +99,18 @@ class CanvasView : UIView {
     }
     
     func updateSelectedVectorPathViewFrame() {
+        guard let dataSource = self.dataSource else {
+            fatalError()
+        }
         if let selectedClosedPathView = self.selectedClosedPathView,
-           let pathTranslationCurrentPoint = self.dataSource!.canvas.pathTranslationCurrentPoint,
-            let pathTranslationStartPoint = self.dataSource!.canvas.pathTranslationStartPoint {
+           let pathTranslationCurrentPoint = dataSource.canvas.pathTranslationCurrentPoint,
+            let pathTranslationStartPoint = dataSource.canvas.pathTranslationStartPoint {
             let translationPoint = CGPoint(x: pathTranslationCurrentPoint.x - pathTranslationStartPoint.x,
                                            y: pathTranslationCurrentPoint.y - pathTranslationStartPoint.y)
             let selectedClosedPathViewInitialOrigin = selectedClosedPathView.initialFrame.origin
             let selectedClosedPathViewInitialSize = selectedClosedPathView.initialFrame.size
             var selectedClosedPathViewFrame = selectedClosedPathView.frame
-            switch self.dataSource!.canvas.closedPathViewSelectedResizeAnchorType {
+            switch dataSource.canvas.closedPathViewSelectedResizeAnchorType {
             case .none:
                 selectedClosedPathViewFrame = CGRect(x: selectedClosedPathViewInitialOrigin.x +
                                                       translationPoint.x,
@@ -125,26 +143,32 @@ class CanvasView : UIView {
     }
     
     func removeSelectedVectorPathView() {
+        guard let delegate = self.delegate else {
+            fatalError()
+        }
         guard let selectedClosedPathView = self.selectedClosedPathView else {
             fatalError()
         }
         selectedClosedPathView.removeFromSuperview()
         self.selectedClosedPathView = nil
-        self.delegate!.removeSelectedVectorPath()
+        delegate.removeSelectedVectorPath()
     }
     
     // MARK: draw
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         guard let context = UIGraphicsGetCurrentContext() else {
-            return
+            fatalError()
         }
-        
+        guard let dataSource = dataSource else {
+            fatalError()
+        }
+        let backgroundColor = dataSource.canvas.backgroundColor
         // TODO: canvas.backgroundColor
-        context.setFillColor(UIColor.yellow.cgColor)
+        context.setFillColor(backgroundColor.cgColor)
         context.fill(bounds)
         
-        switch self.dataSource!.canvas.editMode {
+        switch dataSource.canvas.editMode {
         case .draw:
             self.drawCurrentVectorPath()
         default: break
@@ -162,26 +186,32 @@ class CanvasView : UIView {
         guard let allTouches = event.allTouches else {
             return
         }
+        guard let dataSource = self.dataSource else {
+            fatalError()
+        }
+        guard let delegate = self.delegate else {
+            fatalError()
+        }
         if allTouches.count == 1 {
             let touch = touches.first!
             let location = touch.location(in: self)
-            switch self.dataSource!.canvas.editMode {
+            switch dataSource.canvas.editMode {
             case .draw:
-                self.delegate?.updateCurrentVectorPath(point: location)
+                delegate.updateCurrentVectorPath(point: location)
             case .select:
                 if let selectedClosedPathView = self.selectedClosedPathView {
                     let selectedClosedPathViewLocation = touch.location(in: selectedClosedPathView)
                     let anchorType = selectedClosedPathView.resizeAnchorType(location: selectedClosedPathViewLocation)
-                    self.delegate?.updateClosedPathViewSelectedResizeAnchorType(anchorType: anchorType)
-                    if selectedClosedPathView.frame.contains(location) == false, self.dataSource!.canvas.closedPathViewSelectedResizeAnchorType == .none {
+                    delegate.updateClosedPathViewSelectedResizeAnchorType(anchorType: anchorType)
+                    if selectedClosedPathView.frame.contains(location) == false, dataSource.canvas.closedPathViewSelectedResizeAnchorType == .none {
                         self.removeSelectedVectorPathView()
-                        self.delegate?.updatePathSelection(point: location)
+                        delegate.updatePathSelection(point: location)
                     }
                 } else {
-                    self.delegate?.updatePathSelection(point: location)
+                    delegate.updatePathSelection(point: location)
                 }
-                self.delegate?.updateStartPathTranslation(point: location)
-                self.delegate?.updateCurrentPathTranslation(point: location)
+                delegate.updateStartPathTranslation(point: location)
+                delegate.updateCurrentPathTranslation(point: location)
             }
             
             self.setNeedsDisplay()
@@ -195,14 +225,20 @@ class CanvasView : UIView {
         guard let allTouches = event.allTouches else {
             return
         }
+        guard let dataSource = self.dataSource else {
+            fatalError()
+        }
+        guard let delegate = self.delegate else {
+            fatalError()
+        }
         if allTouches.count == 1 {
             let touch = touches.first!
             let location = touch.location(in: self)
-            switch self.dataSource!.canvas.editMode {
+            switch dataSource.canvas.editMode {
             case .draw:
-                self.delegate?.updateCurrentVectorPath(point: location)
+                delegate.updateCurrentVectorPath(point: location)
             case .select:
-                self.delegate?.updateCurrentPathTranslation(point: location)
+                delegate.updateCurrentPathTranslation(point: location)
                 self.updateSelectedVectorPathViewFrame()
                 break
             }
@@ -218,15 +254,21 @@ class CanvasView : UIView {
         guard let allTouches = event.allTouches else {
             return
         }
+        guard let dataSource = self.dataSource else {
+            fatalError()
+        }
+        guard let delegate = self.delegate else {
+            fatalError()
+        }
         if allTouches.count == 1 {
-            switch self.dataSource!.canvas.editMode {
+            switch dataSource.canvas.editMode {
             case .draw:
-                self.delegate?.closeCurrentVectorPath()
+                delegate.closeCurrentVectorPath()
             case .select:
-                self.delegate?.clearTranslationPath()
+                delegate.clearTranslationPath()
                 
                 // TODO: inside method
-                if let selectedVectorPath = self.dataSource?.canvas.selectedVectorPath {
+                if let selectedVectorPath = dataSource.canvas.selectedVectorPath {
                     guard let selectedClosedPathView = self.selectedClosedPathView else {
                         fatalError()
                     }

@@ -37,17 +37,15 @@ class VectorColorPickerView: UIView {
     }
     
     @objc func handleColorChanged(picker: ColorPicker) {
-        guard let pathBackgroundColor = pathBackgroundColor else {
-            fatalError()
-        }
         guard let delegate = self.delegate else {
             fatalError()
         }
+        self.pathBackgroundColor = picker.color
 
-        delegate.vectorColorPickerViewDidUpdate(backgroundColor: pathBackgroundColor)
+        delegate.vectorColorPickerViewDidUpdate(backgroundColor: picker.color)
     }
     
-    func configure(backgroundColor: UIColor, lineColor: UIColor?) {
+    func configure(backgroundColor: UIColor) {
         self.pathBackgroundInitialColor = backgroundColor
         self.pathBackgroundColor = self.pathBackgroundInitialColor
         self.colorPickerView.set(color: backgroundColor, colorSpace: .sRGB)

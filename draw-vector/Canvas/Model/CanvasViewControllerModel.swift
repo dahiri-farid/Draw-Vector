@@ -9,9 +9,10 @@ import Foundation
 
 protocol CanvasViewControllerModelDelegate: NSObject {
     func didUpdateSelectedVectorPath()
+    func didUpdateBackgroundColor()
 }
 
-class CanvasViewControllerModel {
+class CanvasViewControllerModel: NSObject, CanvasControllerDelegate {
     var canvas: ICanvas {
         get {
             return self.canvasController.canvas
@@ -19,10 +20,12 @@ class CanvasViewControllerModel {
     }
     weak var delegate: CanvasViewControllerModelDelegate?
     
-    private let canvasController: CanvasController
+    let canvasController: CanvasController
     
     init(canvasController: CanvasController) {
         self.canvasController = canvasController
+        super.init()
+        self.canvasController.delegate = self
     }
     
     func reset() {
@@ -63,7 +66,7 @@ class CanvasViewControllerModel {
     
     func selectClosedVectorPath(atPoint: CGPoint) -> Bool {
         guard let delegate = delegate else {
-         fatalError()
+            fatalError()
         }
         
         let didSelectVectorPath = self.canvasController.selectClosedVectorPath(atPoint: atPoint)
@@ -73,5 +76,13 @@ class CanvasViewControllerModel {
     
     func updateMode(mode: CanvasEditMode) {
         self.canvasController.updateMode(editMode: mode)
+    }
+    
+    // MARK: CanvasControllerDelegate
+    func canvasDidUpdateBackgroundColor() {
+        guard let delegate = self.delegate else {
+            fatalError()
+        }
+        delegate.didUpdateBackgroundColor()
     }
 }

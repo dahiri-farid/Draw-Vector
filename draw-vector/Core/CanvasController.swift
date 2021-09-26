@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 protocol CanvasControllerDelegate: NSObject {
-    func canvasDidUpdateEditMode(editMode: CanvasEditMode)
+    func canvasDidUpdateBackgroundColor()
 }
 
 class CanvasController {
@@ -98,5 +99,13 @@ class CanvasController {
     
     func updateMode(editMode: CanvasEditMode) {
         self._canvas.editMode = editMode
+    }
+    
+    func updateBackgroundColor(color: UIColor) {
+        self._canvas.backgroundColor = color
+        guard let delegate = self.delegate else {
+            fatalError()
+        }
+        delegate.canvasDidUpdateBackgroundColor()
     }
 }
