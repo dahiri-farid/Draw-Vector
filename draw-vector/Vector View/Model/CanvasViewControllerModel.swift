@@ -8,6 +8,11 @@
 import Foundation
 
 class CanvasViewControllerModel {
+    var canvas: ICanvas {
+        get {
+            return self.canvasController.canvas
+        }
+    }
     var viewMode: CanvasEditMode = .draw
     private let canvasController: CanvasController
     

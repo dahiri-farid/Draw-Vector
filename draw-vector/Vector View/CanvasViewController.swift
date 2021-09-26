@@ -15,7 +15,7 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
     var viewModel: CanvasViewControllerModel?
     var canvas: ICanvas {
         get {
-            return self.viewModel!.canvasController.canvas
+            return self.viewModel!.canvas
         }
     }
 
