@@ -37,9 +37,7 @@ class DrawingOptionsPanelView : UIView {
             drawOptionsButton.isEnabled = false
             canvasOptionsButton.isEnabled = true
         case .select:
-            if canvas.selectedVectorPath != nil {
-                drawOptionsButton.isEnabled = true
-            }
+            drawOptionsButton.isEnabled = canvas.selectedVectorPath != nil
             canvasOptionsButton.isEnabled = true
         }
     }

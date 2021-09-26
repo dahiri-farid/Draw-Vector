@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, CanvasViewDataSource, CanvasViewDelegate, DrawingOptionsPanelViewDelegate {
+class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, CanvasViewDataSource, CanvasViewDelegate, CanvasViewControllerModelDelegate, DrawingOptionsPanelViewDelegate {
     let panelView: CanvasEditModePanelView? = CanvasEditModePanelView.loadFromNib()
     let drawOptionsPanelView: DrawingOptionsPanelView? = DrawingOptionsPanelView.loadFromNib()
     let vectorView = CanvasView()
@@ -42,7 +42,9 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
     
     // MARK: Public
     func configure(canvasController: CanvasController) {
-        self.viewModel = CanvasViewControllerModel(canvasController: canvasController)
+        let viewModel = CanvasViewControllerModel(canvasController: canvasController)
+        viewModel.delegate = self
+        self.viewModel = viewModel
         self.update()
     }
     
@@ -176,6 +178,11 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
             fatalError()
         }
         return viewModel.selectClosedVectorPath(atPoint: atPoint)
+    }
+    
+    // MARK: CanvasViewControllerModelDelegate
+    func didUpdateSelectedVectorPath() {
+        self.update()
     }
     
     // MARK: VectorDrawingOptionsPanelViewDelegate

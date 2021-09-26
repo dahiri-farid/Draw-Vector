@@ -7,12 +7,17 @@
 
 import Foundation
 
+protocol CanvasViewControllerModelDelegate: NSObject {
+    func didUpdateSelectedVectorPath()
+}
+
 class CanvasViewControllerModel {
     var canvas: ICanvas {
         get {
             return self.canvasController.canvas
         }
     }
+    weak var delegate: CanvasViewControllerModelDelegate?
     
     private let canvasController: CanvasController
     
@@ -57,7 +62,13 @@ class CanvasViewControllerModel {
     }
     
     func selectClosedVectorPath(atPoint: CGPoint) -> Bool {
-        return self.canvasController.selectClosedVectorPath(atPoint: atPoint)
+        guard let delegate = delegate else {
+         fatalError()
+        }
+        
+        let didSelectVectorPath = self.canvasController.selectClosedVectorPath(atPoint: atPoint)
+        delegate.didUpdateSelectedVectorPath()
+        return didSelectVectorPath
     }
     
     func updateMode(mode: CanvasEditMode) {
