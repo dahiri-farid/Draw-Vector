@@ -41,7 +41,7 @@ class CanvasView : UIView {
     var pathSelectionPoint : CGPoint?
     
     // MARK: private
-    func drawClosedVectorPathCollection() {
+    func drawSelectedVectorPathIfNeeded() {
         let closedVectorPathCollection = self.closedVectorPathCollection
         for closedVectorPath in closedVectorPathCollection {
             if let pathSelectionPoint = self.pathSelectionPoint, closedVectorPath.bezierPath.contains(pathSelectionPoint) {
@@ -54,7 +54,9 @@ class CanvasView : UIView {
                 break
             }
         }
-        
+    }
+    
+    func drawClosedVectorPathCollection() {
         for closedVectorPath in closedVectorPathCollection {
             let bezierPath = closedVectorPath.bezierPath
             closedVectorPath.strokeColor.setFill()
@@ -165,6 +167,7 @@ class CanvasView : UIView {
             self.updateSelectedVectorPathLayout()
         }
         
+        self.drawSelectedVectorPathIfNeeded()
         self.drawClosedVectorPathCollection()
     }
     
