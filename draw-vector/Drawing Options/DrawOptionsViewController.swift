@@ -8,8 +8,8 @@
 import PureLayout
 import UIKit
 
-class DrawOptionsViewController : UIViewController, VectorColorPickerViewDelegate {
-    private var colorPickerView: VectorColorPickerView? = VectorColorPickerView.loadFromNib()
+class DrawOptionsViewController : UIViewController, ColorPickerViewDelegate {
+    private var colorPickerView: ColorPickerView? = ColorPickerView.loadFromNib()
     private var viewModel: DrawOptionsViewControllerModel?
     
     override func viewDidLoad() {
@@ -35,7 +35,7 @@ class DrawOptionsViewController : UIViewController, VectorColorPickerViewDelegat
     }
     
     // MARK: VectorColorPickerViewDelegate
-    func vectorColorPickerViewDidUpdate(backgroundColor: UIColor) {
+    func colorPickerViewDidUpdate(backgroundColor: UIColor) {
         guard let viewModel = self.viewModel else {
             fatalError()
         }

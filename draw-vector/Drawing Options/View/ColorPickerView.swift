@@ -1,5 +1,5 @@
 //
-//  VectorColorPickerView.swift
+//  ColorPickerView.swift
 //  draw-vector
 //
 //  Created by Farid Dahiri on 24.09.2021.
@@ -9,19 +9,19 @@ import UIKit
 import Colorful
 import PureLayout
 
-protocol VectorColorPickerViewDelegate: NSObject {
+protocol ColorPickerViewDelegate: NSObject {
     
-    func vectorColorPickerViewDidUpdate(backgroundColor: UIColor);
+    func colorPickerViewDidUpdate(backgroundColor: UIColor);
 }
 
-class VectorColorPickerView: UIView {
+class ColorPickerView: UIView {
     @IBOutlet var colorPickerContainerView: UIView?
     let colorPickerView = ColorPicker()
     
     var pathBackgroundInitialColor: UIColor?
     var pathBackgroundColor: UIColor?
     
-    weak var delegate: VectorColorPickerViewDelegate?
+    weak var delegate: ColorPickerViewDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,7 +42,7 @@ class VectorColorPickerView: UIView {
         }
         self.pathBackgroundColor = picker.color
 
-        delegate.vectorColorPickerViewDidUpdate(backgroundColor: picker.color)
+        delegate.colorPickerViewDidUpdate(backgroundColor: picker.color)
     }
     
     func configure(backgroundColor: UIColor) {

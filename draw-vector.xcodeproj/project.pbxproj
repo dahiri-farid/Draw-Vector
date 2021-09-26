@@ -18,8 +18,8 @@
 		4119123E26F7C538009509D3 /* DrawingOptionsPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4119123D26F7C538009509D3 /* DrawingOptionsPanelView.xib */; };
 		4119124226F7E535009509D3 /* ClosedVectorPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119124126F7E535009509D3 /* ClosedVectorPath.swift */; };
 		413146EB26FA5E3900E25B7D /* ClosedPathSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413146EA26FA5E3900E25B7D /* ClosedPathSelectionView.swift */; };
-		4178542726FE3B0800A0874D /* VectorColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178542626FE3B0800A0874D /* VectorColorPickerView.swift */; };
-		4178542926FE3B1300A0874D /* VectorColorPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4178542826FE3B1300A0874D /* VectorColorPickerView.xib */; };
+		4178542726FE3B0800A0874D /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178542626FE3B0800A0874D /* ColorPickerView.swift */; };
+		4178542926FE3B1300A0874D /* ColorPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4178542826FE3B1300A0874D /* ColorPickerView.xib */; };
 		4178543326FE514600A0874D /* DrawOptionsViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178543226FE514600A0874D /* DrawOptionsViewControllerModel.swift */; };
 		4178543626FE5F5100A0874D /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178543526FE5F5100A0874D /* Canvas.swift */; };
 		4178543826FE5F5F00A0874D /* CanvasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178543726FE5F5F00A0874D /* CanvasController.swift */; };
@@ -65,8 +65,8 @@
 		4119123D26F7C538009509D3 /* DrawingOptionsPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawingOptionsPanelView.xib; sourceTree = "<group>"; };
 		4119124126F7E535009509D3 /* ClosedVectorPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedVectorPath.swift; sourceTree = "<group>"; };
 		413146EA26FA5E3900E25B7D /* ClosedPathSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedPathSelectionView.swift; sourceTree = "<group>"; };
-		4178542626FE3B0800A0874D /* VectorColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorColorPickerView.swift; sourceTree = "<group>"; };
-		4178542826FE3B1300A0874D /* VectorColorPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VectorColorPickerView.xib; sourceTree = "<group>"; };
+		4178542626FE3B0800A0874D /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
+		4178542826FE3B1300A0874D /* ColorPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorPickerView.xib; sourceTree = "<group>"; };
 		4178543226FE514600A0874D /* DrawOptionsViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawOptionsViewControllerModel.swift; sourceTree = "<group>"; };
 		4178543526FE5F5100A0874D /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		4178543726FE5F5F00A0874D /* CanvasController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasController.swift; sourceTree = "<group>"; };
@@ -162,8 +162,8 @@
 		4178543026FE4F3000A0874D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4178542626FE3B0800A0874D /* VectorColorPickerView.swift */,
-				4178542826FE3B1300A0874D /* VectorColorPickerView.xib */,
+				4178542626FE3B0800A0874D /* ColorPickerView.swift */,
+				4178542826FE3B1300A0874D /* ColorPickerView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -309,7 +309,7 @@
 				4197F92E26F527AE0075C0BC /* LaunchScreen.storyboard in Resources */,
 				4119123E26F7C538009509D3 /* DrawingOptionsPanelView.xib in Resources */,
 				4197F92B26F527AE0075C0BC /* Assets.xcassets in Resources */,
-				4178542926FE3B1300A0874D /* VectorColorPickerView.xib in Resources */,
+				4178542926FE3B1300A0874D /* ColorPickerView.xib in Resources */,
 				4119123026F79FC6009509D3 /* CanvasEditModePanelView.xib in Resources */,
 				4197F92926F527AD0075C0BC /* Main.storyboard in Resources */,
 			);
@@ -370,7 +370,7 @@
 				4178543A26FF39E400A0874D /* ICanvas.swift in Sources */,
 				4119123826F7C1A7009509D3 /* DrawOptionsViewController.swift in Sources */,
 				4119124226F7E535009509D3 /* ClosedVectorPath.swift in Sources */,
-				4178542726FE3B0800A0874D /* VectorColorPickerView.swift in Sources */,
+				4178542726FE3B0800A0874D /* ColorPickerView.swift in Sources */,
 				4197F92626F527AD0075C0BC /* CanvasViewController.swift in Sources */,
 				4119122E26F79FAD009509D3 /* CanvasEditModePanelView.swift in Sources */,
 				41929E9F26F68CE10090F96F /* DVSVGConverter.m in Sources */,
