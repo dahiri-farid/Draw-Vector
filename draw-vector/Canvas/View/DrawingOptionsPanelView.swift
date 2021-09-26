@@ -15,9 +15,34 @@ protocol DrawingOptionsPanelViewDelegate : NSObject {
 
 class DrawingOptionsPanelView : UIView {
     weak var delegate: DrawingOptionsPanelViewDelegate?
+    var canvas: ICanvas?
     
     @IBOutlet var drawOptionsButton: UIButton?
     @IBOutlet var canvasOptionsButton: UIButton?
+    
+    // MARK: public
+    func update() {
+        guard let canvas = self.canvas else {
+            fatalError()
+        }
+        guard let drawOptionsButton = self.drawOptionsButton else {
+            fatalError()
+        }
+        guard let canvasOptionsButton = self.canvasOptionsButton else {
+            fatalError()
+        }
+
+        switch canvas.editMode {
+        case .draw:
+            drawOptionsButton.isEnabled = false
+            canvasOptionsButton.isEnabled = true
+        case .select:
+            if canvas.selectedVectorPath != nil {
+                drawOptionsButton.isEnabled = true
+            }
+            canvasOptionsButton.isEnabled = true
+        }
+    }
     
     @IBAction func drawOptionsAction(sender: Any) {
         guard let delegate = self.delegate else {
