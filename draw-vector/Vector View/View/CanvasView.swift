@@ -23,7 +23,7 @@ class CanvasView : UIView {
             if editMode == .draw {
                 if self.selectedClosedPathView != nil {
                     self.pathSelectionPoint = nil
-                    self.removeSelectedVectorPath()
+                    self.removeSelectedVectorPathView()
                     self.setNeedsDisplay()
                 }
             }
@@ -42,16 +42,11 @@ class CanvasView : UIView {
     
     // MARK: private
     func drawSelectedVectorPathIfNeeded() {
-        let closedVectorPathCollection = self.closedVectorPathCollection
-        for closedVectorPath in closedVectorPathCollection {
-            if let pathSelectionPoint = self.pathSelectionPoint, closedVectorPath.bezierPath.contains(pathSelectionPoint) {
-                self.selectedVectorPath = closedVectorPath
-                self.pathSelectionPoint = nil
-                let pathView = ClosedPathSelectionView(closedPath: closedVectorPath)
+        if let pathSelectionPoint = self.pathSelectionPoint, self.selectClosedVectorPath(atPoint: pathSelectionPoint) {
+            if let selectedVectorPath = self.selectedVectorPath {
+                let pathView = ClosedPathSelectionView(closedPath: selectedVectorPath)
                 self.addSubview(pathView)
                 self.selectedClosedPathView = pathView
-                self.closedVectorPathCollection = self.closedVectorPathCollection.filter { return $0 !== self.selectedVectorPath}
-                break
             }
         }
     }
@@ -91,6 +86,19 @@ class CanvasView : UIView {
         self.closedPathViewSelectedResizeAnchorType = ClosedPathSelectionViewAnchorType.none
         self.pathTranslationStartPoint = nil
         self.pathTranslationCurrentPoint = nil
+    }
+    
+    func selectClosedVectorPath(atPoint: CGPoint) -> Bool {
+        for closedVectorPath in self.closedVectorPathCollection {
+            let bezierPath = closedVectorPath.bezierPath
+            if let pathSelectionPoint = self.pathSelectionPoint, bezierPath.contains(pathSelectionPoint) {
+                self.selectedVectorPath = closedVectorPath
+                self.pathSelectionPoint = nil
+                self.closedVectorPathCollection = self.closedVectorPathCollection.filter { return $0 !== self.selectedVectorPath}
+            }
+        }
+        
+        return self.selectedVectorPath != nil
     }
     
     func updateSelectedVectorPathLayout() {
@@ -135,19 +143,27 @@ class CanvasView : UIView {
     }
     
     func removeSelectedVectorPath() {
-        guard let selectedClosedPathView = self.selectedClosedPathView else {
+        guard let selectedVectorPath = self.selectedVectorPath else {
             fatalError()
         }
+
+        self.selectedClosedPathView = nil
+        // TODO: should be inserted at its previous index
+        self.closedVectorPathCollection.append(selectedVectorPath)
+        self.selectedVectorPath = nil
+    }
+    
+    func removeSelectedVectorPathView() {
         guard let selectedVectorPath = self.selectedVectorPath else {
+            fatalError()
+        }
+        guard let selectedClosedPathView = self.selectedClosedPathView else {
             fatalError()
         }
         let translationPoint = CGPoint(x: selectedClosedPathView.frame.origin.x - selectedVectorPath.bezierPath.bounds.origin.x, y: selectedClosedPathView.frame.origin.y - selectedVectorPath.bezierPath.bounds.origin.y)
         selectedVectorPath.bezierPath.apply(CGAffineTransform(translationX: translationPoint.x, y: translationPoint.y))
         selectedClosedPathView.removeFromSuperview()
-        self.selectedClosedPathView = nil
-        // TODO: should be inserted at its previous index
-        self.closedVectorPathCollection.append(selectedVectorPath)
-        self.selectedVectorPath = nil
+        self.removeSelectedVectorPath()
     }
     
     // MARK: draw
@@ -192,7 +208,7 @@ class CanvasView : UIView {
                     let selectedClosedPathViewLocation = touch.location(in: selectedClosedPathView)
                     self.closedPathViewSelectedResizeAnchorType = selectedClosedPathView.resizeAnchorType(location: selectedClosedPathViewLocation)
                     if selectedClosedPathView.frame.contains(location) == false, self.closedPathViewSelectedResizeAnchorType == .none {
-                        self.removeSelectedVectorPath()
+                        self.removeSelectedVectorPathView()
                         self.pathSelectionPoint = location
                     }
                 } else {
