@@ -49,6 +49,7 @@ class CanvasView : UIView {
             }
         }
         self.setNeedsDisplay()
+        self.selectedClosedPathView?.setNeedsLayout()
     }
     
     // MARK: private
@@ -74,8 +75,8 @@ class CanvasView : UIView {
         }
         for closedVectorPath in dataSource.canvas.closedVectorPathCollection {
             let bezierPath = closedVectorPath.bezierPath
-            closedVectorPath.strokeColor.setFill()
             closedVectorPath.fillColor.setFill()
+            closedVectorPath.fillColor.setStroke()
             bezierPath.lineWidth = closedVectorPath.strokeWidth
             bezierPath.stroke()
             bezierPath.fill()
@@ -91,7 +92,7 @@ class CanvasView : UIView {
                 fatalError()
             }
             currentVectorPath.fillColor.setFill()
-            currentVectorPath.strokeColor.setStroke()
+            currentVectorPath.fillColor.setStroke()
             bezierPath.lineWidth = currentVectorPath.strokeWidth
             bezierPath.fill()
             bezierPath.stroke()
@@ -164,7 +165,6 @@ class CanvasView : UIView {
             fatalError()
         }
         let backgroundColor = dataSource.canvas.backgroundColor
-        // TODO: canvas.backgroundColor
         context.setFillColor(backgroundColor.cgColor)
         context.fill(bounds)
         
