@@ -7,9 +7,9 @@
 
 import UIKit
 
-class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, CanvasViewDataSource, CanvasViewDelegate, VectorDrawingOptionsPanelViewDelegate {
+class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, CanvasViewDataSource, CanvasViewDelegate, DrawingOptionsPanelViewDelegate {
     let panelView: CanvasEditModePanelView? = CanvasEditModePanelView.loadFromNib()
-    let drawOptionsPanelView: VectorDrawingOptionsPanelView? = VectorDrawingOptionsPanelView.loadFromNib()
+    let drawOptionsPanelView: DrawingOptionsPanelView? = DrawingOptionsPanelView.loadFromNib()
     let vectorView = CanvasView()
     
     var viewModel: CanvasViewControllerModel?
@@ -168,11 +168,11 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
     }
     
     // MARK: VectorDrawingOptionsPanelViewDelegate
-    func vectorDrawingOptionsPanelViewCanvasSelected(view: VectorDrawingOptionsPanelView) {
+    func drawingOptionsPanelViewCanvasSelected(view: DrawingOptionsPanelView) {
         
     }
     
-    func vectorDrawingOptionsPanelViewOptionsSelected(view: VectorDrawingOptionsPanelView) {
+    func drawingOptionsPanelViewOptionsSelected(view: DrawingOptionsPanelView) {
     }
 }
 

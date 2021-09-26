@@ -14,8 +14,8 @@
 		4119123626F7AAB2009509D3 /* CanvasViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119123526F7AAB2009509D3 /* CanvasViewControllerModel.swift */; };
 		4119123826F7C1A7009509D3 /* DrawOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119123726F7C1A7009509D3 /* DrawOptionsViewController.swift */; };
 		4119123A26F7C4C1009509D3 /* CanvasEditMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119123926F7C4C1009509D3 /* CanvasEditMode.swift */; };
-		4119123C26F7C522009509D3 /* VectorDrawingOptionsPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119123B26F7C522009509D3 /* VectorDrawingOptionsPanelView.swift */; };
-		4119123E26F7C538009509D3 /* VectorDrawingOptionsPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4119123D26F7C538009509D3 /* VectorDrawingOptionsPanelView.xib */; };
+		4119123C26F7C522009509D3 /* DrawingOptionsPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119123B26F7C522009509D3 /* DrawingOptionsPanelView.swift */; };
+		4119123E26F7C538009509D3 /* DrawingOptionsPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4119123D26F7C538009509D3 /* DrawingOptionsPanelView.xib */; };
 		4119124226F7E535009509D3 /* ClosedVectorPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4119124126F7E535009509D3 /* ClosedVectorPath.swift */; };
 		413146EB26FA5E3900E25B7D /* ClosedPathSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413146EA26FA5E3900E25B7D /* ClosedPathSelectionView.swift */; };
 		4178542726FE3B0800A0874D /* VectorColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178542626FE3B0800A0874D /* VectorColorPickerView.swift */; };
@@ -61,8 +61,8 @@
 		4119123526F7AAB2009509D3 /* CanvasViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewControllerModel.swift; sourceTree = "<group>"; };
 		4119123726F7C1A7009509D3 /* DrawOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawOptionsViewController.swift; sourceTree = "<group>"; };
 		4119123926F7C4C1009509D3 /* CanvasEditMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasEditMode.swift; sourceTree = "<group>"; };
-		4119123B26F7C522009509D3 /* VectorDrawingOptionsPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorDrawingOptionsPanelView.swift; sourceTree = "<group>"; };
-		4119123D26F7C538009509D3 /* VectorDrawingOptionsPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VectorDrawingOptionsPanelView.xib; sourceTree = "<group>"; };
+		4119123B26F7C522009509D3 /* DrawingOptionsPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingOptionsPanelView.swift; sourceTree = "<group>"; };
+		4119123D26F7C538009509D3 /* DrawingOptionsPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawingOptionsPanelView.xib; sourceTree = "<group>"; };
 		4119124126F7E535009509D3 /* ClosedVectorPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedVectorPath.swift; sourceTree = "<group>"; };
 		413146EA26FA5E3900E25B7D /* ClosedPathSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedPathSelectionView.swift; sourceTree = "<group>"; };
 		4178542626FE3B0800A0874D /* VectorColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorColorPickerView.swift; sourceTree = "<group>"; };
@@ -132,8 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				413146EA26FA5E3900E25B7D /* ClosedPathSelectionView.swift */,
-				4119123B26F7C522009509D3 /* VectorDrawingOptionsPanelView.swift */,
-				4119123D26F7C538009509D3 /* VectorDrawingOptionsPanelView.xib */,
+				4119123B26F7C522009509D3 /* DrawingOptionsPanelView.swift */,
+				4119123D26F7C538009509D3 /* DrawingOptionsPanelView.xib */,
 				4119122D26F79FAD009509D3 /* CanvasEditModePanelView.swift */,
 				4119122F26F79FC6009509D3 /* CanvasEditModePanelView.xib */,
 				4197F93526F527D10075C0BC /* CanvasView.swift */,
@@ -307,7 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4197F92E26F527AE0075C0BC /* LaunchScreen.storyboard in Resources */,
-				4119123E26F7C538009509D3 /* VectorDrawingOptionsPanelView.xib in Resources */,
+				4119123E26F7C538009509D3 /* DrawingOptionsPanelView.xib in Resources */,
 				4197F92B26F527AE0075C0BC /* Assets.xcassets in Resources */,
 				4178542926FE3B1300A0874D /* VectorColorPickerView.xib in Resources */,
 				4119123026F79FC6009509D3 /* CanvasEditModePanelView.xib in Resources */,
@@ -364,7 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4119123C26F7C522009509D3 /* VectorDrawingOptionsPanelView.swift in Sources */,
+				4119123C26F7C522009509D3 /* DrawingOptionsPanelView.swift in Sources */,
 				4178543626FE5F5100A0874D /* Canvas.swift in Sources */,
 				4119123426F7A84C009509D3 /* Nib+View.swift in Sources */,
 				4178543A26FF39E400A0874D /* ICanvas.swift in Sources */,
