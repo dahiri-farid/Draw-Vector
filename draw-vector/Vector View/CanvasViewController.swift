@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, CanvasViewDelegate, VectorDrawingOptionsPanelViewDelegate {
+class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, CanvasViewDataSource, CanvasViewDelegate, VectorDrawingOptionsPanelViewDelegate {
     let panelView: CanvasEditModePanelView? = CanvasEditModePanelView.loadFromNib()
     let drawOptionsPanelView: VectorDrawingOptionsPanelView? = VectorDrawingOptionsPanelView.loadFromNib()
     let vectorView = CanvasView()
@@ -25,6 +25,7 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
 
         // TODO: move this outside soon
         self.configure(canvasController: CanvasController())
+        self.vectorView.dataSource = self
         self.vectorView.delegate = self
         self.view.addSubview(self.vectorView)
         self.setupPanelView()
@@ -97,43 +98,43 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
     
     // MARK: CanvasViewDelegate
     func reset() {
-        
-    }
-    
-    func updateSelectedVectorPathLayout() {
-        
+        self.viewModel?.reset()
     }
     
     func removeSelectedVectorPath() {
-        
+        self.viewModel?.removeSelectedVectorPath()
     }
     
     func updateCurrentVectorPath(point: CGPoint) {
-        
+        self.viewModel?.updateCurrentVectorPath(point: point)
     }
     
     func closeCurrentVectorPath() {
-        
+        self.viewModel?.closeCurrentVectorPath()
     }
     
     func updatePathSelection(point: CGPoint) {
-        
+        self.viewModel?.updatePathSelection(point: point)
     }
     
     func updateClosedPathViewSelectedResizeAnchorType(anchorType: ClosedPathSelectionViewAnchorType) {
-        
+        self.viewModel?.updateClosedPathViewSelectedResizeAnchorType(anchorType: anchorType)
     }
     
     func clearTranslationPath() {
-        
+        self.viewModel?.clearTranslationPath()
     }
     
     func updateCurrentPathTranslation(point: CGPoint) {
-        
+        self.viewModel?.updateCurrentPathTranslation(point: point)
     }
     
     func updateStartPathTranslation(point: CGPoint) {
-        
+        self.viewModel?.updateStartPathTranslation(point: point)
+    }
+    
+    func selectClosedVectorPath(atPoint: CGPoint) -> Bool {
+        return self.viewModel!.selectClosedVectorPath(atPoint: atPoint)
     }
     
     // MARK: VectorDrawingOptionsPanelViewDelegate
