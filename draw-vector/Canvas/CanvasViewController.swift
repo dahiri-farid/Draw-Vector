@@ -98,43 +98,73 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
     
     // MARK: CanvasViewDelegate
     func reset() {
-        self.viewModel?.reset()
+        guard let viewModel = self.viewModel else {
+            fatalError()
+        }
+        viewModel.reset()
     }
     
     func removeSelectedVectorPath() {
-        self.viewModel?.removeSelectedVectorPath()
+        guard let viewModel = self.viewModel else {
+            fatalError()
+        }
+        viewModel.removeSelectedVectorPath()
     }
     
     func updateCurrentVectorPath(point: CGPoint) {
-        self.viewModel?.updateCurrentVectorPath(point: point)
+        guard let viewModel = self.viewModel else {
+            fatalError()
+        }
+        viewModel.updateCurrentVectorPath(point: point)
     }
     
     func closeCurrentVectorPath() {
-        self.viewModel?.closeCurrentVectorPath()
+        guard let viewModel = self.viewModel else {
+            fatalError()
+        }
+        viewModel.closeCurrentVectorPath()
     }
     
     func updatePathSelection(point: CGPoint) {
-        self.viewModel?.updatePathSelection(point: point)
+        guard let viewModel = self.viewModel else {
+            fatalError()
+        }
+        viewModel.updatePathSelection(point: point)
     }
     
     func updateClosedPathViewSelectedResizeAnchorType(anchorType: ClosedPathSelectionViewAnchorType) {
-        self.viewModel?.updateClosedPathViewSelectedResizeAnchorType(anchorType: anchorType)
+        guard let viewModel = self.viewModel else {
+            fatalError()
+        }
+        viewModel.updateClosedPathViewSelectedResizeAnchorType(anchorType: anchorType)
     }
     
     func clearTranslationPath() {
-        self.viewModel?.clearTranslationPath()
+        guard let viewModel = self.viewModel else {
+            fatalError()
+        }
+        viewModel.clearTranslationPath()
     }
     
     func updateCurrentPathTranslation(point: CGPoint) {
-        self.viewModel?.updateCurrentPathTranslation(point: point)
+        guard let viewModel = self.viewModel else {
+            fatalError()
+        }
+        viewModel.updateCurrentPathTranslation(point: point)
     }
     
     func updateStartPathTranslation(point: CGPoint) {
-        self.viewModel?.updateStartPathTranslation(point: point)
+        guard let viewModel = self.viewModel else {
+            fatalError()
+        }
+        viewModel.updateStartPathTranslation(point: point)
     }
     
     func selectClosedVectorPath(atPoint: CGPoint) -> Bool {
-        return self.viewModel!.selectClosedVectorPath(atPoint: atPoint)
+        guard let viewModel = self.viewModel else {
+            fatalError()
+        }
+        return viewModel.selectClosedVectorPath(atPoint: atPoint)
     }
     
     // MARK: VectorDrawingOptionsPanelViewDelegate
