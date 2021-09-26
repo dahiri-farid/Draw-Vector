@@ -187,11 +187,15 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
     
     // MARK: VectorDrawingOptionsPanelViewDelegate
     func drawingOptionsPanelViewCanvasSelected(view: DrawingOptionsPanelView) {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DrawOptionsViewController") as! DrawOptionsViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func drawingOptionsPanelViewOptionsSelected(view: DrawingOptionsPanelView) {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DrawOptionsViewController") as! DrawOptionsViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
