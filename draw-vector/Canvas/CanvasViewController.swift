@@ -204,9 +204,6 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
     }
     
     func drawingOptionsPanelViewOptionsSelected(view: DrawingOptionsPanelView) {
-        guard let navigationController = self.navigationController else {
-            fatalError()
-        }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DrawOptionsViewController") as! DrawOptionsViewController
         vc.configure(canvasController: self.viewModel!.canvasController)
@@ -216,7 +213,7 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
             vc.modalPresentationStyle = .popover
             vc.popoverPresentationController?.sourceView = self.drawOptionsPanelView?.drawOptionsButton
         }
-        navigationController.present(vc, animated: true, completion: nil)
+        self.present(vc, animated: true, completion: nil)
     }
 }
 
