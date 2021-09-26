@@ -22,7 +22,7 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.isNavigationBarHidden = true
         self.vectorView.dataSource = self
         self.vectorView.delegate = self
         self.view.addSubview(self.vectorView)
@@ -191,13 +191,16 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
     
     // MARK: VectorDrawingOptionsPanelViewDelegate
     func drawingOptionsPanelViewCanvasSelected(view: DrawingOptionsPanelView) {
-        guard let navigationController = self.navigationController else {
-            fatalError()
-        }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DrawOptionsViewController") as! DrawOptionsViewController
         vc.configure(canvasController: self.viewModel!.canvasController)
-        navigationController.present(vc, animated: true, completion: nil)
+
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            vc.preferredContentSize = CGSize(width: 320, height: 320)
+            vc.modalPresentationStyle = .popover
+            vc.popoverPresentationController?.sourceView = self.drawOptionsPanelView?.canvasOptionsButton
+        }
+        self.present(vc, animated: true, completion: nil)
     }
     
     func drawingOptionsPanelViewOptionsSelected(view: DrawingOptionsPanelView) {
@@ -207,6 +210,12 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DrawOptionsViewController") as! DrawOptionsViewController
         vc.configure(canvasController: self.viewModel!.canvasController)
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            vc.preferredContentSize = CGSize(width: 320, height: 320)
+            vc.modalPresentationStyle = .popover
+            vc.popoverPresentationController?.sourceView = self.drawOptionsPanelView?.drawOptionsButton
+        }
         navigationController.present(vc, animated: true, completion: nil)
     }
 }
