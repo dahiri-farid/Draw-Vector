@@ -100,19 +100,39 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
         
     }
     
-    func drawCurrentVectorPath() {
-        
-    }
-    
     func updateSelectedVectorPathLayout() {
         
     }
     
-    func drawClosedVectorPathCollection() {
+    func removeSelectedVectorPath() {
         
     }
     
-    func removeSelectedVectorPath() {
+    func updateCurrentVectorPath(point: CGPoint) {
+        
+    }
+    
+    func closeCurrentVectorPath() {
+        
+    }
+    
+    func updatePathSelection(point: CGPoint) {
+        
+    }
+    
+    func updateClosedPathViewSelectedResizeAnchorType(anchorType: ClosedPathSelectionViewAnchorType) {
+        
+    }
+    
+    func clearTranslationPath() {
+        
+    }
+    
+    func updateCurrentPathTranslation(point: CGPoint) {
+        
+    }
+    
+    func updateStartPathTranslation(point: CGPoint) {
         
     }
     

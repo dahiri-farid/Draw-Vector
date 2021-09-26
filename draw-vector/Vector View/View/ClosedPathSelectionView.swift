@@ -18,6 +18,7 @@ enum ClosedPathSelectionViewAnchorType {
 }
 
 class ClosedPathSelectionView : UIView {
+    private(set) var initialFrame: CGRect
     let topLeftCornerResizeAnchor = UIView()
     let topRightCornerResizeAnchor = UIView()
     let bottomLeftCornerResizeAnchor = UIView()
@@ -28,6 +29,7 @@ class ClosedPathSelectionView : UIView {
     
     init(closedPath: ClosedVectorPath) {
         self.closedPath = closedPath
+        self.initialFrame = self.closedPath.bezierPath.bounds
         super.init(frame: self.closedPath.bezierPath.bounds)
         
         let anchorSide: CGFloat = 20
@@ -121,5 +123,9 @@ class ClosedPathSelectionView : UIView {
         }
         
         return .none
+    }
+    
+    func updateInitialFrame() {
+        self.initialFrame = self.closedPath.bezierPath.bounds
     }
 }

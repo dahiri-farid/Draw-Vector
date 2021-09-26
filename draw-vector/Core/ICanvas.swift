@@ -12,7 +12,6 @@ protocol ICanvas {
     var currentVectorPath: VectorPath? { get }
     var closedVectorPathCollection: [ClosedVectorPath] { get }
     var selectedVectorPath: ClosedVectorPath? { get }
-    var selectedClosedPathView: ClosedPathSelectionView? { get }
     
     var closedPathViewSelectedResizeAnchorType: ClosedPathSelectionViewAnchorType { get }
     var pathTranslationStartPoint: CGPoint? { get }

@@ -12,7 +12,6 @@ class Canvas: ICanvas {
     var currentVectorPath: VectorPath?
     var closedVectorPathCollection = [ClosedVectorPath]()
     var selectedVectorPath: ClosedVectorPath?
-    var selectedClosedPathView: ClosedPathSelectionView?
     
     var closedPathViewSelectedResizeAnchorType = ClosedPathSelectionViewAnchorType.none
     var pathTranslationStartPoint: CGPoint?
