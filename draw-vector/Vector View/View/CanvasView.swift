@@ -1,5 +1,5 @@
 //
-//  VectorView.swift
+//  CanvasView.swift
 //  draw-vector
 //
 //  Created by Farid Dahiri on 17.09.2021.
@@ -8,7 +8,18 @@
 import Foundation
 import UIKit
 
-class VectorView : UIView {
+protocol CanvasViewDelegate: NSObject {
+    var canvas: ICanvas { get }
+    
+    func reset()
+    func drawCurrentVectorPath()
+    func updateSelectedVectorPathLayout()
+    func drawClosedVectorPathCollection()
+    func removeSelectedVectorPath()
+}
+
+class CanvasView : UIView {
+    weak var delegate: CanvasViewDelegate?
     var editMode = CanvasEditMode.draw {
         didSet {
             if editMode == .draw {

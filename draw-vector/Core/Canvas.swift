@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Canvas {
+class Canvas: ICanvas {
     var editMode = CanvasEditMode.draw
     var currentVectorPath: VectorPath?
     var closedVectorPathCollection = [ClosedVectorPath]()

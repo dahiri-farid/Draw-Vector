@@ -1,5 +1,5 @@
 //
-//  VectorViewController.swift
+//  CanvasViewController.swift
 //  draw-vector
 //
 //  Created by Farid Dahiri on 17.09.2021.
@@ -7,12 +7,17 @@
 
 import UIKit
 
-class VectorViewController: UIViewController, VectorEditPanelViewDelegate, VectorDrawingOptionsPanelViewDelegate {
-    let panelView: VectorEditModePanelView? = VectorEditModePanelView.loadFromNib()
+class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, CanvasViewDelegate, VectorDrawingOptionsPanelViewDelegate {
+    let panelView: CanvasEditModePanelView? = CanvasEditModePanelView.loadFromNib()
     let drawOptionsPanelView: VectorDrawingOptionsPanelView? = VectorDrawingOptionsPanelView.loadFromNib()
-    let vectorView = VectorView()
+    let vectorView = CanvasView()
     
-    var viewModel: VectorViewControllerModel?
+    var viewModel: CanvasViewControllerModel?
+    var canvas: ICanvas {
+        get {
+            return self.viewModel!.canvasController.canvas
+        }
+    }
 
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -20,6 +25,7 @@ class VectorViewController: UIViewController, VectorEditPanelViewDelegate, Vecto
 
         // TODO: move this outside soon
         self.configure(canvasController: CanvasController())
+        self.vectorView.delegate = self
         self.view.addSubview(self.vectorView)
         self.setupPanelView()
         self.setupDrawOptionsPanelView()
@@ -34,7 +40,7 @@ class VectorViewController: UIViewController, VectorEditPanelViewDelegate, Vecto
     
     // MARK: Public
     func configure(canvasController: CanvasController) {
-        self.viewModel = VectorViewControllerModel(canvasController: canvasController)
+        self.viewModel = CanvasViewControllerModel(canvasController: canvasController)
     }
     
     // MARK: Configuration
@@ -87,6 +93,27 @@ class VectorViewController: UIViewController, VectorEditPanelViewDelegate, Vecto
         }
         viewModel.viewMode = .select
         self.update()
+    }
+    
+    // MARK: CanvasViewDelegate
+    func reset() {
+        
+    }
+    
+    func drawCurrentVectorPath() {
+        
+    }
+    
+    func updateSelectedVectorPathLayout() {
+        
+    }
+    
+    func drawClosedVectorPathCollection() {
+        
+    }
+    
+    func removeSelectedVectorPath() {
+        
     }
     
     // MARK: VectorDrawingOptionsPanelViewDelegate

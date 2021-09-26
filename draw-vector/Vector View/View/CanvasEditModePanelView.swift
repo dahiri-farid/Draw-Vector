@@ -1,5 +1,5 @@
 //
-//  VectorEditModePanelView.swift
+//  CanvasEditModePanelView.swift
 //  draw-vector
 //
 //  Created by Farid Dahiri on 19.09.2021.
@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-protocol VectorEditPanelViewDelegate : NSObject {
+protocol CanvasEditPanelViewDelegate : NSObject {
     func drawActionSelected()
     func selectActionSelected()
 }
 
-class VectorEditModePanelView : UIView {
-    weak var delegate: VectorEditPanelViewDelegate?
+class CanvasEditModePanelView : UIView {
+    weak var delegate: CanvasEditPanelViewDelegate?
     
     @IBOutlet var drawButton: UIButton?
     @IBOutlet var selectButton: UIButton?
