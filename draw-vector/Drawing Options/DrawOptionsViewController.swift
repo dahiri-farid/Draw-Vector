@@ -10,7 +10,7 @@ import UIKit
 
 class DrawOptionsViewController : UIViewController, ColorPickerViewDelegate {
     private var colorPickerView: ColorPickerView? = ColorPickerView.loadFromNib()
-    private var viewModel: DrawOptionsViewControllerModel?
+    var didSelectColor: ((UIColor) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,21 +24,18 @@ class DrawOptionsViewController : UIViewController, ColorPickerViewDelegate {
         self.colorPickerView = colorPickerView
     }
     
-    func configure(canvasController: CanvasController) {
+    func configure(backgroundColor: UIColor) {
         guard let colorPickerView = self.colorPickerView else {
             fatalError()
         }
-        
-        let viewModel = DrawOptionsViewControllerModel(canvasController: canvasController)
-        self.viewModel = viewModel
-        colorPickerView.configure(backgroundColor: viewModel.backgroundColor)
+        colorPickerView.configure(backgroundColor: backgroundColor)
     }
     
     // MARK: VectorColorPickerViewDelegate
     func colorPickerViewDidUpdate(backgroundColor: UIColor) {
-        guard let viewModel = self.viewModel else {
+        guard let didSelectColor = self.didSelectColor else {
             fatalError()
         }
-        viewModel.updateBackgroundColor(color: backgroundColor)
+        didSelectColor(backgroundColor)
     }
 }

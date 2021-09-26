@@ -185,19 +185,18 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
         self.update()
     }
     
-    func didUpdateBackgroundColor() {
-        self.update()
-    }
-    
-    func didUpdateSelectedVectorPathBackgroundColor() {
-        self.update()
-    }
-    
     // MARK: VectorDrawingOptionsPanelViewDelegate
     func drawingOptionsPanelViewCanvasSelected(view: DrawingOptionsPanelView) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DrawOptionsViewController") as! DrawOptionsViewController
-        vc.configure(canvasController: self.viewModel!.canvasController)
+        guard let viewModel = self.viewModel else {
+            fatalError()
+        }
+        vc.configure(backgroundColor: viewModel.canvas.backgroundColor)
+        vc.didSelectColor = { [weak self] color in
+            viewModel.updateCanvasBackgroundColor(color: color)
+            self?.update()
+        }
 
         if UIDevice.current.userInterfaceIdiom == .pad {
             vc.preferredContentSize = CGSize(width: 320, height: 320)
@@ -210,7 +209,17 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
     func drawingOptionsPanelViewOptionsSelected(view: DrawingOptionsPanelView) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DrawOptionsViewController") as! DrawOptionsViewController
-        vc.configure(canvasController: self.viewModel!.canvasController)
+        guard let viewModel = self.viewModel else {
+            fatalError()
+        }
+        guard let selectedVectorPath = viewModel.canvas.selectedVectorPath else {
+            fatalError()
+        }
+        vc.configure(backgroundColor: selectedVectorPath.fillColor)
+        vc.didSelectColor = { [weak self] color in
+            viewModel.updateSelectedVectorPathBackgroundColor(color: color)
+            self?.update()
+        }
         
         if UIDevice.current.userInterfaceIdiom == .pad {
             vc.preferredContentSize = CGSize(width: 320, height: 320)

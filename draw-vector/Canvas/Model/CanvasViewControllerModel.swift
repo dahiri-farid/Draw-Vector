@@ -6,11 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 protocol CanvasViewControllerModelDelegate: NSObject {
     func didUpdateSelectedVectorPath()
-    func didUpdateBackgroundColor()
-    func didUpdateSelectedVectorPathBackgroundColor()
 }
 
 class CanvasViewControllerModel: NSObject, CanvasControllerDelegate {
@@ -79,18 +78,13 @@ class CanvasViewControllerModel: NSObject, CanvasControllerDelegate {
         self.canvasController.updateMode(editMode: mode)
     }
     
-    // MARK: CanvasControllerDelegate
-    func canvasDidUpdateBackgroundColor() {
-        guard let delegate = self.delegate else {
-            fatalError()
-        }
-        delegate.didUpdateBackgroundColor()
+    func updateCanvasBackgroundColor(color: UIColor) {
+        self.canvasController.updateBackgroundColor(color: color)
     }
     
-    func canvasDidUpdateSelectedVectorPathBackgroundColor() {
-        guard let delegate = self.delegate else {
-            fatalError()
+    func updateSelectedVectorPathBackgroundColor(color: UIColor) {
+        if canvas.selectedVectorPath != nil {
+            self.canvasController.updateSelectedVectorPathBackgroundColor(color: color)
         }
-        delegate.didUpdateSelectedVectorPathBackgroundColor()
     }
 }
