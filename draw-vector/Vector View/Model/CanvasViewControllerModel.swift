@@ -9,7 +9,7 @@ import Foundation
 
 class CanvasViewControllerModel {
     var viewMode: CanvasEditMode = .draw
-    let canvasController: CanvasController
+    private let canvasController: CanvasController
     
     init(canvasController: CanvasController) {
         self.canvasController = canvasController
