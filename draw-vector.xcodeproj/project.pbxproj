@@ -110,14 +110,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4178542B26FE4E4600A0874D /* Vector View */ = {
+		4178542B26FE4E4600A0874D /* Canvas */ = {
 			isa = PBXGroup;
 			children = (
 				4197F92526F527AD0075C0BC /* CanvasViewController.swift */,
 				4178542D26FE4E5D00A0874D /* View */,
 				4178542C26FE4E5300A0874D /* Model */,
 			);
-			path = "Vector View";
+			path = Canvas;
 			sourceTree = "<group>";
 		};
 		4178542C26FE4E5300A0874D /* Model */ = {
@@ -213,7 +213,7 @@
 				4178543426FE5F2900A0874D /* Core */,
 				4178542F26FE4F2500A0874D /* Drawing Options */,
 				4178542E26FE4EAB00A0874D /* Extension */,
-				4178542B26FE4E4600A0874D /* Vector View */,
+				4178542B26FE4E4600A0874D /* Canvas */,
 				417E228326FBD83E001D3A98 /* draw-vector.entitlements */,
 				4197F92126F527AD0075C0BC /* AppDelegate.swift */,
 				4197F92326F527AD0075C0BC /* SceneDelegate.swift */,
