@@ -12,21 +12,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="VectorColorPickerView" customModule="draw_vector" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="478"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cP7-0G-GyE">
-                    <rect key="frame" x="141.5" y="8" width="131" height="32"/>
-                    <segments>
-                        <segment title="First"/>
-                        <segment title="Second"/>
-                    </segments>
-                    <connections>
-                        <action selector="segmentedControlValueChangedWithSender:" destination="iN0-l3-epB" eventType="valueChanged" id="Ksn-5c-ueM"/>
-                    </connections>
-                </segmentedControl>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4m-Hy-8rm">
-                    <rect key="frame" x="0.0" y="52" width="414" height="414"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="l4m-Hy-8rm" secondAttribute="height" multiplier="1:1" id="wtJ-RN-mVv"/>
@@ -36,10 +26,8 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="l4m-Hy-8rm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="52" id="CuU-7s-k5S"/>
-                <constraint firstAttribute="bottom" secondItem="l4m-Hy-8rm" secondAttribute="bottom" constant="12" id="OWo-nX-biS"/>
-                <constraint firstItem="cP7-0G-GyE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="RJ8-sC-Hsg"/>
-                <constraint firstItem="cP7-0G-GyE" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cUA-4M-gg5"/>
+                <constraint firstItem="l4m-Hy-8rm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CuU-7s-k5S"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="l4m-Hy-8rm" secondAttribute="bottom" id="ZSA-Ey-KD6"/>
                 <constraint firstAttribute="trailing" secondItem="l4m-Hy-8rm" secondAttribute="trailing" id="cUj-Ao-ZDy"/>
                 <constraint firstItem="l4m-Hy-8rm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dXy-7q-n4t"/>
             </constraints>
@@ -48,7 +36,6 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="colorPickerContainerView" destination="l4m-Hy-8rm" id="EpW-kT-Wna"/>
-                <outlet property="segmentedControl" destination="cP7-0G-GyE" id="Id3-LC-xee"/>
             </connections>
             <point key="canvasLocation" x="650.72463768115949" y="-107.14285714285714"/>
         </view>

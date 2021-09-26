@@ -10,17 +10,22 @@ import UIKit
 
 class DrawOptionsViewController : UIViewController, VectorColorPickerViewDelegate {
     
-    let colorPickerView = VectorColorPickerView()
+    var colorPickerView: VectorColorPickerView? = VectorColorPickerView.loadFromNib()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.colorPickerView.translatesAutoresizingMaskIntoConstraints = false
-        self.colorPickerView.delegate = self
-        self.view.addSubview(self.colorPickerView)
+        guard let colorPickerView = self.colorPickerView else {
+            fatalError()
+        }
+        colorPickerView.translatesAutoresizingMaskIntoConstraints = false
+        colorPickerView.delegate = self
+        self.view.addSubview(colorPickerView)
+        colorPickerView.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .bottom)
+        self.colorPickerView = colorPickerView
     }
     
     // MARK: VectorColorPickerViewDelegate
-    func vectorColorPickerViewDidUpdate(lineColor: UIColor, backgroundColor: UIColor) {
+    func vectorColorPickerViewDidUpdate(backgroundColor: UIColor) {
         
     }
 }
