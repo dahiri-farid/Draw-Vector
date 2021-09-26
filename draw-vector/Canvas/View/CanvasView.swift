@@ -35,17 +35,18 @@ protocol CanvasViewDelegate: NSObject {
 class CanvasView : UIView {
     weak var dataSource: CanvasViewDataSource?
     weak var delegate: CanvasViewDelegate?
-    var editMode = CanvasEditMode.draw {
-        didSet {
-            if editMode == .draw {
-                if self.selectedClosedPathView != nil {
-                    self.removeSelectedVectorPathView()
-                    self.setNeedsDisplay()
-                }
+    
+    private var selectedClosedPathView: ClosedPathSelectionView?
+    
+    // MARK: public
+    func update() {
+        if self.dataSource!.canvas.editMode == .draw {
+            if self.selectedClosedPathView != nil {
+                self.removeSelectedVectorPathView()
+                self.setNeedsDisplay()
             }
         }
     }
-    var selectedClosedPathView: ClosedPathSelectionView?
     
     // MARK: private
     func drawSelectedVectorPathIfNeeded() {
@@ -143,7 +144,7 @@ class CanvasView : UIView {
         context.setFillColor(UIColor.yellow.cgColor)
         context.fill(bounds)
         
-        switch self.editMode {
+        switch self.dataSource!.canvas.editMode {
         case .draw:
             self.drawCurrentVectorPath()
         default: break
@@ -164,7 +165,7 @@ class CanvasView : UIView {
         if allTouches.count == 1 {
             let touch = touches.first!
             let location = touch.location(in: self)
-            switch self.editMode {
+            switch self.dataSource!.canvas.editMode {
             case .draw:
                 // updateCurrentVectorPath
                 self.delegate?.updateCurrentVectorPath(point: location)
@@ -203,7 +204,7 @@ class CanvasView : UIView {
         if allTouches.count == 1 {
             let touch = touches.first!
             let location = touch.location(in: self)
-            switch self.editMode {
+            switch self.dataSource!.canvas.editMode {
             case .draw:
                 // updateCurrentVectorPath
                 self.delegate?.updateCurrentVectorPath(point: location)
@@ -226,7 +227,7 @@ class CanvasView : UIView {
             return
         }
         if allTouches.count == 1 {
-            switch self.editMode {
+            switch self.dataSource!.canvas.editMode {
             case .draw:
                 // closeCurrentVectorPath()
                 self.delegate?.closeCurrentVectorPath()

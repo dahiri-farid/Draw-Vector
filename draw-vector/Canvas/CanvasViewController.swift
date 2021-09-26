@@ -75,8 +75,8 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
         guard let viewModel = self.viewModel else {
             fatalError()
         }
-        self.panelView?.viewMode = viewModel.viewMode
-        self.vectorView.editMode = viewModel.viewMode
+        self.panelView?.viewMode = viewModel.canvas.editMode
+        self.vectorView.update()
     }
     
     // MARK: VectorPanelViewDelegate

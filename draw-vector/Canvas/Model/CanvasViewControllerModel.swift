@@ -13,11 +13,7 @@ class CanvasViewControllerModel {
             return self.canvasController.canvas
         }
     }
-    var viewMode: CanvasEditMode {
-        get {
-            return self.canvasController.canvas.editMode
-        }
-    }
+    
     private let canvasController: CanvasController
     
     init(canvasController: CanvasController) {
