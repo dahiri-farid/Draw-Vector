@@ -167,26 +167,20 @@ class CanvasView : UIView {
             let location = touch.location(in: self)
             switch self.dataSource!.canvas.editMode {
             case .draw:
-                // updateCurrentVectorPath
                 self.delegate?.updateCurrentVectorPath(point: location)
             case .select:
                 if let selectedClosedPathView = self.selectedClosedPathView {
                     let selectedClosedPathViewLocation = touch.location(in: selectedClosedPathView)
-                    // updateClosedPathViewSelectedResizeAnchorType
                     let anchorType = selectedClosedPathView.resizeAnchorType(location: selectedClosedPathViewLocation)
                     self.delegate?.updateClosedPathViewSelectedResizeAnchorType(anchorType: anchorType)
                     if selectedClosedPathView.frame.contains(location) == false, self.dataSource!.canvas.closedPathViewSelectedResizeAnchorType == .none {
                         self.removeSelectedVectorPathView()
-                        // updatePathSelectionPoint
                         self.delegate?.updatePathSelection(point: location)
                     }
                 } else {
-                    // updatePathSelectionPoint
                     self.delegate?.updatePathSelection(point: location)
                 }
-                // updateStartPathTranslation
                 self.delegate?.updateStartPathTranslation(point: location)
-                // updateCurrentPathTranslation
                 self.delegate?.updateCurrentPathTranslation(point: location)
             }
             
@@ -206,10 +200,8 @@ class CanvasView : UIView {
             let location = touch.location(in: self)
             switch self.dataSource!.canvas.editMode {
             case .draw:
-                // updateCurrentVectorPath
                 self.delegate?.updateCurrentVectorPath(point: location)
             case .select:
-                // updateCurrentPathTranslation
                 self.delegate?.updateCurrentPathTranslation(point: location)
                 self.updateSelectedVectorPathViewFrame()
                 break
@@ -229,10 +221,8 @@ class CanvasView : UIView {
         if allTouches.count == 1 {
             switch self.dataSource!.canvas.editMode {
             case .draw:
-                // closeCurrentVectorPath()
                 self.delegate?.closeCurrentVectorPath()
             case .select:
-                // clearTranslationPath()
                 self.delegate?.clearTranslationPath()
                 
                 // TODO: inside method
