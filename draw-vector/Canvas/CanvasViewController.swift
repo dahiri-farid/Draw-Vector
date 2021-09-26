@@ -23,13 +23,14 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // TODO: move this outside soon
-        self.configure(canvasController: CanvasController())
         self.vectorView.dataSource = self
         self.vectorView.delegate = self
         self.view.addSubview(self.vectorView)
         self.setupPanelView()
         self.setupDrawOptionsPanelView()
+        
+        // TODO: move this outside soon
+        self.configure(canvasController: CanvasController())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +43,7 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
     // MARK: Public
     func configure(canvasController: CanvasController) {
         self.viewModel = CanvasViewControllerModel(canvasController: canvasController)
+        self.update()
     }
     
     // MARK: Configuration
@@ -75,8 +77,17 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
         guard let viewModel = self.viewModel else {
             fatalError()
         }
-        self.panelView?.viewMode = viewModel.canvas.editMode
+        guard let panelView = panelView else {
+            fatalError()
+        }
+        guard let drawOptionsPanelView = drawOptionsPanelView else {
+            fatalError()
+        }
+        panelView.viewMode = viewModel.canvas.editMode
+        drawOptionsPanelView.canvas = viewModel.canvas
+        
         self.vectorView.update()
+        drawOptionsPanelView.update()
     }
     
     // MARK: VectorPanelViewDelegate
@@ -173,6 +184,7 @@ class CanvasViewController: UIViewController, CanvasEditPanelViewDelegate, Canva
     }
     
     func drawingOptionsPanelViewOptionsSelected(view: DrawingOptionsPanelView) {
+        
     }
 }
 
