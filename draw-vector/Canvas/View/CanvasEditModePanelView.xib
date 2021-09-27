@@ -14,19 +14,25 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="bcD-Vi-ln5">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bcD-Vi-ln5">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLU-F1-g6M">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
-                            <state key="normal" title="Draw"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="mqz-LL-tyJ"/>
+                            </constraints>
+                            <state key="normal" image="pen_icon"/>
                             <connections>
                                 <action selector="drawActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="rtI-nD-I9M"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fw5-bD-bbT">
-                            <rect key="frame" x="0.0" y="866" width="414" height="30"/>
-                            <state key="normal" title="Select"/>
+                            <rect key="frame" x="0.0" y="852" width="414" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="ne3-Ru-w1V"/>
+                            </constraints>
+                            <state key="normal" image="select_icon"/>
                             <connections>
                                 <action selector="selectActionWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="YI5-Io-Es8"/>
                             </connections>
@@ -36,7 +42,7 @@
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="bcD-Vi-ln5" secondAttribute="bottom" id="IWI-qD-q2X"/>
                 <constraint firstAttribute="trailing" secondItem="bcD-Vi-ln5" secondAttribute="trailing" id="Xsh-Qt-ou7"/>
@@ -53,4 +59,8 @@
             <point key="canvasLocation" x="-46" y="104"/>
         </view>
     </objects>
+    <resources>
+        <image name="pen_icon" width="128" height="128"/>
+        <image name="select_icon" width="128" height="128"/>
+    </resources>
 </document>
